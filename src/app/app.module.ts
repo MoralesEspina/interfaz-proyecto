@@ -17,9 +17,13 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModificarFormularioComponent } from './componentes/vuelo/modificar-formulario/modificar-formulario.component';
 import { PrincipalComponent } from './principal/principal.component';
+import { AeropuertoComponent } from './aeropuerto/aeropuerto.component';
+import { AgregarComponent } from './aeropuerto/COMPONENTE/agregar/agregar.component';
+import { ModificarComponent } from './aeropuerto/COMPONENTE/modificar/modificar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,10 @@ import { PrincipalComponent } from './principal/principal.component';
     MostrarTablaComponent,
     AgregarFormularioComponent,
     ModificarFormularioComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    AeropuertoComponent,
+    AgregarComponent,
+    ModificarComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +51,10 @@ import { PrincipalComponent } from './principal/principal.component';
     MatSelectModule,
     MatRadioModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
