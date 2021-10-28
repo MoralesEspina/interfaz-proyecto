@@ -3,14 +3,14 @@
     <h1></h1>
     <h1>La mejor pagina para comprar vuelos</h1>
   </div>
-
+<form [formGroup]="form" (ngSubmit)= "grabar_localstorage()" >
   <div class="container p-1 mb-4 ">
     <div class="row">
       <div class="col order-first">
         <h4>Lugar de Origen</h4>
         <mat-form-field appearance="fill">
           <mat-label>Origen</mat-label>
-          <mat-select [(value)]="selected">
+          <mat-select formControlName='Origen'>
             <mat-option *ngFor="let aeropuerto of collection" [value]="aeropuerto.iataCode">
               {{aeropuerto.iataCode}}  {{aeropuerto.pais}}, {{aeropuerto.ciudad}}
             </mat-option>
@@ -21,7 +21,7 @@
         <h4>Lugar de Destino</h4>
         <mat-form-field appearance="fill">
           <mat-label>Destino</mat-label>
-          <mat-select [(value)]="selected1">
+          <mat-select formControlName='Destino'>
             <mat-option *ngFor="let aeropuerto of collection" [value]="aeropuerto.iataCode">
               {{aeropuerto.iataCode}}  {{aeropuerto.pais}}, {{aeropuerto.ciudad}}
             </mat-option>
@@ -30,20 +30,18 @@
       </div>
       <div class="col order-last">
         <h4>Fecha del Vuelo</h4>
-        <mat-form-field appearance="fill">
-          <mat-label>Fecha</mat-label>
-          <input matInput [matDatepicker]="picker">
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
+          <mat-form-field appearance="fill">
+            <input matInput type = "date" placeholder="Fecha" formControlName="Fecha" >
+          </mat-form-field>
       </div>
       <div class="col order-last align-self-center">
       <div class="example-button-row">
-        <button mat-raised-button color="primary">Buscar Vuelos</button>
+        <button type='submit' [disabled]="form.invalid" mat-raised-button color="primary">Buscar Vuelos</button>
       </div>
     </div>
   </div>
   </div>
+</form>
 </div>
 <div class="main-header" id="inicio">
 <div class="row">
