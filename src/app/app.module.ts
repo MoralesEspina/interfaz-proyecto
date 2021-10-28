@@ -21,6 +21,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ModificarFormularioComponent } from './componentes/vuelo/modificar-formulario/modificar-formulario.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormcanvuelosComponent } from './componentes/canvuelo/formcanvuelos/formcanvuelos.component';
+
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { TablaCanvuelosComponent } from './componentes/canvuelo/tabla-canvuelos/tabla-canvuelos.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +35,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     MostrarTablaComponent,
     AgregarFormularioComponent,
     ModificarFormularioComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    FormcanvuelosComponent,
+    TablaCanvuelosComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +54,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     MatRadioModule,
     MatCardModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

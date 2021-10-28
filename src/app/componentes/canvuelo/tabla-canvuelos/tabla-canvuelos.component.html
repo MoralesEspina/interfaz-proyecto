@@ -1,0 +1,35 @@
+<div class="mat-elevation-z8">
+    <mat-toolbar style="background-color:rgb(241, 218, 87);" >
+      <span>Informacion De Cancelacion De Vuelos</span>
+      <div class="example-spacer"></div>
+      <button mat-raised-button color="primary" routerLink="/addcancelacion_vuelos">Agregar</button>
+    </mat-toolbar>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Motivo</th>
+          <th scope="col">Estado</th>
+          <th scope="col">Vuelo</th>
+          <th scope="col">Fecha Reasignada</th>
+        
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor= "let canvuelos of Listarcanvuelos">
+          <th>{{canvuelos.id_cancelacion_vuelos}}</th>
+          <td>{{canvuelos.motivo}}</td>
+          <td>{{canvuelos.estado}}</td>
+          <td>{{canvuelos.vuelo}}</td>
+          <td>{{canvuelos.fecha_reasignada}}</td>
+          <td>
+            <button  type="button" class="btn btn-info">Editar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  
+  
+  
