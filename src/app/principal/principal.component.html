@@ -3,14 +3,16 @@
     <h1></h1>
     <h1>La mejor pagina para comprar vuelos</h1>
   </div>
+
   <div class="container p-1 mb-4 ">
     <div class="row">
       <div class="col order-first">
         <h4>Lugar de Origen</h4>
         <mat-form-field appearance="fill">
           <mat-label>Origen</mat-label>
-          <mat-select>
-            <mat-option *ngFor="let Ruta of displayedColumns" >
+          <mat-select [(value)]="selected">
+            <mat-option *ngFor="let aeropuerto of collection" [value]="aeropuerto.iataCode">
+              {{aeropuerto.iataCode}}  {{aeropuerto.pais}}, {{aeropuerto.ciudad}}
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -19,8 +21,9 @@
         <h4>Lugar de Destino</h4>
         <mat-form-field appearance="fill">
           <mat-label>Destino</mat-label>
-          <mat-select>
-            <mat-option *ngFor="let Ruta of displayedColumns">
+          <mat-select [(value)]="selected1">
+            <mat-option *ngFor="let aeropuerto of collection" [value]="aeropuerto.iataCode">
+              {{aeropuerto.iataCode}}  {{aeropuerto.pais}}, {{aeropuerto.ciudad}}
             </mat-option>
           </mat-select>
         </mat-form-field>
