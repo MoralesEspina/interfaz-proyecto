@@ -20,6 +20,12 @@ import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ModificarFormularioComponent } from './componentes/vuelo/modificar-formulario/modificar-formulario.component';
 import { PrincipalComponent } from './principal/principal.component';
+import { TablaVDisponibleComponent } from './tabla-vdisponible/tabla-vdisponible.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +34,9 @@ import { PrincipalComponent } from './principal/principal.component';
     MostrarTablaComponent,
     AgregarFormularioComponent,
     ModificarFormularioComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    TablaVDisponibleComponent
+
   ],
   imports: [
     BrowserModule,
@@ -44,7 +52,12 @@ import { PrincipalComponent } from './principal/principal.component';
     MatSelectModule,
     MatRadioModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

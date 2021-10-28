@@ -1,3 +1,4 @@
+import { TablaVDisponibleComponent } from './tabla-vdisponible/tabla-vdisponible.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { MostrarTablaComponent } from './componentes/vuelo/mostrar-tabla/mostrar-tabla.component';
 import { NgModule } from '@angular/core';
@@ -7,6 +8,8 @@ const routes: Routes = [
   {path:'', redirectTo:'/inicio',pathMatch:'full'},
   {path:'inicio', component: PrincipalComponent},
   {path:'vuelo', component: MostrarTablaComponent},
+  {path: 'disponible', component: TablaVDisponibleComponent},
+
 
 ];
 
