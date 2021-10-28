@@ -1,0 +1,41 @@
+
+<div class="container">
+    <p>Crear estado de Boleto</p>
+    <div class="row">
+      <div class="col-sm-6">
+        <form>
+          <div class="mb3">
+            <label class="form-label">ID Estado Boleto</label>
+            <input [(ngModel)]="EstadoBoleto.idestado_boleto" type="text" class="form-control" name="idestado_boleto">
+          </div>
+  
+          <div class="mb3">
+            <label class="form-label">Descripcion</label>
+            <input [(ngModel)]="EstadoBoleto.descripcion" type="text" class="form-control" name="descripcion">
+          </div>   
+          <br>
+          <div class="mb10">
+            <button (click)="agregar()" type="button" class="btn btn-danger">Guardar</button>
+          </div>
+  
+        </form>
+      </div>
+      <div class="col-sm-6">
+        <form>
+          <div class="mb3">
+            <label class="form-label">{{EstadoBoleto.idestado_boleto}}</label>
+          </div>
+  
+          <div class="mb3">
+            <label class="form-label">{{EstadoBoleto.descripcion}}</label>
+          </div>
+  
+         
+  
+        </form>
+      </div>
+  
+    </div>
+  
+  </div>
+  

@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+  <div class="container">
+
+
+    <table class="table">
+      <thead>
+        <tr>
+         
+          <th scope="col">ID</th>
+          <th scope="col">Estado</th>
+          <th scope="col">Modelo</th>
+          <th scope="col">Aerolinea</th>
+      
+          <th scope="col">Editar</th>
+          <th scope="col">Eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let avion of ListarAvion">
+          
+         
+          <th>{{avion.id_avion}}</th>
+          <td>{{avion.estado}}</td>
+          <td>{{avion.modelo}}</td>
+          <td>{{avion.aerolinea}}</td>
+        
+         
+          <td>
+           
+            <button (click)="modificarr(avion.id_avion)" type="button" class="btn btn-info">Editar</button>
+          </td>
+          <td>
+            <button (click)="eliminarr(avion.id_avion)" type="button" class="btn btn-danger">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+   
+    <button type="button" class="btn btn-info" (click)="Onnuevoo()">Crear Nuevo Avion</button>
+
+  </div>
+
+</body>
+
+</html>
+
+
+

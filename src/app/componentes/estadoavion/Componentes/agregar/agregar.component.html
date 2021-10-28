@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+  <div class="container">
+
+
+    <table class="table">
+      <thead>
+        <tr>
+         
+         
+          <th scope="col">Descripcion</th>
+          <th scope="col">Editar</th>
+          <th scope="col">Eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let estadoavion of ListarEstadoAvion">
+          
+         
+          <th>{{estadoavion.id_estado_avion}}</th>
+          <td>{{estadoavion.descripcion}}</td>
+         
+          <td>
+           
+            <button (click)="modificarr(estadoavion.id_estado_avion)" type="button" class="btn btn-info">Editar</button>
+          </td>
+          <td>
+            <button (click)="eliminarr(estadoavion.id_estado_avion)" type="button" class="btn btn-danger">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+   
+    <button type="button" class="btn btn-info" (click)="Onnuevoo()">Crear Estado Avion</button>
+
+  </div>
+
+</body>
+
+</html>
+
+
