@@ -20,7 +20,9 @@ import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ModificarFormularioComponent } from './componentes/vuelo/modificar-formulario/modificar-formulario.component';
 import { PrincipalComponent } from './principal/principal.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './componentes/public/login/login/login.component';
+import { RegisterComponent } from './componentes/public/register/register.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     MostrarTablaComponent,
     AgregarFormularioComponent,
     ModificarFormularioComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    LoginComponent,
+    RegisterComponent
+
   ],
   imports: [
     BrowserModule,

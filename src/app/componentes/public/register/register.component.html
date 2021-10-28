@@ -1,0 +1,57 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="crearPersona()">
+  <mat-card class="mat_card">
+    <mat-card-content>
+      <h2>Registro</h2>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="mat-form-field">
+            <input type ="text" matInput placeholder="Nombres" formControlName="nombres" required autofocus>
+            <mat-error *ngIf="addressForm.controls['nombres'].hasError('required')">
+              El Nombre es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="mat-form-field">
+            <input type ="text" matInput placeholder="Apellidos" formControlName="apellidos" required >
+            <mat-error *ngIf="addressForm.controls['apellidos'].hasError('required')">
+              El Apellido es <strong>requerida</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="mat-form-field">
+            <mat-label>Tipo de Documento</mat-label>
+            <mat-select formControlName ="tipo_doc">
+              <mat-option *ngFor="let TipoDoc of _tipoDoc" [value]="TipoDoc.value">
+                {{TipoDoc.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="mat-form-field">
+            <input  matInput placeholder="Número de Documento" formControlName="numero_doc" required>
+            <mat-error *ngIf="addressForm.controls['numero_doc'].hasError('required')">
+              El Número de Documento es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" [disabled] = "addressForm.invalid" type = "submit" >Siguiente</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
