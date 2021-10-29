@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,6 +19,10 @@ import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ModificarFormularioComponent } from './componentes/vuelo/modificar-formulario/modificar-formulario.component';
 import { PrincipalComponent } from './principal/principal.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import{HttpClientModule}from '@angular/common/http';
+import "@angular/compiler";
 
 @NgModule({
   declarations: [
@@ -32,6 +35,7 @@ import { PrincipalComponent } from './principal/principal.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
@@ -44,7 +48,10 @@ import { PrincipalComponent } from './principal/principal.component';
     MatSelectModule,
     MatRadioModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
