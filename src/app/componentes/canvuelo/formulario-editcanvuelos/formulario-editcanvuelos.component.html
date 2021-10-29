@@ -1,4 +1,3 @@
-
 <form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
   <body>
   <mat-card class="shipping-card">
@@ -16,6 +15,16 @@
             </mat-error>
           </mat-form-field>
         </div>
+        
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Id Estado" formControlName="estado" [(ngModel)]="canvuelos.estado">
+            <mat-error *ngIf="addressForm.controls['estado'].hasError('required')">
+              Estado is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        
 
       </div>
       <div class="row">
@@ -29,7 +38,7 @@
         </div>
         <div class="col">
           <mat-form-field class="full-width">
-            <input matInput type="datetime-local"  placeholder="Seleccione Fecha" formControlName="fecha_reasignada" [(ngModel)]="canvuelos.fecha_reasignada">
+            <input matInput placeholder="Ingrese Fecha" formControlName="fecha_reasignada" [(ngModel)]="canvuelos.fecha_reasignada">
             <mat-error *ngIf="addressForm.controls['fecha_reasignada'].hasError('required')">
               Fecha Reasignada is <strong>required</strong>
             </mat-error>
@@ -39,8 +48,9 @@
       
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="primary" type="submit" (click)="agregar()">Guardar</button>
+      <button mat-raised-button color="primary" type="submit" (click)="modificar()">Guardar</button>
       <button mat-raised-button color="primary" type="submit" (click)="regresar()">Regresar</button>
+
     </mat-card-actions>
   </mat-card>
 </body>

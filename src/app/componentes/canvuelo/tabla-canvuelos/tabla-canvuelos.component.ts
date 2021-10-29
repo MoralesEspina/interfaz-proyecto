@@ -26,6 +26,9 @@ export class TablaCanvuelosComponent implements OnInit {
       err => console.log(err)
     );
   }
+  modificar(id_pasajero:string){
+    this.router.navigate(['/editcancelacion_vuelos/'+id_pasajero])
+  }
 
 
 }

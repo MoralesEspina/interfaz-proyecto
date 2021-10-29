@@ -23,7 +23,7 @@
           <td>{{canvuelos.vuelo}}</td>
           <td>{{canvuelos.fecha_reasignada}}</td>
           <td>
-            <button  type="button" class="btn btn-info">Editar</button>
+            <button (click)="modificar(canvuelos.id_cancelacion_vuelos)"  type="button" class="btn btn-info" >Editar</button>
           </td>
         </tr>
       </tbody>

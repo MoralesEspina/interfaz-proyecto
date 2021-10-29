@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-
 
 
 @Injectable({
@@ -9,8 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class CanvuelosService {
 
-  url = 'http://localhost:3000/cancelacion_vuelos';
-  url1='http://localhost:3000/vuelos';
+  url = 'https://aeropuerto-dw.herokuapp.com/cancelacion_vuelos';
+  url1= 'https://aeropuerto-dw.herokuapp.com/cancelacion_vueloss';
 
   constructor(private http: HttpClient) { }
 
@@ -21,42 +19,19 @@ export class CanvuelosService {
     return this.http.get(this.url+'/'+id_vuelo);
   }
 
-
   addVuelos(canvuelos: canvuelos) {
     return this.http.post(this.url, canvuelos);
   }
 
-  updateVuelos(id: string, canvuelos: canvuelos) {
-    this.http.put(this.url + '/' + id, canvuelos).subscribe(
-      res => console.log(res),
-      err => console.log(err)
-    )
+  updateVuelos(id: string, canvuelos: canvuelos){
+    return this.http.put(this.url+'/'+id,canvuelos);
+
   }
 
-  deleteVuelos(id: string) {
-    this.http.delete(this.url + '/' + id).subscribe(
-      res => console.log(res),
-      err => alert(err(""))
-    )
-  }
+  updateVueloss(id: string, vuelos: vuelos){
+    return this.http.put(this.url1+'/'+id, vuelos);
 
-
-//modificar la tabla vuelos
-  unVuelo(id: string) {
-    return this.http.get<vuelos[]>(this.url1 + '/' + id);
   }
-
-  updateHero(id:string, vuelos: vuelos): Observable<any> {
-    return this.http.put(this.url1+ '/' + id, vuelos)
-  
-  }
-  modificaVuelos(id_vuelo: string, vuelos: vuelos) {
-    this.http.put(this.url1 + '/' + id_vuelo, vuelos).subscribe(
-      res => console.log(res),
-      err => console.log(err)
-    )
-  }
-
 
 
 }
@@ -69,8 +44,5 @@ export interface canvuelos {
 }
 export interface vuelos {
   id_vuelo?: any;
-  id_ruta:string;
-  id_avion:string;
-  fecha_hora_salida: string;
-  id_estado: string
+  fecha_salida: string;
 }

@@ -27,6 +27,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { TablaCanvuelosComponent } from './componentes/canvuelo/tabla-canvuelos/tabla-canvuelos.component';
+import { FormularioEditcanvuelosComponent } from './componentes/canvuelo/formulario-editcanvuelos/formulario-editcanvuelos.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { TablaCanvuelosComponent } from './componentes/canvuelo/tabla-canvuelos/
     ModificarFormularioComponent,
     PrincipalComponent,
     FormcanvuelosComponent,
-    TablaCanvuelosComponent
+    TablaCanvuelosComponent,
+    FormularioEditcanvuelosComponent
   ],
   imports: [
     BrowserModule,
