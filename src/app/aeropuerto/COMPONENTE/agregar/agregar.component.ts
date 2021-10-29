@@ -57,7 +57,7 @@ export class AgregarComponent implements OnInit {
   
     actualizar(){
       setTimeout(location.reload.bind(location),500);
-
+///ceomatrio dylan
     }
    
 }
