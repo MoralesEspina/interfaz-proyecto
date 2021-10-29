@@ -24,7 +24,7 @@ export class PrincipalComponent implements OnInit {
       Fecha: ['', Validators.required]
     })
     this.grabar_localstorage();
-    //this.obtener_localstorage();
+    /*this.obtener_localstorage();*/
 
 
   }
@@ -49,20 +49,24 @@ export class PrincipalComponent implements OnInit {
 
  //Para obtener los datos obtenidos a local storage
  /*obtener_localstorage(){
-    let datos = localStorage.getItem("informacion");
-
-    console.log(datos);
+    let datosOrigen = localStorage.getItem("Orig");
+    let datosDestino = localStorage.getItem("Dest");
+    let datosFecha = localStorage.getItem("Fech");
+    console.log(datosOrigen);
+    console.log(datosDestino);
+    console.log(datosFecha);
   }
 */
 
  //Para obtener y agregar los datos obtenidos a local storage
  grabar_localstorage() {
-  let informacion = {
-    Origen: this.form.value.Origen,
-    Destino: this.form.value.Destino,
-    Fecha: this.form.value.Fecha,
-  }
-  localStorage.setItem("informacion", JSON.stringify(informacion));
+  let Orig =  this.form.value.Origen
+  let Dest =  this.form.value.Destino
+  let Fech = this.form.value.Fecha
+
+  localStorage.setItem("Orig", Orig);
+  localStorage.setItem("Dest", Dest);
+  localStorage.setItem("Fech", Fech);
 
 }
 
