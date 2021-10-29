@@ -17,10 +17,14 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModificarFormularioComponent } from './componentes/vuelo/modificar-formulario/modificar-formulario.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AeropuertoComponent } from './aeropuerto/aeropuerto.component';
+import { AgregarComponent } from './aeropuerto/COMPONENTE/agregar/agregar.component';
+import { ModificarComponent } from './aeropuerto/COMPONENTE/modificar/modificar.component';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +33,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     MostrarTablaComponent,
     AgregarFormularioComponent,
     ModificarFormularioComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    AeropuertoComponent,
+    AgregarComponent,
+    ModificarComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +53,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     MatRadioModule,
     MatCardModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+   
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

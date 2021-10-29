@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+</head>
+<mat-toolbar style="background-color:rgb(241, 218, 87);" >
+  <span>Lista Aerolinea</span>
+  <div class="example-spacer"></div>
+ 
+</mat-toolbar>
+<body>
+  <div class="container">
+
+
+    <table class="table">
+      <thead>
+        <tr>
+         
+          <th scope="col">iataCode</th>
+          <th scope="col">ciudad</th>
+          <th scope="col">pais</th>
+          <th scope="col">Editar</th>
+          <th scope="col">Eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let modelo of ListarModelos">
+          
+          <th scope="row">{{modelo.iataCode}}</th>
+        
+          <td>{{modelo.ciudad}}</td>
+          <td>{{modelo.pais}}</td>
+         
+          <td>
+           
+            <button (click)="modificarr(modelo.iataCode)" type="button" class="btn btn-info">Editar</button>
+          </td>
+          <td>
+            <button (click)="eliminarr(modelo.iataCode)" type="button" class="btn btn-danger">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <button type="button" class="btn btn-info" (click)="Onnuevoo()">AgregarPersona</button>
+
+    <button type="button" class="btn btn-primary btn-lg" (click)="actualizar()">Actualizar Tabla</button>
+
+  </div>
+
+</body>
+
+</html>
+

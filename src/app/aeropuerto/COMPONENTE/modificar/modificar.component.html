@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+</head>
+<mat-toolbar style="background-color:rgb(241, 218, 87);" >
+  <span>EDITAR</span>
+  <div class="example-spacer"></div>
+ 
+</mat-toolbar>
+ <body>
+<div class="container">
+  
+    <p>Editar</p>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <form>
+          
+          <div class="mb3">
+            <label class="form-label">ciudad</label>
+            <input [(ngModel)]="Modelo.ciudad" type="text" class="form-control" name="ciudad">
+          </div>
+  
+          <div class="mb3">
+            <label class="form-label">pais</label>
+            <input [(ngModel)]="Modelo.pais" type="text" class="form-control" name="pais">
+          </div>
+  
+  
+          
+          <br>
+  
+          <div class="mb10">
+            <button (click)="modificar()" type="button" class="btn btn-danger">Guardar</button>
+          </div>
+  
+        </form>
+      </div>
+      <div class="col-sm-6">
+        <form>
+          
+          <div class="mb3">
+            <label class="form-label">{{Modelo.ciudad}}</label>
+          </div>
+  
+          <div class="mb3">
+            <label class="form-label">{{Modelo.pais}}</label>
+          </div>
+  
+         
+  
+          
+  
+        </form>
+      </div>
+  
+    </div>
+  
+  </div>
+  
+</body>
