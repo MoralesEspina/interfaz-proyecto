@@ -1,3 +1,4 @@
+import { RegisterUserComponent } from './componentes/public/register-user/register-user.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -20,8 +21,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ModificarComponent } from './componentes/aeropuerto/COMPONENTE/modificarAeropuerto/modificarAeropuerto.component';
 import { AeropuertoComponent } from './componentes/aeropuerto/COMPONENTE/tablaAeropuerto.component';
 import { AgregarComponent } from './componentes/aeropuerto/COMPONENTE/agregarAeropuerto/agregarAeropuerto.component';
-
-
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './componentes/public/login/login/login.component';
+import { RegisterComponent } from './componentes/public/register/register.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import "@angular/compiler";
 
 @NgModule({
   declarations: [
@@ -31,9 +36,18 @@ import { AgregarComponent } from './componentes/aeropuerto/COMPONENTE/agregarAer
     AeropuertoComponent,
     AgregarComponent,
     ModificarComponent
+    MostrarTablaComponent,
+    AgregarFormularioComponent,
+    ModificarFormularioComponent,
+    PrincipalComponent,
+    LoginComponent,
+    RegisterComponent,
+    RegisterUserComponent
+
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
@@ -48,8 +62,10 @@ import { AgregarComponent } from './componentes/aeropuerto/COMPONENTE/agregarAer
     MatCardModule,
     ReactiveFormsModule,
     HttpClientModule,
-
     FormsModule
+    HttpClientModule
+    MatDatepickerModule,
+    MatNativeDateModule
 
   ],
   providers: [],
