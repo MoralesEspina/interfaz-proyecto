@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+  <div class="container">
+
+    <mat-toolbar style="background-color:rgb(241, 218, 87);" >
+      <span>Lista Aerolinea</span>
+      <div class="example-spacer"></div>
+    </mat-toolbar>
+
+    <table class="table">
+      <thead>
+        <tr>
+
+          <th scope="col">id_aerolinea</th>
+          <th scope="col">nombre</th>
+          <th scope="col">Editar</th>
+          <th scope="col">Eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let modelo of ListarModelos">
+
+
+          <td>{{modelo.id_aerolinea}}</td>
+          <td>{{modelo.nombre}}</td>
+
+          <td>
+            <button (click)="modificarr(modelo.id_aerolinea)" type="button" class="btn btn-info">Editar</button>
+
+          </td>
+          <td>
+            <button (click)="eliminar(modelo.id_aerolinea)" type="button" class="btn btn-danger">Eliminar</button>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" class="btn btn-info" (click)="Onnuevo()">AgregarPersona</button>
+
+
+  </div>
+
+</body>
+
+</html>
