@@ -1,0 +1,97 @@
+<div class="mat-elevation-z8">
+  <mat-toolbar style="background-color:rgb(241, 218, 87);" >
+    <span>Informacion De Vuelos</span>
+    <div class="example-spacer"></div>
+    <!--<button mat-raised-button color="primary" routerLink="/agregar">Agregar</button>-->
+  </mat-toolbar>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id Vuelo</th>
+        <th scope="col">Id Avion</th>
+        <th scope="col">Id Ruta</th>
+        <th scope="col">Origen</th>
+        <th scope="col">Destino</th>
+        <th scope="col">Precio Base</th>
+        <th scope="col">Distancia</th>
+        <th scope="col">Tiempo Viaje</th>
+        <th scope="col">Fecha Creacion</th>
+        <th scope="col">Descripcion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor= "let vuelo of ListarVuelo">
+        <th>{{vuelo.id_vuelo}}</th>
+        <td>{{vuelo.id_avion}}</td>
+        <td>{{vuelo.id_ruta}}</td>
+        <td>{{vuelo.origen}}</td>
+        <td>{{vuelo.destino}}</td>
+        <td>{{vuelo.precio_base}}</td>
+        <td>{{vuelo.distancia_viaje}}</td>
+        <td>{{vuelo.tiempo_viaje}}</td>
+        <td>{{vuelo.fecha_creacion}}</td>
+        <td>{{vuelo.descripcion}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <mat-toolbar style="background-color:rgb(241, 218, 87);" >
+    <span>Formulario De Vuelo</span>
+    <div class="example-spacer"></div>
+    <!--<button mat-raised-button color="primary" routerLink="/agregar">Agregar</button>-->
+  </mat-toolbar>
+  <form [formGroup]="addressForm" novalidate (ngSubmit)="onAgregar()">
+    <mat-card class="shipping-card">
+      <!--<mat-card-header>-->
+       <!-- <mat-card-title>Agregar un nuevo vuelo</mat-card-title>-->
+     <!-- </mat-card-header>-->
+      <mat-card-content>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Nombres" formControlName="nombres">
+              <mat-error *ngIf="addressForm.controls['nombres'].hasError('required')">
+                <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Apellidos" formControlName="apellidos">
+              <mat-error *ngIf="addressForm.controls['apellidos'].hasError('required')">
+                <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-label>Tipo Documento</mat-label>
+            <mat-select formControlName="tipo_doc">
+              <mat-option *ngFor="let persona of documento" [value]="persona">
+                {{persona}}
+              </mat-option>
+            </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Numero Documento" formControlName="numero_doc">
+              <mat-error *ngIf="addressForm.controls['numero_doc'].hasError('required')">
+                <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions style="text-align: center;">
+        <button mat-raised-button color="primary" type="submit" [disabled]="addressForm.invalid">Siguiente</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>
+
+
+
+
+
