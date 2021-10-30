@@ -1,11 +1,11 @@
 import { Router } from '@angular/router';
-import { ApiService } from '../services/api.service';
+import { ApiService } from '../../services/api.service';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { TablaVDisponibleDataSource, TablaVDisponibleItem } from './tabla-vdisponible-datasource';
-import { Ruta } from '../interfaces/ruta';
+import { Ruta } from '../../interfaces/ruta';
 
 @Component({
   selector: 'app-tabla-vdisponible',
