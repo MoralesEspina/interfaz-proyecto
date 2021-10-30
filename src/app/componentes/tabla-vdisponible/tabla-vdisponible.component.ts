@@ -1,10 +1,11 @@
 import { Router } from '@angular/router';
-import { ApiService } from './../shared/api.service';
+import { ApiService } from '../services/api.service';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { TablaVDisponibleDataSource, TablaVDisponibleItem } from './tabla-vdisponible-datasource';
+import { Ruta } from '../interfaces/ruta';
 
 @Component({
   selector: 'app-tabla-vdisponible',
@@ -17,26 +18,38 @@ export class TablaVDisponibleComponent implements AfterViewInit {
   @ViewChild(MatTable) table!: MatTable<TablaVDisponibleItem>;
   dataSource: TablaVDisponibleDataSource;
 
+  _ruta: Ruta = {
+    nombre: '',
+    origen: 'PTY', //localStorage.getItem("Orig"),
+    destino: 'SAL', //localStorage.getItem("Dest"),
+    distancia_viaje: '',
+    tiempo_viaje: '',
+    precio_base: '',
+    fecha_salida: '2012-11-11', //localStorage.getItem("Fech"),
+    descripcion: '',
+    id_vuelo:'',
+    id_ruta:'',
+  }
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['nombre', 'origen', 'destino', 'distancia_viaje', 'tiempo_viaje', 'precio_base', 'fecha_salida', 'descripcion', 'Acciones'];
 
   constructor(private ApiService:ApiService, private Router:Router) {
     this.dataSource = new TablaVDisponibleDataSource();
-    this.obtener_localstorage();
-  }
 
+  }
 
   ngOnInit(){
     this.dataSource = new TablaVDisponibleDataSource();
-    this.ApiService.getVuelos().subscribe(
-      (res:any) => {
+
+    this.ApiService.getVuelos2(this._ruta).subscribe(
+      res => {
         console.log(res);
         this.dataSource.data = res;
-      }
+      },
+      err => console.log(err)
     )
-
-
   }
+
 
   ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;
@@ -44,14 +57,12 @@ export class TablaVDisponibleComponent implements AfterViewInit {
     this.table.dataSource = this.dataSource;
   }
 
-  //Para obtener los datos obtenidos a local storage
- obtener_localstorage(){
-    let datosOrigen = localStorage.getItem("Orig");
-    let datosDestino = localStorage.getItem("Dest");
-    let datosFecha = localStorage.getItem("Fech");
-    console.log(datosOrigen);
-    console.log(datosDestino);
-    console.log(datosFecha);
+  seleccionarVuelo(vuelo:any,ruta:any){
+
+        localStorage.setItem('id_ruta',ruta);
+        localStorage.setItem('id_vuelo',vuelo);
+
+
   }
 
 }

@@ -14,7 +14,6 @@ export interface TablaVDisponibleItem {
   'precio_base': string,
   'fecha_salida': string,
   'descripcion': string,
-
 }
 
 // TODO: replace this with real data from your application
