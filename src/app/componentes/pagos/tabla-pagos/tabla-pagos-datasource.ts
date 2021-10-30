@@ -4,7 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
 
-// TODO: Replace this with your own data model type
+// TODO: Replace this with your own data model type.
 export interface TablaPagosItem {
   numero_factura: string;
   id_boleto: string;

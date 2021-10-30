@@ -8,7 +8,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 
 import { PagosComponent } from './pagos.component';
-
+/* */
 describe('PagosComponent', () => {
   let component: PagosComponent;
   let fixture: ComponentFixture<PagosComponent>;

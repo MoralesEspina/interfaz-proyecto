@@ -27,7 +27,7 @@ export class ApiService {
     return this.http.post<Ruta[]>(this.URL+'/disponibilidad/',vuelos)
   }
 
-  //Tabla pagos
+  //Tablapagos
   getpagos(){
     return this.http.get(this.URL+'/pagos')
   }

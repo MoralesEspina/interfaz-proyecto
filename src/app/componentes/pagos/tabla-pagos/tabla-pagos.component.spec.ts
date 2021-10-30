@@ -5,7 +5,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 
 import { TablaPagosComponent } from './tabla-pagos.component';
-
+/**/
 describe('TablaPagosComponent', () => {
   let component: TablaPagosComponent;
   let fixture: ComponentFixture<TablaPagosComponent>;

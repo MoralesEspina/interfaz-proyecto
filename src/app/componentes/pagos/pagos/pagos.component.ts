@@ -11,7 +11,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class PagosComponent {
   addressForm!: FormGroup;
-  /*addressForm = this.fb.group({
+  /*addressForm = this.fb.group({--
     company: null,
     firstName: [null, Validators.required],
     lastName: [null, Validators.required],

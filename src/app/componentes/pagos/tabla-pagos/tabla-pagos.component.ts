@@ -5,7 +5,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { TablaPagosDataSource, TablaPagosItem } from './tabla-pagos-datasource';
-
+/* */
 @Component({
   selector: 'app-tabla-pagos',
   templateUrl: './tabla-pagos.component.html',
