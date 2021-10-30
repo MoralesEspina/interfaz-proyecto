@@ -1,0 +1,40 @@
+<div class="mat-elevation-z8">
+  <mat-toolbar style="background-color:rgb(241, 218, 87);" >
+    <span>Informacion De Vuelos</span>
+    <div class="example-spacer"></div>
+    <button mat-raised-button color="primary" routerLink="/agregar">Agregar</button>
+  </mat-toolbar>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id Vuelo</th>
+        <th scope="col">Id Avion</th>
+        <th scope="col">Id Ruta</th>
+        <th scope="col">Origen</th>
+        <th scope="col">Destino</th>
+        <th scope="col">Precio Base</th>
+        <th scope="col">Distancia</th>
+        <th scope="col">Tiempo Viaje</th>
+        <th scope="col">Fecha Creacion</th>
+        <th scope="col">Descripcion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor= "let vuelo of ListarVuelo">
+        <th>{{vuelo.id_vuelo}}</th>
+        <td>{{vuelo.id_avion}}</td>
+        <td>{{vuelo.id_ruta}}</td>
+        <td>{{vuelo.origen}}</td>
+        <td>{{vuelo.destino}}</td>
+        <td>{{vuelo.precio_base}}</td>
+        <td>{{vuelo.distancia_viaje}}</td>
+        <td>{{vuelo.tiempo_viaje}}</td>
+        <td>{{vuelo.fecha_creacion}}</td>
+        <td>{{vuelo.descripcion}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
