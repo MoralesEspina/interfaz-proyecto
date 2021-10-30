@@ -18,11 +18,13 @@ export class TablaVDisponibleComponent implements AfterViewInit {
   dataSource: TablaVDisponibleDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['nombre', 'origen', 'destino', 'distancia_viaje', 'tiempo_viaje', 'precio_base', 'fecha_hora_salida', 'descripcion', 'Acciones'];
+  displayedColumns = ['nombre', 'origen', 'destino', 'distancia_viaje', 'tiempo_viaje', 'precio_base', 'fecha_salida', 'descripcion', 'Acciones'];
 
   constructor(private ApiService:ApiService, private Router:Router) {
     this.dataSource = new TablaVDisponibleDataSource();
+    this.obtener_localstorage();
   }
+
 
   ngOnInit(){
     this.dataSource = new TablaVDisponibleDataSource();
@@ -41,4 +43,15 @@ export class TablaVDisponibleComponent implements AfterViewInit {
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
   }
+
+  //Para obtener los datos obtenidos a local storage
+ obtener_localstorage(){
+    let datosOrigen = localStorage.getItem("Orig");
+    let datosDestino = localStorage.getItem("Dest");
+    let datosFecha = localStorage.getItem("Fech");
+    console.log(datosOrigen);
+    console.log(datosDestino);
+    console.log(datosFecha);
+  }
+
 }

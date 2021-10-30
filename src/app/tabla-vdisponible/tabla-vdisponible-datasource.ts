@@ -12,7 +12,7 @@ export interface TablaVDisponibleItem {
   'distancia_viaje': string,
   'tiempo_viaje': string,
   'precio_base': string,
-  'fecha_hora_salida': string,
+  'fecha_salida': string,
   'descripcion': string,
 
 }
@@ -89,7 +89,7 @@ export class TablaVDisponibleDataSource extends DataSource<TablaVDisponibleItem>
         case 'distancia_viaje': return compare(+a.distancia_viaje, +b.distancia_viaje, isAsc);
         case 'tiempo_viaje': return compare(+a.tiempo_viaje, +b.tiempo_viaje, isAsc);
         case 'precio_base': return compare(+a.precio_base, +b.precio_base, isAsc);
-        case 'fecha_hora_salida': return compare(+a.fecha_hora_salida, +b.fecha_hora_salida, isAsc);
+        case 'fecha_salida': return compare(+a.fecha_salida, +b.fecha_salida, isAsc);
         case 'descripcion': return compare(+a.descripcion, +b.descripcion, isAsc);
         default: return 0;
       }

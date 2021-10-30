@@ -25,6 +25,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { HttpClientModule } from '@angular/common/http';
+import { VuelodComponent } from './vuelod/vuelod.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     AgregarFormularioComponent,
     ModificarFormularioComponent,
     PrincipalComponent,
-    TablaVDisponibleComponent
+    TablaVDisponibleComponent,
+    VuelodComponent
 
   ],
   imports: [

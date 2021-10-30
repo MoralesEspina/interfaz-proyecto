@@ -1,3 +1,4 @@
+import { VuelodComponent } from './vuelod/vuelod.component';
 import { TablaVDisponibleComponent } from './tabla-vdisponible/tabla-vdisponible.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { MostrarTablaComponent } from './componentes/vuelo/mostrar-tabla/mostrar-tabla.component';
@@ -9,6 +10,8 @@ const routes: Routes = [
   {path:'inicio', component: PrincipalComponent},
   {path:'vuelo', component: MostrarTablaComponent},
   {path: 'disponible', component: TablaVDisponibleComponent},
+  {path: 'disponibles', component: VuelodComponent},
+
 
 
 ];

@@ -1,3 +1,5 @@
+import { Ruta } from './../interfaz/ruta';
+import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -6,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiService {
   url='http://localhost:3000/disponibles';
+  URL='http://localhost:3000';
   constructor(private http: HttpClient) { }
    //get Vuelos
    getVuelos(){
@@ -15,6 +18,10 @@ export class ApiService {
   //get id Vuelos
   getIdVuelos(id_vuelo:string){
     return this.http.get(this.url+'/'+id_vuelo);
+  }
+  getVuelos2(vuelos:{}): Observable<Ruta[]>{
+    console.log(vuelos);
+    return this.http.post<Ruta[]>(this.URL+'/disponibilidad/',vuelos)
   }
 }
 

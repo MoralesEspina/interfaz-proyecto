@@ -1,0 +1,103 @@
+<div class="card bg-dark text-white" >
+  <img src="../../assets/imagenes/avion-sky.jpg" class="card-img" alt="...">
+  <div class="card-img-overlay"  bacrd-t >
+    <form [formGroup]="addressForm" novalidate (ngSubmit)="cargarDocente()">
+      <mat-card class="registro-docente" style="background-color: rgba(241, 214, 60, 0.514); border-color:rgb(241, 221, 107);">
+        <mat-toolbar style="background-color:rgba(245, 210, 16, 0.582);">
+          <span>Vuelos Disponibles</span>
+          <div class="example-spacer"></div>
+          <!--button mat-raised-button color="primary" routerLink="/agregar">Agregar</button-->
+        </mat-toolbar>
+        <mat-card-content>
+
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="full-width">
+                <input type="text"  matInput [(ngModel)]="_ruta.nombre" placeholder="Aerolinea" formControlName="nombre">
+                <mat-error *ngIf="addressForm.controls['nombre'].hasError('required')">
+                  Aerolinea es <strong>requerido</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col">
+              <mat-form-field class="full-width">
+                <input type="text" matInput [(ngModel)]="_ruta.origen" placeholder="Origen" formControlName="origen">
+                <mat-error *ngIf="addressForm.controls['origen'].hasError('required')">
+                  El origen es <strong>requerido</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col">
+              <mat-form-field class="full-width">
+                <input type="text" matInput [(ngModel)]="_ruta.destino" placeholder="Destino" formControlName="destino">
+                <mat-error *ngIf="addressForm.controls['destino'].hasError('required')">
+                  El Destino es <strong>requerido</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col">
+              <mat-form-field class="full-width">
+                <input type="number" matInput [(ngModel)]="_ruta.distancia_viaje" placeholder="Distancia"
+                  formControlName="distancia_viaje">
+                <mat-error *ngIf="addressForm.controls['distancia_viaje'].hasError('required')">
+                  La Distancia es <strong>requerido</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col">
+              <mat-form-field class="full-width">
+                <input type="time" matInput [(ngModel)]="_ruta.tiempo_viaje" placeholder="Tiempo"
+                  formControlName="tiempo_viaje">
+                <mat-error *ngIf="addressForm.controls['tiempo_viaje'].hasError('required')">
+                  El Tiempo es <strong>requerido</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col">
+              <mat-form-field class="full-width">
+                <input type="number" matInput [(ngModel)]="_ruta.precio_base" placeholder="Precio"
+                  formControlName="precio_base">
+                <mat-error *ngIf="addressForm.controls['precio_base'].hasError('required')">
+                  El Precio es <strong>requerido</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col">
+              <mat-form-field class="full-width">
+                <input type="date" matInput [(ngModel)]="_ruta.fecha_salida" placeholder="Fecha de Salida"
+                  formControlName="fecha_salida">
+                <mat-error *ngIf="addressForm.controls['fecha_salida'].hasError('required')">
+                  El Fecha de Salida es <strong>requerido</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col">
+              <mat-form-field class="full-width">
+                <input type="text" matInput [(ngModel)]="_ruta.descripcion" placeholder="Estado"
+                  formControlName="descripcion">
+                <mat-error *ngIf="addressForm.controls['descripcion'].hasError('required')">
+                  el Estado es <strong>requerido</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" type="submit">Guardar</button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+
+
+  </div>
+</div>
+
+
+
