@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
-import {AerolineaService, Aerolinea } from 'src/app/aerolinea/Componentes/Service/aerolinea.service';
+import {AerolineaService, Aerolinea } from 'src/app/componentes/aerolinea/Componentes/Service/aerolinea.service';
 
 
 @Component({
@@ -19,7 +19,7 @@ export class ModificarAerolineaComponent implements OnInit {
 
   ngOnInit(): void {
 
-    const id_entrada = <string>this.ActiveRoute.snapshot.params.id;
+    const id_entrada = <string>this.ActiveRoute.snapshot.params.id_aerolinea;
 
     console.log('Id de entrada:' + id_entrada);
 
@@ -46,7 +46,7 @@ export class ModificarAerolineaComponent implements OnInit {
       },
       err => console.log(err)
     );
-      this.router.navigate(['inicio'])
+      this.router.navigate(['listaaerolinea'])
 
   }
  

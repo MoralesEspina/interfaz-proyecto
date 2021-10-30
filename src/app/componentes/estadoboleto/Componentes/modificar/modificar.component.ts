@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
-import {EstadoBoletoService, EstadoBoleto } from 'src/app/estadoboleto/Componentes/Service/estado-boleto.service';
+import {EstadoBoletoService, EstadoBoleto } from 'src/app/componentes/estadoboleto/Componentes/Service/estado-boleto.service';
 
 
 @Component({
@@ -19,7 +19,7 @@ export class ModificarEstadoBoletoComponent implements OnInit {
 
   ngOnInit(): void {
 
-    const id_entrada = <string>this.ActiveRoute.snapshot.params.id;
+    const id_entrada = <string>this.ActiveRoute.snapshot.params.idestado_boleto;
 
     console.log('Id de entrada:' + id_entrada);
 
@@ -46,7 +46,7 @@ export class ModificarEstadoBoletoComponent implements OnInit {
       },
       err => console.log(err)
     );
-      this.router.navigate(['inicio'])
+      this.router.navigate(['listaestadoboleto'])
 
   }
  

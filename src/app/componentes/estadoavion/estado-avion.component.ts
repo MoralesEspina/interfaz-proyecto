@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { EstadoAvionService, EstadoAvion} from 'src/app/estadoavion/Componentes/Service/estadoavion.service';
+import { EstadoAvionService, EstadoAvion} from 'src/app/componentes/estadoavion/Componentes/Service/estadoavion.service';
 
 @Component({
   selector: 'app-estado-avion',

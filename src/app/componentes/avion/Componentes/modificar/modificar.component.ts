@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
-import {AvionService, Avion } from 'src/app/avion/Componentes/Service/aviones.service';
-
+import {AvionService, Avion } from 'src/app/componentes/avion/Componentes/Service/aviones.service';
 
 @Component({
   selector: 'app-modificar',
@@ -21,7 +20,7 @@ export class ModificarAvionComponent implements OnInit {
 
   ngOnInit(): void {
 
-    const id_entrada = <string>this.ActiveRoute.snapshot.params.id;
+    const id_entrada = <string>this.ActiveRoute.snapshot.params.id_avion;
 
     console.log('Id de entrada:' + id_entrada);
 
@@ -48,7 +47,7 @@ export class ModificarAvionComponent implements OnInit {
       },
       err => console.log(err)
     );
-      this.router.navigate(['inicio'])
+      this.router.navigate(['listaavion'])
 
   }
  

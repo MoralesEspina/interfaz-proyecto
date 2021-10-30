@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {AerolineaService, Aerolinea } from 'src/app/aerolinea/Componentes/Service/aerolinea.service';
+import {AerolineaService, Aerolinea } from 'src/app/componentes/aerolinea/Componentes/Service/aerolinea.service';
 
 import { Router } from '@angular/router';
 
@@ -38,10 +38,11 @@ export class AgregarAerolineaComponent implements OnInit {
 
       },
       err=> console.log(err));
+      setTimeout(location.reload.bind(location), 500);
   }
 
   modificarr(id_aerolinea:string){
-    this.router.navigate(['modificar'+id_aerolinea])
+    this.router.navigate(['modificaraerolinea/'+id_aerolinea])
   }
 
 

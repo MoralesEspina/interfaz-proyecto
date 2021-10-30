@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {AvionService, Avion } from 'src/app/avion/Componentes/Service/aviones.service';
+import {AvionService, Avion } from 'src/app/componentes/avion/Componentes/Service/aviones.service';
 
 import { Router } from '@angular/router';
 
@@ -41,7 +41,7 @@ export class AgregarAvionComponent implements OnInit {
   }
 
   modificarr(id_avion:string){
-    this.router.navigate(['modificar'+id_avion])
+    this.router.navigate(['modificardatosavion/'+id_avion])
   }
 
 

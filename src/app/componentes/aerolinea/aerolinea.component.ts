@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AerolineaService, Aerolinea} from 'src/app/aerolinea/Componentes/Service/aerolinea.service';
+import { AerolineaService, Aerolinea} from 'src/app/componentes/aerolinea/Componentes/Service/aerolinea.service';
 
 @Component({
   selector: 'app-aerolinea',

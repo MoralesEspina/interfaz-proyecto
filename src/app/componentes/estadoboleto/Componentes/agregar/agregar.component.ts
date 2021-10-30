@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {EstadoBoletoService, EstadoBoleto } from 'src/app/estadoboleto/Componentes/Service/estado-boleto.service';
+import {EstadoBoletoService, EstadoBoleto } from 'src/app/componentes/estadoboleto/Componentes/Service/estado-boleto.service';
 
 import { Router } from '@angular/router';
 
@@ -41,7 +41,7 @@ export class AgregarEstadoBoletoComponent implements OnInit {
   }
 
   modificarr(idestado_boleto:string){
-    this.router.navigate(['modificar'+idestado_boleto])
+    this.router.navigate(['modificarboleto/'+idestado_boleto])
   }
 
 

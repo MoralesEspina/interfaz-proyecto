@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { EstadoBoletoService, EstadoBoleto} from 'src/app/estadoboleto/Componentes/Service/estado-boleto.service';
+import { EstadoBoletoService, EstadoBoleto} from 'src/app/componentes/estadoboleto/Componentes/Service/estado-boleto.service';
 
 @Component({
   selector: 'app-estadoboleto',

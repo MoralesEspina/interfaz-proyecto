@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
-import {AeroService, Modelo } from 'src/app/aeropuerto/Services/aero.service';
+import {AeroService, Modelo } from 'src/app/componentes/aeropuerto/Services/aero.service';
 
 
 @Component({

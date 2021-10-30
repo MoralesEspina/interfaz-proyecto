@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {AeroService, Modelo } from 'src/app/aeropuerto/Services/aero.service';
+import {AeroService, Modelo } from 'src/app/componentes/aeropuerto/Services/aero.service';
 
 import { Router } from '@angular/router';
 
@@ -41,7 +41,7 @@ export class AgregarComponent implements OnInit {
   }
 
   modificarr(iataCode:string){
-    this.router.navigate(['modificar'+iataCode])
+    this.router.navigate(['modificaraeropuertos/'+iataCode])
   }
 
 

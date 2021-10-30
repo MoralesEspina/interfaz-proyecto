@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {EstadoAvionService, EstadoAvion } from 'src/app/estadoavion/Componentes/Service/estadoavion.service';
+import {EstadoAvionService, EstadoAvion } from 'src/app/componentes/estadoavion/Componentes/Service/estadoavion.service';
 
 import { Router } from '@angular/router';
 
@@ -41,7 +41,7 @@ export class AgregarEstadoAvionComponent implements OnInit {
   }
 
   modificarr(id_estado_avion:string){
-    this.router.navigate(['modificar'+id_estado_avion])
+    this.router.navigate(['modificarestadoavion/'+id_estado_avion])
   }
 
 
