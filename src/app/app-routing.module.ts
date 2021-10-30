@@ -16,7 +16,6 @@ const routes: Routes = [
   {path:'agregarAeropuertos', component:AgregarComponent},
   {path:'modificarAeropuerto/:iataCode', component:ModificarComponent},
   {path:'listaAeropuertos', component:AeropuertoComponent},
-  {path:'vuelos', component: MostrarTablaComponent},
   {path:'login', component: LoginComponent},
   {path:'register', component: RegisterComponent},
   {path:'register_user', component: RegisterUserComponent}
