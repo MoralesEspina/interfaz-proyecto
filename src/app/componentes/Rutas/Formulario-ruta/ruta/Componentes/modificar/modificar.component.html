@@ -1,0 +1,89 @@
+
+<div class="container">
+    <p>Agregar</p>
+    <div class="row">
+      <div class="col-sm-6">
+        <form>
+
+
+
+          <div class="mb3">
+            <label class="form-label">Precio base</label>
+            <input [(ngModel)]="rutas.precio_base" type="text" class="form-control" name="precio_base">
+          </div>
+          <div class="mb3">
+            <label class="form-label">distancia del viaje</label>
+            <input [(ngModel)]="rutas.distancia_viaje" type="text" class="form-control"name="distancia_viaje">
+          </div>
+          <div class="mb3">
+            <label class="form-label">tiempo del viaje</label>
+            <input [(ngModel)]="rutas.tiempo_viaje" type="text" class="form-control" name="tiempo_viaje">
+          </div>
+
+
+          <div class="mb3">
+            <h4>Lugar de Origen</h4>
+        <mat-form-field appearance="fill">
+          <mat-label>Origen</mat-label>
+          <mat-select formControlName='Origen'>
+            <mat-option *ngFor="let aeropuerto of collection" [value]="aeropuerto.iataCode">
+              {{aeropuerto.iataCode}}  {{aeropuerto.pais}}, {{aeropuerto.ciudad}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+          </div>
+
+          <div class="mb3">
+            <h4>Lugar de Destino</h4>
+        <mat-form-field appearance="fill">
+          <mat-label>Destino</mat-label>
+          <mat-select formControlName='Destino'>
+            <mat-option *ngFor="let aeropuerto of collection" [value]="aeropuerto.iataCode">
+              {{aeropuerto.iataCode}}  {{aeropuerto.pais}}, {{aeropuerto.ciudad}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+          </div>
+
+          <br>
+
+          <div class="mb10">
+            <button (click)="agregar()" type="button" class="btn btn-danger">Guardar</button>
+          </div>
+
+        </form>
+      </div>
+      <div class="col-sm-6">
+        <form>
+
+
+            <div class="mb3">
+                <label class="form-label">{{rutas.precio_base}}</label>
+              </div>
+
+            <div class="mb3">
+                <label class="form-label">{{rutas.distancia_viaje}}</label>
+              </div>
+
+          <div class="mb3">
+            <label class="form-label">{{rutas.tiempo_viaje}}</label>
+          </div>
+
+          <div class="mb3">
+            <label class="form-label">{{rutas.origen}}</label>
+          </div>
+
+          <div class="mb3">
+            <label class="form-label">{{rutas.destino}}</label>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
