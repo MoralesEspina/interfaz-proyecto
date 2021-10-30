@@ -12,9 +12,10 @@ import { SecurityService } from 'src/app/componentes/services/security.service';
 export class LoginComponent {
 
   _usuario: Usuario = {
-    id: 0,
+    id_persona: 0,
     userName: '',
-    password: ''
+    password: '',
+    rol:1
   };
 
   addressForm = this.fb.group({

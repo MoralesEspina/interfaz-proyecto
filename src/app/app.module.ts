@@ -1,3 +1,4 @@
+import { RegisterUserComponent } from './componentes/public/register-user/register-user.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -33,7 +34,8 @@ import { RegisterComponent } from './componentes/public/register/register.compon
     ModificarFormularioComponent,
     PrincipalComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    RegisterUserComponent
 
   ],
   imports: [

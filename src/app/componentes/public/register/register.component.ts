@@ -53,7 +53,13 @@ export class RegisterComponent {
       tipo_doc: this.addressForm.value.tipo_doc,
       numero_doc: this.addressForm.value.numero_doc
     }
+
     console.log(persona);
     this._personaRegister.register(persona);
+
+    let numero_doc = this.addressForm.value.numero_doc;
+    localStorage.setItem("NumeroDoc",numero_doc);
+    this._router.navigate(['/register_user']);
+
   }
 }

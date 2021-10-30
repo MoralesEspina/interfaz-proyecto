@@ -6,7 +6,12 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="mat-form-field">
-            <input type ="text" matInput placeholder="Nombres" formControlName="nombres" required autofocus>
+            <input type ="text"
+            matInput placeholder="Nombres"
+            formControlName="nombres"
+            minlength="1"
+            maxlength="45"
+            required autofocus>
             <mat-error *ngIf="addressForm.controls['nombres'].hasError('required')">
               El Nombre es <strong>requerido</strong>
             </mat-error>
@@ -17,9 +22,14 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="mat-form-field">
-            <input type ="text" matInput placeholder="Apellidos" formControlName="apellidos" required >
+            <input type ="text"
+            matInput placeholder="Apellidos"
+            formControlName="apellidos"
+            minlength="1"
+            maxlength="45"
+            required >
             <mat-error *ngIf="addressForm.controls['apellidos'].hasError('required')">
-              El Apellido es <strong>requerida</strong>
+              El Apellido es <strong>requerido</strong>
             </mat-error>
           </mat-form-field>
         </div>
@@ -41,7 +51,10 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="mat-form-field">
-            <input  matInput placeholder="Número de Documento" formControlName="numero_doc" required>
+            <input  matInput placeholder="Número de Documento" formControlName="numero_doc"
+            minlength="10"
+            maxlength="15"
+            required>
             <mat-error *ngIf="addressForm.controls['numero_doc'].hasError('required')">
               El Número de Documento es <strong>requerido</strong>
             </mat-error>

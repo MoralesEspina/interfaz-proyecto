@@ -3,5 +3,5 @@ export interface Persona {
   nombres:string;
   apellidos:string;
   tipo_doc:string;
-  numero_doc:string;
+  numero_doc:any;
 }

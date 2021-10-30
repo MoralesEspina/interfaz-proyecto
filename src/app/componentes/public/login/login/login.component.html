@@ -5,7 +5,12 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="mat-form-field">
-            <input type ="text" [(ngModel)]="_usuario.userName" matInput placeholder="Nombre de Usuario" formControlName="userName" required autofocus>
+            <input type ="text" [(ngModel)]="_usuario.userName"
+            matInput placeholder="Nombre de Usuario"
+            formControlName="userName"
+            minlength="5"
+            maxlength="25"
+            required autofocus>
             <mat-error *ngIf="addressForm.controls['userName'].hasError('required')">
               El Nombre de Usuario es <strong>requerido</strong>
             </mat-error>
@@ -16,7 +21,10 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="mat-form-field">
-            <input type ="password" [(ngModel)]="_usuario.password" matInput placeholder="Contraseña" formControlName="password" required >
+            <input type ="password" [(ngModel)]="_usuario.password" matInput placeholder="Contraseña" formControlName="password"
+            minlength="5"
+            maxlength="25"
+             required >
             <mat-error *ngIf="addressForm.controls['password'].hasError('required')">
               La Contraseña es <strong>requerida</strong>
             </mat-error>
