@@ -11,15 +11,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { MostrarTablaComponent } from './componentes/vuelo/mostrar-tabla/mostrar-tabla.component';
-import { AgregarFormularioComponent } from './componentes/vuelo/agregar-formulario/agregar-formulario.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
-import { ReactiveFormsModule } from '@angular/forms';
-import { ModificarFormularioComponent } from './componentes/vuelo/modificar-formulario/modificar-formulario.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PrincipalComponent } from './principal/principal.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ModificarComponent } from './componentes/aeropuerto/COMPONENTE/modificarAeropuerto/modificarAeropuerto.component';
+import { AeropuertoComponent } from './componentes/aeropuerto/COMPONENTE/tablaAeropuerto.component';
+import { AgregarComponent } from './componentes/aeropuerto/COMPONENTE/agregarAeropuerto/agregarAeropuerto.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './componentes/public/login/login/login.component';
 import { RegisterComponent } from './componentes/public/register/register.component';
@@ -31,6 +32,10 @@ import "@angular/compiler";
   declarations: [
     AppComponent,
     NavComponent,
+    PrincipalComponent,
+    AeropuertoComponent,
+    AgregarComponent,
+    ModificarComponent
     MostrarTablaComponent,
     AgregarFormularioComponent,
     ModificarFormularioComponent,
@@ -56,6 +61,8 @@ import "@angular/compiler";
     MatRadioModule,
     MatCardModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule
     HttpClientModule
     MatDatepickerModule,
     MatNativeDateModule

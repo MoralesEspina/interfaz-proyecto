@@ -1,0 +1,55 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+<mat-toolbar style="background-color:rgb(241, 218, 87);" >
+  <span>AGREGAR AEROPUERTO</span>
+  <div class="example-spacer"></div>
+
+</mat-toolbar>
+
+<body>
+
+<div class="container">
+    <p>Agregar Aeropuerto</p>
+    <div class="row">
+      <div class="col-sm-6">
+        <form>
+          <div class="mb3">
+            <label class="form-label">IataCode</label>
+            <input [(ngModel)]="Modelo.iataCode" type="text" class="form-control" name="iataCode">
+          </div>
+
+          <div class="mb3">
+            <label class="form-label">Ciudad</label>
+            <input [(ngModel)]="Modelo.ciudad" type="text" class="form-control" name="ciudad">
+          </div>
+
+          <div class="mb3">
+            <label class="form-label">Pais</label>
+            <input [(ngModel)]="Modelo.pais" type="text" class="form-control" name="pais">
+          </div>
+
+
+          <br>
+
+          <div class="mb10">
+            <button   (click)="agregar()" type="button" class="btn btn-danger">Guardar</button>
+          </div>
+
+        </form>
+      </div>
+      <div class="col-sm-6">
+        <form>
+
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+</body>
