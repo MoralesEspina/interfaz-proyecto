@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+ <body>
+<div class="container">
+  <div class="row align-self-center">
+
+  </div>
+    <p>Editar</p>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <form>
+
+          <div class="mb3">
+            <label class="form-label">Ciudad</label>
+            <input [(ngModel)]="Modelo.ciudad" type="text" class="form-control" name="ciudad">
+          </div>
+
+          <div class="mb3">
+            <label class="form-label">Pais</label>
+            <input [(ngModel)]="Modelo.pais" type="text" class="form-control" name="pais">
+          </div>
+
+
+
+          <br>
+
+          <div class="mb10">
+            <button (click)="modificar()" type="button" class="btn btn-danger">Guardar</button>
+          </div>
+
+        </form>
+      </div>
+      <div class="col-sm-6">
+        <form>
+
+
+
+
+
+
+
+
+
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>

@@ -20,6 +20,12 @@ import { PrincipalComponent } from './principal/principal.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PrincipalComponent } from './principal/principal.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ModificarComponent } from './componentes/aeropuerto/COMPONENTE/modificarAeropuerto/modificarAeropuerto.component';
+import { AeropuertoComponent } from './componentes/aeropuerto/COMPONENTE/tablaAeropuerto.component';
+import { AgregarComponent } from './componentes/aeropuerto/COMPONENTE/agregarAeropuerto/agregarAeropuerto.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TablaVDisponibleComponent } from './componentes/tabla-vdisponible/tabla-vdisponible.component';
 import { LoginComponent } from './componentes/public/login/login/login.component';
@@ -34,9 +40,14 @@ import "@angular/compiler";
     AppComponent,
     NavComponent,
     PrincipalComponent,
-
+    AeropuertoComponent,
+    AgregarComponent,
+    ModificarComponent
+    MostrarTablaComponent,
+    AgregarFormularioComponent,
+    ModificarFormularioComponent,
+    PrincipalComponent,
     TablaVDisponibleComponent,
-
     LoginComponent,
     RegisterComponent,
     RegisterUserComponent
@@ -63,6 +74,10 @@ import "@angular/compiler";
     MatPaginatorModule,
     MatSortModule,
     HttpClientModule,
+    HttpClientModule,
+    FormsModule
+    HttpClientModule
+    MatDatepickerModule,
     MatNativeDateModule
 
   ],

@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<body>
+
+
+
+
+  <div class="container">
+      <div class="row align-self-center">
+      <h1></h1>
+      <h1>AEROPUERTOS</h1>
+     </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+
+          <th scope="col">IataCode</th>
+          <th scope="col">Ciudad</th>
+          <th scope="col">Pais</th>
+          <th scope="col">Editar</th>
+          <th scope="col">Eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let modelo of ListarModelos">
+
+          <th scope="row">{{modelo.iataCode}}</th>
+
+          <td>{{modelo.ciudad}}</td>
+          <td>{{modelo.pais}}</td>
+
+          <td>
+
+            <button (click)="modificarr(modelo.iataCode)" type="button" class="btn btn-info">Editar</button>
+          </td>
+          <td>
+            <button (click)="eliminarr(modelo.iataCode)" type="button" class="btn btn-danger">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button type="button" class="btn btn-info" (click)="Onnuevoo()">Agregar Aeropuerto</button>
+
+    <button type="button" class="btn btn-danger" (click)="actualizar()">Refrescar Tabla</button>
+
+  </div>
+
+</body>
+
+</html>
+
