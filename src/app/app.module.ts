@@ -1,3 +1,4 @@
+import { RegisterUserComponent } from './componentes/public/register-user/register-user.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,9 +20,11 @@ import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ModificarFormularioComponent } from './componentes/vuelo/modificar-formulario/modificar-formulario.component';
 import { PrincipalComponent } from './principal/principal.component';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './componentes/public/login/login/login.component';
+import { RegisterComponent } from './componentes/public/register/register.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import{HttpClientModule}from '@angular/common/http';
 import "@angular/compiler";
 
 @NgModule({
@@ -31,7 +34,11 @@ import "@angular/compiler";
     MostrarTablaComponent,
     AgregarFormularioComponent,
     ModificarFormularioComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    LoginComponent,
+    RegisterComponent,
+    RegisterUserComponent
+
   ],
   imports: [
     BrowserModule,
@@ -49,6 +56,7 @@ import "@angular/compiler";
     MatRadioModule,
     MatCardModule,
     ReactiveFormsModule,
+    HttpClientModule
     MatDatepickerModule,
     MatNativeDateModule
 

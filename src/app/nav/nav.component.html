@@ -1,4 +1,3 @@
-
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
@@ -6,7 +5,7 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/vuelo">Vuelos</a>
+      <a mat-list-item routerLink="/vuelos">Vuelos</a>
       <a mat-list-item href="#">Link 2</a>
       <a mat-list-item href="#">Link 3</a>
     </mat-nav-list>
@@ -26,6 +25,13 @@
         AIRPORT SKYLINES</span>
       <span class="example-spacer"></span>
       <a mat-button href="#inicio">INICIO</a>
+      <ng-container *ngIf="!logedIn(); else elseTemplate">
+        <a mat-button routerLink= "/login">Log In</a>
+      </ng-container>
+      <ng-template #elseTemplate>
+        <a mat-button (click)="onLogOut()" routerLink= "/login">Log Out</a>
+      </ng-template>
+
     </mat-toolbar>
     <!-- Add Content Here -->
     <router-outlet></router-outlet>
