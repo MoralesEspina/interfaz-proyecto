@@ -18,8 +18,11 @@
         mat-icon-button
         (click)="drawer.toggle()">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+
       </button>
-      <span>AIRPORT SKYLINES</span>
+      <span>
+        <a class="navbar-brand" href="#inicio" style="font-size: x-large;"><img src="https://i.ibb.co/JQLPBtc/Logo.png" alt="Logo" height="40" width="50"></a>
+        AIRPORT SKYLINES</span>
       <span class="example-spacer"></span>
       <a mat-button href="#inicio">INICIO</a>
       <ng-container *ngIf="!logedIn(); else elseTemplate">
