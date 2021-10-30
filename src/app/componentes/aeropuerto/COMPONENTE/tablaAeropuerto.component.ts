@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 
-import {AeroService, Modelo } from 'src/app/aeropuerto/Services/aero.service';
+import { AeroService, Modelo } from 'src/app/componentes/services/aero.service';
 
 import { Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-agregar',
-  templateUrl: './agregar.component.html',
-  styleUrls: ['./agregar.component.css']
+  selector: 'app-tabla-aeropuerto',
+  templateUrl: './tablaAeropuerto.component.html',
+  styleUrls: ['./tablaAeropuerto.component.css']
 })
-export class AgregarComponent implements OnInit {
- 
+export class AeropuertoComponent implements OnInit {
+
   ListarModelos!: Modelo[];
   constructor(private AeroService:AeroService, private router:Router) { }
 
@@ -26,17 +26,17 @@ export class AgregarComponent implements OnInit {
         this.ListarModelos=<any>res;
       },
       err=> console.log(err)
-      
+
     );
-   
+
   }
   eliminarr(iataCode:string){
     this.AeroService.eliminarmodelo(iataCode).subscribe(
       res=>{
         console.log('Eliminado');
-       
-        this.router.navigate(['/listaaeropuerto']);
-      
+
+        this.router.navigate(['/listaAeropuerto']);
+
 
       },
       err=> console.log(err));
@@ -44,20 +44,18 @@ export class AgregarComponent implements OnInit {
   }
 
   modificarr(iataCode:string){
-    this.router.navigate(['modificar',iataCode])
-    
+    this.router.navigate(['modificarAeropuerto',iataCode])
+
 
   }
 
-
   Onnuevoo(){
-    this.router.navigate(["agregaraeropuerto"])
-   
+    this.router.navigate(["agregarAeropuertos"])
+
     }
-  
+
     actualizar(){
       setTimeout(location.reload.bind(location),500);
-///ceomatrio dylan
     }
-   
+
 }

@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
-import {AeroService, Modelo } from 'src/app/aeropuerto/Services/aero.service';
-
-
+import { AeroService, Modelo } from 'src/app/componentes/services/aero.service';
 
 @Component({
-  selector: 'app-modificar',
-  templateUrl: './modificar.component.html',
-  styleUrls: ['./modificar.component.css']
+  selector: 'app-modificar-aeropuerto',
+  templateUrl: './modificarAeropuerto.component.html',
+  styleUrls: ['./modificarAeropuerto.component.css']
 })
 export class ModificarComponent implements OnInit {
 
@@ -48,8 +46,8 @@ export class ModificarComponent implements OnInit {
       err => console.log(err)
     );
       this.router.navigate(['listaaeropuerto'])
-      
+
   }
- 
+
 
 }
