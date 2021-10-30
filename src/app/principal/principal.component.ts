@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Ruta1Service } from 'src/app/principal/services/principal.service';
+import { Ruta1Service } from 'src/app/componentes/services/principal.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 export interface vuelos {
   Origen: string,
@@ -17,14 +18,13 @@ export interface vuelos {
 })
 export class PrincipalComponent implements OnInit {
 
-  constructor(private http: HttpClient, private fb: FormBuilder) {
+  constructor(private http: HttpClient, private fb: FormBuilder, private _router:Router) {
     this.form = this.fb.group({
       Origen: ['', Validators.required],
       Destino: ['', Validators.required],
       Fecha: ['', Validators.required]
     })
-    this.grabar_localstorage();
-    /*this.obtener_localstorage();*/
+
 
 
   }
@@ -68,6 +68,7 @@ export class PrincipalComponent implements OnInit {
   localStorage.setItem("Dest", Dest);
   localStorage.setItem("Fech", Fech);
 
+  this._router.navigate(["/disponible"]);
 }
 
 

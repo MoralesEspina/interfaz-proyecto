@@ -7,6 +7,6 @@ export interface Ruta {
   precio_base:string,
   fecha_salida:any,
   descripcion:string
-  id_vuelo:string;
-  id_ruta:string;
+  id_vuelo:any;
+  id_ruta:any;
 }

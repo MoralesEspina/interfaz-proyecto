@@ -20,12 +20,12 @@ export class TablaVDisponibleComponent implements AfterViewInit {
 
   _ruta: Ruta = {
     nombre: '',
-    origen: 'PTY', //localStorage.getItem("Orig"),
-    destino: 'SAL', //localStorage.getItem("Dest"),
+    origen: localStorage.getItem("Orig"),
+    destino: localStorage.getItem("Dest"),
     distancia_viaje: '',
     tiempo_viaje: '',
     precio_base: '',
-    fecha_salida: '2012-11-11', //localStorage.getItem("Fech"),
+    fecha_salida: localStorage.getItem("Fech"),
     descripcion: '',
     id_vuelo:'',
     id_ruta:'',
@@ -33,7 +33,7 @@ export class TablaVDisponibleComponent implements AfterViewInit {
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['nombre', 'origen', 'destino', 'distancia_viaje', 'tiempo_viaje', 'precio_base', 'fecha_salida', 'descripcion', 'Acciones'];
 
-  constructor(private ApiService:ApiService, private Router:Router) {
+  constructor(private ApiService:ApiService, private _router:Router) {
     this.dataSource = new TablaVDisponibleDataSource();
 
   }
@@ -61,8 +61,7 @@ export class TablaVDisponibleComponent implements AfterViewInit {
 
         localStorage.setItem('id_ruta',ruta);
         localStorage.setItem('id_vuelo',vuelo);
-
-
+        this._router.navigate(["/agregar-personas"]);
   }
 
 }

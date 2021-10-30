@@ -4,11 +4,11 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Persona } from 'src/app/componentes/interfaces/persona';
 import { VueloService } from 'src/app/componentes/services/vuelo.service';
-import { Pasajero, PasajeroService } from 'src/app/componentes/services/pasajero.service';
-import { PersonaService } from 'src/app/componentes/services/persona.service';
+import { PasajeroService } from 'src/app/componentes/services/pasajero.service';
 import { Vuelo } from 'src/app/componentes/interfaces/vuelo';
-import { RegisterService } from 'src/app/componentes/services/register.service';
 import { RegisterUserService } from 'src/app/componentes/services/registerUser.service';
+import { Ruta } from 'src/app/componentes/interfaces/ruta';
+import { Pasajero } from 'src/app/componentes/interfaces/pasajero';
 
 export interface Boletos{
   clase: string;
@@ -28,6 +28,19 @@ export class MostrarPasajerosTablaComponent implements OnInit {
     apellidos:'',
     tipo_doc: '',
     numero_doc: localStorage.getItem("NumeroDoc")
+  }
+
+  _ruta: Ruta = {
+    nombre: '',
+    origen: '',
+    destino: '',
+    distancia_viaje: '',
+    tiempo_viaje: '',
+    precio_base: '',
+    fecha_salida: '',
+    descripcion: '',
+    id_vuelo: localStorage.getItem("id_vuelo"),
+    id_ruta: localStorage.getItem("id_ruta"),
   }
 
   genero: any[] = [
@@ -74,7 +87,7 @@ export class MostrarPasajerosTablaComponent implements OnInit {
 
   listarVuelo()
   {
-    this.VueloService.getVuelos().subscribe(
+    this.VueloService.getVuelos2(this._ruta).subscribe(
       res=>{
         console.log(res);
         this.ListarVuelo=<any>res;
@@ -88,7 +101,7 @@ export class MostrarPasajerosTablaComponent implements OnInit {
 
     const pasajero: Pasajero ={
       id_pasajero:this.addressForm.value.id_pasajero,
-      id_persona: '',
+      id_persona: this.persona.id_persona,
       fecha_nacimiento: this.addressForm.value.fecha_nacimiento,
       genero:this.addressForm.value.genero,
       nacionalidad:this.addressForm.value.nacionalidad,

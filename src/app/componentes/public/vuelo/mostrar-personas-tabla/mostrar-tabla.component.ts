@@ -6,6 +6,7 @@ import { PersonaService } from 'src/app/componentes/services/persona.service';
 import { Persona } from 'src/app/componentes/interfaces/persona';
 import { Vuelo } from 'src/app/componentes/interfaces/vuelo';
 import { RegisterService } from 'src/app/componentes/services/register.service';
+import { Ruta } from 'src/app/componentes/interfaces/ruta';
 
 
 interface TipoDoc {
@@ -36,6 +37,19 @@ export class MostrarTablaComponent implements OnInit {
     {value: 'VISA', viewValue: 'VISA'}
   ];
 
+  _ruta: Ruta = {
+    nombre: '',
+    origen: '',
+    destino: '',
+    distancia_viaje: '',
+    tiempo_viaje: '',
+    precio_base: '',
+    fecha_salida: '',
+    descripcion: '',
+    id_vuelo: localStorage.getItem("id_vuelo"),
+    id_ruta: localStorage.getItem("id_ruta"),
+  }
+
   ListarVuelo!: Vuelo[];
   constructor(private VueloService:VueloService,
     private router:Router, private fb: FormBuilder,
@@ -50,7 +64,7 @@ export class MostrarTablaComponent implements OnInit {
 
   listarVuelo()
   {
-    this.VueloService.getVuelos().subscribe(
+    this.VueloService.getVuelos2(this._ruta).subscribe(
       res=>{
         console.log(res);
         this.ListarVuelo=<any>res;
