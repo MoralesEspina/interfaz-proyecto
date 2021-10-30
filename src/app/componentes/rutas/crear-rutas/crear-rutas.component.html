@@ -1,0 +1,80 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Agregar Pago</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input type="number" matInput placeholder="id_ruta" formControlName="id_ruta">
+            <mat-error *ngIf="addressForm.controls['id_ruta'].hasError('required')">
+              id_ruta is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input type="number" matInput placeholder="precio_base" formControlName="precio_base">
+            <mat-error *ngIf="addressForm.controls['precio_base'].hasError('required')">
+              precio_base is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input type="number" matInput placeholder="distancia_viaje" formControlName="distancia_viaje">
+            <mat-error *ngIf="addressForm.controls['distancia_viaje'].hasError('required')">
+              distancia_viaje is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input type="text" matInput placeholder="origen" formControlName="origen">
+            <mat-error *ngIf="addressForm.controls['origen'].hasError('required')">
+              origen is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input type="text" matInput placeholder="destino" formControlName="destino">
+            <mat-error *ngIf="addressForm.controls['destino'].hasError('required')">
+              destino is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input type="time" matInput placeholder="tiempo_viaje" formControlName="tiempo_viaje">
+            <mat-error *ngIf="addressForm.controls['tiempo_viaje'].hasError('required')">
+              tiempo_viaje is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input type="date" matInput placeholder="fecha_creacion" formControlName="fecha_creacion">
+            <mat-error *ngIf="addressForm.controls['fecha_creacion'].hasError('required')">
+              fecha_creacion is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit" [disabled]="addressForm.invalid">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
