@@ -3,9 +3,9 @@ import { CanvuelosService, canvuelos } from '../SERVICES/canvuelos.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-tabla-canvuelos',
-  templateUrl: './tabla-canvuelos.component.html',
-  styleUrls: ['./tabla-canvuelos.component.css']
+  selector: 'app-tablaCanvuelos',
+  templateUrl: './tablaCanvuelos.component.html',
+  styleUrls: ['./tablaCanvuelos.component.css']
 })
 export class TablaCanvuelosComponent implements OnInit {
 

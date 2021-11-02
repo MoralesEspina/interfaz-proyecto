@@ -6,9 +6,9 @@ import { ActivatedRoute } from '@angular/router';
 import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 
 @Component({
-  selector: 'app-formulario-editcanvuelos',
-  templateUrl: './formulario-editcanvuelos.component.html',
-  styleUrls: ['./formulario-editcanvuelos.component.css']
+  selector: 'app-editarCanvuelos',
+  templateUrl: './editarCanvuelos.component.html',
+  styleUrls: ['./editarCanvuelos.component.css']
 })
 export class FormularioEditcanvuelosComponent implements OnInit {
 
@@ -51,7 +51,7 @@ export class FormularioEditcanvuelosComponent implements OnInit {
     }
 
   }
-  
+
   modificar() {
 
     this.canvuelosservice.updateVuelos(this.canvuelos.id_cancelacion_vuelos, this.canvuelos).subscribe(

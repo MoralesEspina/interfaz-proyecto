@@ -5,12 +5,12 @@ import { CanvuelosService, canvuelos, vuelos } from '../SERVICES/canvuelos.servi
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-formcanvuelos',
-  templateUrl: './formcanvuelos.component.html',
-  styleUrls: ['./formcanvuelos.component.css']
+  selector: 'app-agregarCanvuelos',
+  templateUrl: './agregarCanvuelos.component.html',
+  styleUrls: ['./agregarCanvuelos.component.css']
 })
 export class FormcanvuelosComponent {
-  
+
   canvuelos: canvuelos = {
     id_cancelacion_vuelos: '',
     motivo: '',
@@ -33,10 +33,6 @@ export class FormcanvuelosComponent {
   hasUnitNumber = false;
 
   constructor(private fb: FormBuilder, private servicecan: CanvuelosService, private router: Router, private activate: ActivatedRoute) { }
-
-  onSubmit(): void {
-    alert('Thanks!');
-  }
 
   agregar() {
       this.servicecan.addVuelos(this.canvuelos).subscribe();
