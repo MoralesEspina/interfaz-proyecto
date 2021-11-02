@@ -1,6 +1,6 @@
 
 <div class="container">
-    <p>agregar</p>
+    <p>Editar</p>
     <div class="row">
       <div class="col-sm-6">
         <form>
@@ -10,43 +10,23 @@
           </div>
 
           <div class="mb3">
-            <label class="form-label">velocidad media</label>
+            <label class="form-label">Velocidad Media</label>
             <input [(ngModel)]="Modelo.velocidad_media" type="text" class="form-control" name="velocidad_media">
           </div>
 
           <div class="mb3">
-            <label class="form-label">asientos economicos</label>
+            <label class="form-label">Asientos Economicos</label>
             <input [(ngModel)]="Modelo.asientos_economicos" type="text" class="form-control" name="asientos_economicos">
           </div>
 
           <div class="mb3">
-            <label class="form-label">asientos ejecutivos</label>
+            <label class="form-label">Asientos Ejecutivos</label>
             <input [(ngModel)]="Modelo.asientos_ejecutivos" type="text" class="form-control" name="asientos_ejecutivos">
           </div>
           <br>
 
           <div class="mb10">
-            <button (click)="agregar()" type="button" class="btn btn-danger">Guardar</button>
-          </div>
-
-        </form>
-      </div>
-      <div class="col-sm-6">
-        <form>
-          <div class="mb3">
-            <label class="form-label">{{Modelo.nombre}}</label>
-          </div>
-
-          <div class="mb3">
-            <label class="form-label">{{Modelo.velocidad_media}}</label>
-          </div>
-
-          <div class="mb3">
-            <label class="form-label">{{Modelo.asientos_economicos}}</label>
-          </div>
-
-          <div class="mb3">
-            <label class="form-label">{{Modelo.asientos_ejecutivos}}</label>
+            <button (click)="modificar()" type="button" class="btn btn-danger">Guardar</button>
           </div>
 
         </form>

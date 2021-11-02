@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ModeloService, Modelo } from './../../SERVICES/modelo.service';
+import { ModeloService, Modelo } from '../../../services/modelo.service';
 
 
 
 
 @Component({
-  selector: 'app-inicioo',
-  templateUrl: './inicioo.component.html',
-  styleUrls: ['./inicioo.component.css']
+  selector: 'app-tabla-modelo',
+  templateUrl: './tabla-modelo.component.html',
+  styleUrls: ['./tabla-modelo.component.css']
 })
 export class IniciooComponent implements OnInit {
   ListarModelos!: Modelo[];
@@ -28,7 +28,7 @@ export class IniciooComponent implements OnInit {
       err=> console.log(err)
     );
   }
-  eliminar(id_modelo:string){
+  eliminarModelo(id_modelo:string){
     this.ModeloService.eliminarmodelo(id_modelo).subscribe(
       res=>{
         console.log('Eliminado');
@@ -40,19 +40,17 @@ export class IniciooComponent implements OnInit {
       err=> console.log(err));
   }
 
-  modificar(id_modelo:string){
+  modificarModelo(id_modelo:string){
     this.router.navigate(['/modificarmodelo/'+id_modelo])
   }
 
 
-
-
-  Onnuevo(){
+  OnnuevoModelo(){
     this.router.navigate(["modelo"])
     }
-  
 
 
 
-  
+
+
 }

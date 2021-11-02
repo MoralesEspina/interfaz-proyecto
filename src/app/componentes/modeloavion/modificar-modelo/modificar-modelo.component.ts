@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
-import {Modelo, ModeloService } from './../../SERVICES/modelo.service';
+import { Modelo, ModeloService } from 'src/app/services/modelo.service';
+
 @Component({
-  selector: 'app-modificarr',
-  templateUrl: './modificarr.component.html',
-  styleUrls: ['./modificarr.component.css']
+  selector: 'app-modificar-modelo',
+  templateUrl: './modificar-modelo.component.html',
+  styleUrls: ['./modificar-modelo.component.css']
 })
 export class ModificarrComponent implements OnInit {
   Modelo: Modelo= {
@@ -14,7 +15,7 @@ export class ModificarrComponent implements OnInit {
     asientos_economicos: '',
     asientos_ejecutivos: ''
   }
- 
+
   constructor(private ModeloService:ModeloService, private router:Router, private ActiveRoute:ActivatedRoute  ) { }
   ngOnInit(): void {
 

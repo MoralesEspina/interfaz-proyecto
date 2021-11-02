@@ -14,12 +14,10 @@
       <thead>
         <tr>
           <th scope="col">Id</th>
-          <th scope="col">nombre</th>
-          <th scope="col">velocidad_media</th>
-          <th scope="col">asientos_economicos</th>
-          <th scope="col">asientos_ejecutivos</th>
-          <th scope="col">Editar</th>
-          <th scope="col">Eliminar</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Velocidad Media</th>
+          <th scope="col">Asientos Economicos</th>
+          <th scope="col">Asientos Ejecutivos</th>
         </tr>
       </thead>
       <tbody>
@@ -30,17 +28,17 @@
           <td>{{modelo.asientos_economicos}}</td>
           <td>{{modelo.asientos_ejecutivos}}</td>
           <td>
-           
-            <button (click)="modificar(modelo.id_modelo)" type="button" class="btn btn-info">Editar</button>
+
+            <button (click)="modificarModelo(modelo.id_modelo)" type="button" class="btn btn-info">Editar</button>
           </td>
           <td>
-            <button (click)="eliminar(modelo.id_modelo)" type="button" class="btn btn-danger">Eliminar</button>
+            <button (click)="eliminarModelo(modelo.id_modelo)" type="button" class="btn btn-danger">Eliminar</button>
           </td>
         </tr>
       </tbody>
     </table>
-   
-    <button type="button" class="btn btn-info" (click)="Onnuevo()">AgregarPersona</button>
+
+    <button type="button" class="btn btn-info" (click)="OnnuevoModelo()">Agregar Modelo</button>
 
   </div>
 

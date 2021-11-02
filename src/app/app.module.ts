@@ -18,12 +18,13 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PrincipalComponent } from './principal/principal.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
-import { IniciooComponent } from 'src/app/componentes/modeloavion/COMPONENTE/inicioo/inicioo.component';
-import { ModeloavionComponent } from 'src/app/componentes/modeloavion/modeloavion.component';
+import { IniciooComponent } from 'src/app/componentes/modeloavion/tabla-modelo/tabla-modelo.component';
+import { ModeloavionComponent } from './componentes/modeloavion/agregar-modeloavion/agregar-modeloavion.component';
+import { ModificarrComponent } from './componentes/modeloavion/modificar-modelo/modificar-modelo.component';
 
-import { ModificarrComponent } from 'src/app/componentes/modeloavion/COMPONENTE/modificarr/modificarr.component';;
+;
 
 
 

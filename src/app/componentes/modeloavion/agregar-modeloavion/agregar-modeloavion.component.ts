@@ -1,13 +1,13 @@
 
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {ModeloService,Modelo } from 'src/app/componentes/modeloavion/SERVICES/modelo.service';
+import {ModeloService,Modelo } from 'src/app/services/modelo.service';
 
 
 @Component({
-  selector: 'app-modeloavion',
-  templateUrl: './modeloavion.component.html',
-  styleUrls: ['./modeloavion.component.css']
+  selector: 'app-agregar-modeloavion',
+  templateUrl: './agregar-modeloavion.component.html',
+  styleUrls: ['./agregar-modeloavion.component.css']
 })
 export class ModeloavionComponent implements OnInit {
 
@@ -25,7 +25,7 @@ export class ModeloavionComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  agregar(){
+  agregarModelo(){
 
     delete this.Modelo.id_modelo;
    this.ModeloService.addmodelo(this.Modelo).subscribe();

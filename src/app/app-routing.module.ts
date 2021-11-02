@@ -2,9 +2,10 @@ import { PrincipalComponent } from './principal/principal.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ModeloavionComponent } from 'src/app/componentes/modeloavion/modeloavion.component';
-import { IniciooComponent } from 'src/app/componentes/modeloavion/COMPONENTE/inicioo/inicioo.component';
-import { ModificarrComponent } from 'src/app/componentes/modeloavion/COMPONENTE/modificarr/modificarr.component';
+import { IniciooComponent } from 'src/app/componentes/modeloavion/tabla-modelo/tabla-modelo.component';
+import { ModeloavionComponent } from './componentes/modeloavion/agregar-modeloavion/agregar-modeloavion.component';
+import { ModificarrComponent } from './componentes/modeloavion/modificar-modelo/modificar-modelo.component';
+
 
 const routes: Routes = [
   {path:'', redirectTo:'/inicio',pathMatch:'full'},
