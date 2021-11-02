@@ -1,5 +1,4 @@
 import { PrincipalComponent } from './principal/principal.component';
-import { MostrarTablaComponent } from './componentes/vuelo/mostrar-tabla/mostrar-tabla.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 //aeropuerto
@@ -31,7 +30,6 @@ import { EstadoBoletoComponent } from './componentes/estadoboleto/estadoboleto.c
 const routes: Routes = [
   {path:'', redirectTo:'/inicio',pathMatch:'full'},
   {path:'inicio', component: PrincipalComponent},
-  {path:'vuelo', component: MostrarTablaComponent},
   //aeropuertos
   {path:'listaaeropuerto', component:AgregarComponent},
   {path:'modificaraeropuertos/:iataCode', component:ModificarComponent},
