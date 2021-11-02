@@ -5,7 +5,7 @@ export interface Ruta {
   distancia_viaje:string,
   tiempo_viaje:string,
   precio_base:string,
-  fecha_salida:any,
+  fecha_salida:string,
   descripcion:string
   id_vuelo:any;
   id_ruta:any;

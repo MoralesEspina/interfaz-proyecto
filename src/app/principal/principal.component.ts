@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 export interface vuelos {
   Origen: string,
   Destino: string,
-  Fecha: Date
+  Fecha: string
 }
 
 @Component({

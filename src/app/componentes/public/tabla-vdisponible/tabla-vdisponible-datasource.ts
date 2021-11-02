@@ -97,6 +97,6 @@ export class TablaVDisponibleDataSource extends DataSource<TablaVDisponibleItem>
 }
 
 /** Simple sort comparator for example ID/Name columns (for client-side sorting). */
-function compare(a: string | number | Date, b: string | number| Date, isAsc: boolean): number {
+function compare(a: string | number | string, b: string | number| string, isAsc: boolean): number {
   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }

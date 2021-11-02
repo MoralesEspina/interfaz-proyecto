@@ -25,7 +25,7 @@ export class TablaVDisponibleComponent implements AfterViewInit {
     distancia_viaje: '',
     tiempo_viaje: '',
     precio_base: '',
-    fecha_salida: localStorage.getItem("Fech"),
+    fecha_salida: ''+localStorage.getItem("Fech"),
     descripcion: '',
     id_vuelo:'',
     id_ruta:'',
