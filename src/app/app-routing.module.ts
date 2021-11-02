@@ -1,10 +1,10 @@
-import { EditComponent } from './aerolinea/edit/edit.component';
-import { AddComponent } from './aerolinea/add/add.component';
-import { ListaComponent } from './aerolinea/lista/lista.component';
+import { EditComponent } from './aerolinea/editar-aerolinea/editar-aerolinea.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { MostrarTablaComponent } from './componentes/vuelo/mostrar-tabla/mostrar-tabla.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddComponent } from './aerolinea/tabla-aerolinea/tabla-aerolinea.component';
+import { ListaComponent } from './aerolinea/agregar-aerolinea/agregar-aerolinea.component';
 
 
 const routes: Routes = [
@@ -14,8 +14,8 @@ const routes: Routes = [
 
 
   //Lista Aerolinea
-  {path: 'add', component:AddComponent},
-  {path: 'listar', component:ListaComponent},
+  {path: 'listar', component:AddComponent},
+  {path: 'add', component:ListaComponent},
   {path: 'edit/:id_aerolinea', component:EditComponent}
 
 

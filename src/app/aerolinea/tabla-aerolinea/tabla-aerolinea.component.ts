@@ -4,9 +4,9 @@ import {aerolineaService, Modelo} from 'src/app/aerolinea/Service/aerolinea.serv
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-add',
-  templateUrl: './add.component.html',
-  styleUrls: ['./add.component.css']
+  selector: 'app-tabla-aerolinea',
+  templateUrl: './tabla-aerolinea.component.html',
+  styleUrls: ['./tabla-aerolinea.component.css']
 })
 export class AddComponent implements OnInit {
 
@@ -25,7 +25,8 @@ export class AddComponent implements OnInit {
       err=> console.log(err)
     );
   }
-  eliminar(id_aerolinea:string){
+
+  eliminarAerolinea(id_aerolinea:string){
     this.aerolineaService.eliminarmodelo(id_aerolinea).subscribe(
       res=>{
         console.log('Eliminado');
@@ -37,11 +38,11 @@ export class AddComponent implements OnInit {
       err=> console.log(err));
   }
 
-  modificarr(id_aerolinea:string){
+  modificarAerolinea(id_aerolinea:string){
     this.router.navigate(['/edit/'+id_aerolinea])
   }
-  Onnuevo(){
-    this.router.navigate(["listar"])
+  OnnuevaAerolinea(){
+    this.router.navigate(["add"])
     }
 
 

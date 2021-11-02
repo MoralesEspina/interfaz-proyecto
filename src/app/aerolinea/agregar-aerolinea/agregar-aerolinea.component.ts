@@ -2,13 +2,12 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { aerolineaService,Modelo } from '../Service/aerolinea.service';
-import { aerolinea } from '../Modelo/aerolinea';
 
 
 @Component({
-  selector: 'app-lista',
-  templateUrl: './lista.component.html',
-  styleUrls: ['./lista.component.css']
+  selector: 'app-agregar-aerolinea.',
+  templateUrl: './agregar-aerolinea.component.html',
+  styleUrls: ['./agregar-aerolinea.component.css']
 })
 export class ListaComponent implements OnInit {
 
@@ -23,7 +22,7 @@ export class ListaComponent implements OnInit {
   ngOnInit(): void {
 
     }
-    agregar(){
+    agregarAerolinea(){
 
       this.aerolineaService.addmodelo(this.Modelo).subscribe();
        this.router.navigate(['/listar']);

@@ -21,9 +21,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModificarFormularioComponent } from './componentes/vuelo/modificar-formulario/modificar-formulario.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ListaComponent } from './aerolinea/lista/lista.component';
-import { AddComponent } from './aerolinea/add/add.component';
-import { EditComponent } from './aerolinea/edit/edit.component';
+import { ListaComponent } from './aerolinea/agregar-aerolinea/agregar-aerolinea.component';
+import { AddComponent } from './aerolinea/tabla-aerolinea/tabla-aerolinea.component';
+import { EditComponent } from './aerolinea/editar-aerolinea/editar-aerolinea.component';
 
 
 

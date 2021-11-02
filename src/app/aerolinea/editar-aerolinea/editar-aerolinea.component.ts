@@ -5,9 +5,9 @@ import {Router, ActivatedRoute} from '@angular/router';
 
 
 @Component({
-  selector: 'app-edit',
-  templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.css']
+  selector: 'app-editar-aerolinea',
+  templateUrl: './editar-aerolinea.component.html',
+  styleUrls: ['./editar-aerolinea.component.css']
 })
 export class EditComponent implements OnInit {
   Modelo: Modelo= {
@@ -38,7 +38,7 @@ export class EditComponent implements OnInit {
     }
 
   }
-  modificar() {
+  modificarAerolinea() {
     this.aerolineaService.editmodelo(this.Modelo.id_aerolinea, this.Modelo).subscribe(
       res => {
         console.log(res)
@@ -46,7 +46,7 @@ export class EditComponent implements OnInit {
       err => console.log(err)
     );
 
- this.router.navigate(['add'])
+ this.router.navigate(['listar'])
   }
 
 
