@@ -22,6 +22,7 @@ export class VueloService {
   getIdVuelos(id:string){
     return this.http.get(this.url+'/'+id);
   }
+
   getVuelos2(vuelos:{}): Observable<Ruta[]>{
     console.log(vuelos);
     return this.http.post<Ruta[]>(this.url+'/vuelosruta/',vuelos)

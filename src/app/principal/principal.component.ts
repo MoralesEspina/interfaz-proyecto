@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Ruta1Service } from 'src/app/componentes/services/principal.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';

@@ -8,7 +8,7 @@ import { MostrarTablaComponent } from './componentes/public/vuelo/mostrar-person
 import { MostrarPasajerosTablaComponent } from './componentes/public/vuelo/mostrar-pasajeros-tabla/mostrar-pasajeros-tabla.component';
 import { AgregarComponent } from './componentes/private/aeropuerto/agregarAeropuerto/agregarAeropuerto.component';
 import { ModificarComponent } from './componentes/private/aeropuerto/modificarAeropuerto/modificarAeropuerto.component';
-import { AeropuertoComponent } from './componentes/private/aeropuerto/tabla-aeropuerto/tablaAeropuerto.component';
+import { AeropuertoComponent } from './componentes/private/aeropuerto/tablaAeropuerto/tablaAeropuerto.component';
 import { LoginComponent } from './componentes/public/login/login.component';
 
 const routes: Routes = [
