@@ -1,0 +1,37 @@
+
+<div class="container">
+    <p>Editar</p>
+    <div class="row">
+      <div class="col-sm-6">
+        <form>
+          <div class="mb3">
+            <label class="form-label">Nombre</label>
+            <input [(ngModel)]="Modelo.nombre" type="text" class="form-control" name="nombre">
+          </div>
+
+          <div class="mb3">
+            <label class="form-label">Velocidad Media</label>
+            <input [(ngModel)]="Modelo.velocidad_media" type="text" class="form-control" name="velocidad_media">
+          </div>
+
+          <div class="mb3">
+            <label class="form-label">Cantidad de Asientos Economicos</label>
+            <input [(ngModel)]="Modelo.asientos_economicos" type="text" class="form-control" name="asientos_economicos">
+          </div>
+
+          <div class="mb3">
+            <label class="form-label">Cantidad de Asientos Ejecutivos</label>
+            <input [(ngModel)]="Modelo.asientos_ejecutivos" type="text" class="form-control" name="asientos_ejecutivos">
+          </div>
+          <br>
+
+          <div class="mb10">
+            <button (click)="modificar()" type="button" class="btn btn-danger">Guardar</button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+
+  </div>

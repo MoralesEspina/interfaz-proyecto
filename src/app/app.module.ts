@@ -19,20 +19,20 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { FormsModule } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PrincipalComponent } from './principal/principal.component';
-import { LoginComponent } from './componentes/public/login/login/login.component';
 import { RegisterComponent } from './componentes/public/register/register.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import "@angular/compiler";
-import { AeropuertoComponent } from './componentes/private/aeropuerto/COMPONENTE/tablaAeropuerto.component';
-import { AgregarComponent } from './componentes/private/aeropuerto/COMPONENTE/agregarAeropuerto/agregarAeropuerto.component';
-import { ModificarComponent } from './componentes/private/aeropuerto/COMPONENTE/modificarAeropuerto/modificarAeropuerto.component';
 import { TablaVDisponibleComponent } from './componentes/public/tabla-vdisponible/tabla-vdisponible.component';
 import { MostrarPasajerosTablaComponent } from './componentes/public/vuelo/mostrar-pasajeros-tabla/mostrar-pasajeros-tabla.component';
 import { MostrarTablaComponent } from './componentes/public/vuelo/mostrar-personas-tabla/mostrar-tabla.component';
+import { AeropuertoComponent } from './componentes/private/aeropuerto/tabla-aeropuerto/tablaAeropuerto.component';
+import { AgregarComponent } from './componentes/private/aeropuerto/agregarAeropuerto/agregarAeropuerto.component';
+import { ModificarComponent } from './componentes/private/aeropuerto/modificarAeropuerto/modificarAeropuerto.component';
+import { LoginComponent } from './componentes/public/login/login.component';
 
 
 @NgModule({
