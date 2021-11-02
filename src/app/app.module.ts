@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule  } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +23,13 @@ import { ModificarFormularioComponent } from './componentes/vuelo/modificar-form
 import { PrincipalComponent } from './principal/principal.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
+import { IniciooComponent } from 'src/app/componentes/modeloavion/COMPONENTE/inicioo/inicioo.component';
+import { ModeloavionComponent } from 'src/app/componentes/modeloavion/modeloavion.component';
+
+import { ModificarrComponent } from 'src/app/componentes/modeloavion/COMPONENTE/modificarr/modificarr.component';;
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +37,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     MostrarTablaComponent,
     AgregarFormularioComponent,
     ModificarFormularioComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    ModeloavionComponent,
+    IniciooComponent,
+    ModificarrComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +57,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     MatRadioModule,
     MatCardModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
