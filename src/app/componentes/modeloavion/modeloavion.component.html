@@ -8,27 +8,27 @@
             <label class="form-label">Nombre</label>
             <input [(ngModel)]="Modelo.nombre" type="text" class="form-control" name="nombre">
           </div>
-  
+
           <div class="mb3">
             <label class="form-label">velocidad media</label>
             <input [(ngModel)]="Modelo.velocidad_media" type="text" class="form-control" name="velocidad_media">
           </div>
-  
+
           <div class="mb3">
             <label class="form-label">asientos economicos</label>
             <input [(ngModel)]="Modelo.asientos_economicos" type="text" class="form-control" name="asientos_economicos">
           </div>
-  
+
           <div class="mb3">
             <label class="form-label">asientos ejecutivos</label>
             <input [(ngModel)]="Modelo.asientos_ejecutivos" type="text" class="form-control" name="asientos_ejecutivos">
           </div>
           <br>
-  
+
           <div class="mb10">
             <button (click)="agregar()" type="button" class="btn btn-danger">Guardar</button>
           </div>
-  
+
         </form>
       </div>
       <div class="col-sm-6">
@@ -36,23 +36,22 @@
           <div class="mb3">
             <label class="form-label">{{Modelo.nombre}}</label>
           </div>
-  
+
           <div class="mb3">
             <label class="form-label">{{Modelo.velocidad_media}}</label>
           </div>
-  
+
           <div class="mb3">
             <label class="form-label">{{Modelo.asientos_economicos}}</label>
           </div>
-  
+
           <div class="mb3">
             <label class="form-label">{{Modelo.asientos_ejecutivos}}</label>
           </div>
-  
+
         </form>
       </div>
-  
+
     </div>
-  
+
   </div>
-  
