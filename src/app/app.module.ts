@@ -11,14 +11,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { MostrarTablaComponent } from './componentes/vuelo/mostrar-tabla/mostrar-tabla.component';
-import { AgregarFormularioComponent } from './componentes/vuelo/agregar-formulario/agregar-formulario.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ModificarFormularioComponent } from './componentes/vuelo/modificar-formulario/modificar-formulario.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ListaComponent } from './aerolinea/agregar-aerolinea/agregar-aerolinea.component';
@@ -32,9 +29,6 @@ import { EditComponent } from './aerolinea/editar-aerolinea/editar-aerolinea.com
   declarations: [
     AppComponent,
     NavComponent,
-    MostrarTablaComponent,
-    AgregarFormularioComponent,
-    ModificarFormularioComponent,
     PrincipalComponent,
     ListaComponent,
     AddComponent,
