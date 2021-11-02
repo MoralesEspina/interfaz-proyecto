@@ -5,7 +5,7 @@
   background-size:cover;
   background-attachment: fixed;
   display: flex;
-  height: 450px;
+  height: 550px;
   width: 100%;
   align-items: center;
   justify-content: center;
@@ -22,7 +22,7 @@
 }
 .header{
   position: relative;
-  background-color:#0026ff52 ;
+  background-color:#ffffff52 ;
     opacity:0.98;
   background-size:cover;
   background-attachment: fixed;
@@ -49,7 +49,8 @@
 
 .info-header{
   top: 0;
-  text-align: center;
+  text-align: justify;
+
   background-color:rgba(233, 211, 103);
 }
 
@@ -100,11 +101,15 @@
   height: 100px;
 
 }
+.mat-form-field{
+  background: rgba(153, 153, 153, 0.589);
 
+}
 .card,.card-header{
-  background: rgb(34, 95, 151) !important;
+  background: rgb(41, 41, 41, 0.39);
   border: none !important;
   padding: 0 !important;
+  text-decoration-color: #f9ca24;
 }
 
 .card{
@@ -113,10 +118,14 @@
   width: 50%;
   left: 25%;
 }
+.button, .mat-raised-button{
+  background-color:rgba(255, 0, 157, 0.74);
+}
 
 ::ng-deep .mat-form-field-underline, ::ng-deep .mat-form-field-ripple {
   color: #f2f2f2;
-  background: rgb(34, 95, 151) !important;
+  background: rgb(255, 255, 255) !important;
+  padding-right: 10%;
 
 }
 
@@ -132,7 +141,7 @@
 
 .card-body{
   color: #222f3e;
-  background: #f2f2f2;
+  background: #080808;
   text-align: justify;
 }
 

@@ -1,57 +1,55 @@
-<div class="header" id="inicio">
-  <div class="row align-self-center">
-    <h1></h1>
-    <h1>La mejor pagina para comprar vuelos</h1>
-  </div>
-<form [formGroup]="form" (ngSubmit)= "grabar_localstorage()" >
-  <div class="container p-1 mb-4 ">
-    <div class="row">
-      <div class="col order-first">
-        <h4>Lugar de Origen</h4>
-        <mat-form-field appearance="fill">
-          <mat-label>Origen</mat-label>
-          <mat-select formControlName='Origen'>
-            <mat-option *ngFor="let aeropuerto of collection" [value]="aeropuerto.iataCode">
-              {{aeropuerto.iataCode}}  {{aeropuerto.pais}}, {{aeropuerto.ciudad}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="col order-last">
-        <h4>Lugar de Destino</h4>
-        <mat-form-field appearance="fill">
-          <mat-label>Destino</mat-label>
-          <mat-select formControlName='Destino'>
-            <mat-option *ngFor="let aeropuerto of collection" [value]="aeropuerto.iataCode">
-              {{aeropuerto.iataCode}}  {{aeropuerto.pais}}, {{aeropuerto.ciudad}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="col order-last">
-        <h4>Fecha del Vuelo</h4>
-          <mat-form-field appearance="fill" >
-            <mat-label>Fecha</mat-label>
-            <input matInput type = "date" placeholder="Fecha" formControlName="Fecha" >
-          </mat-form-field>
-      </div>
-      <div class="col order-last align-self-center">
-      <div class="example-button-row">
-        <button type='submit' [disabled]="form.invalid"  mat-raised-button color="primary">Buscar Vuelos</button>
-      </div>
-    </div>
-  </div>
-  </div>
-</form>
-</div>
+
 <div class="main-header" id="inicio">
 <div class="row">
-  <div class="col-sm-12 text-center align-self-center">
-    <div class="background-overlay text-white py-5">
-      <div class="wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-8.84,97.85 C162.71,204.44 228.74,107.73 505.83,32.73 L501.88,153.11 L0.00,150.00 Z" style="stroke: none; fill: rgba(233, 211, 103);"></path></svg></div>
-    <h1 class="mt-5">TE OFRECEMOS EL MEJOR</h1>
+  <div class="col-sm-12 text-center align-self-center ">
+    <div class="background-overlay text-white py-5 ">
+      <div class="card " id="inicio">
+        <form [formGroup]="form" (ngSubmit)= "grabar_localstorage()" >
+          <div class="container p-1 mb-4 ">
+            <div class="row">
+              <div class="col order-first ">
+                <h4>Lugar de Origen</h4>
+                <mat-form-field appearance="fill">
+                  <mat-label  style="color:#ffffff;" >Origen</mat-label>
+                  <mat-select formControlName='Origen'>
+                    <mat-option *ngFor="let aeropuerto of collection" [value]="aeropuerto.iataCode">
+                      {{aeropuerto.iataCode}}  {{aeropuerto.pais}}, {{aeropuerto.ciudad}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col order-last" style="color:#ffffff;">
+                <h4>Lugar de Destino</h4>
+                <mat-form-field appearance="fill">
+                  <mat-label  style="color:#ffffff;">Destino</mat-label>
+                  <mat-select style="color:#ffffff;" formControlName='Destino' >
+                    <mat-option *ngFor="let aeropuerto of collection" [value]="aeropuerto.iataCode">
+                      {{aeropuerto.iataCode}}  {{aeropuerto.pais}}, {{aeropuerto.ciudad}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col order-last mb-3" style="color:#ffffff;">
+                <h4>Fecha del Vuelo</h4>
+                  <mat-form-field appearance="fill" >
+                    <mat-label style="color:#ffffff;">Fecha</mat-label>
+                    <input matInput type = "date" placeholder="Fecha" formControlName="Fecha" style="color:#000000;">
+                  </mat-form-field>
+              </div>
+              <div class="col order-last align-self-center">
+              <div class="boton">
+                <button type='submit' [disabled]="form.invalid"  mat-raised-button color="primary">Buscar Vuelos</button>
+              </div>
+            </div>
+          </div>
+          </div>
+        </form>
+      </div>
+      <h1 class="mt-5">TE OFRECEMOS EL MEJOR</h1>
     <h1>SERVICIO DE VIAJES</h1>
     <p>Airport Skyline te ofrece garantías y el mejor servicio de viajes que hay en el mercado.</p>
+    <div class="wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-8.84,97.85 C162.71,204.44 228.74,107.73 505.83,32.73 L501.88,153.11 L0.00,150.00 Z" style="stroke: none; fill: rgba(233, 211, 103);"></path></svg></div>
+
   </div>
 </div>
 </div>
@@ -60,11 +58,11 @@
   <div class="info-header">
     <div class="container">
       <div class="row">
-        <div class="col-sm-6 mt-3">
-          <a ><img src="https://i.ibb.co/BBHLz9b/Mundo.png" alt="Mundo"></a>
+        <div class="col-sm-6 mb-10">
+          <a class=" align-self-center"><img src="https://i.ibb.co/BBHLz9b/Mundo.png" alt="Mundo"></a>
         </div>
-        <div class="col-sm-6 mt-3">
-          <h1>¿Qué es lo que hacemos?</h1>
+        <div class="col-sm-6 mb-5">
+          <h1 class=" text-center">¿Qué es lo que hacemos?</h1>
           <p>El servicio del aeropuerto Airport Skyline realiza servicios de operaciones a través de varias
             infraestructuras para el transporte de pasajeros y comerciales
             de forma internacional para lo cual disponemos de aduanas e inmigración que nos ayudará a la gestión de
@@ -86,13 +84,13 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-6 mt-3">
-          <h1>¿Qué tipos de viajes ofrecemos?</h1>
-          <p>Airport Skyline ofrecemos diferentes tipos de viajes ya sean nacionales e internacionales con diferentes
+          <h1 class=" text-center">¿Qué tipos de viajes ofrecemos?</h1>
+          <p class=" text-center">Airport Skyline ofrecemos diferentes tipos de viajes ya sean nacionales e internacionales con diferentes
             lineas de comodidad.</p>
           <p class="py-2"></p>
         </div>
-        <div class="col-sm-6 mt-3">
-          <a ><img src="https://i.ibb.co/WK7Xqr6/Avion.png" alt="Avion"></a>
+        <div class="col-sm-6">
+          <a class=" align-self-center" ><img src="https://i.ibb.co/WK7Xqr6/Avion.png" alt="Avion"></a>
         </div>
       </div>
     </div>
@@ -191,50 +189,3 @@
     </div>
   </div>
 </section>
-<footer id="contactos">
-  <div class="container">
-    <div class="container-footer">
-      <h1 class="titulo-serv py-4 align-self-center;">CONTACTANOS</h1>
-      <section class="part-1">
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="content-foo">
-              <h4>Direccion</h4>
-              <p>Guatemala</p>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="content-foo">
-              <h4>Whatsapp</h4>
-              <p>+502 4180-6704</p>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="content-foo">
-              <h4>Teléfono</h4>
-              <p>+502 4180-6704</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="part-2">
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="content-foo">
-              <h4>Facebook</h4>
-              <p>Facebook/Skylines</p>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="content-foo">
-              <h4>Email</h4>
-              <p>skyline@gmail.com</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-    <h2 class="titulo-final">&copy; 2021-Designed by Desarrollo web</h2>
-  </div>
-</footer>
-
