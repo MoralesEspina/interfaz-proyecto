@@ -1,67 +1,70 @@
-
 <div class="main-header" id="inicio">
-<div class="row">
-  <div class="col-sm-12 text-center align-self-center ">
-    <div class="background-overlay text-white py-5 ">
-      <div class="card " id="inicio">
-        <form [formGroup]="form" (ngSubmit)= "grabar_localstorage()" >
-          <div class="container p-1 mb-4 ">
-            <div class="row">
-              <div class="col order-first ">
-                <h4>Lugar de Origen</h4>
-                <mat-form-field appearance="fill">
-                  <mat-label  style="color:#ffffff;" >Origen</mat-label>
-                  <mat-select formControlName='Origen'>
-                    <mat-option *ngFor="let aeropuerto of collection" [value]="aeropuerto.iataCode">
-                      {{aeropuerto.iataCode}}  {{aeropuerto.pais}}, {{aeropuerto.ciudad}}
-                    </mat-option>
-                  </mat-select>
-                </mat-form-field>
-              </div>
-              <div class="col order-last" style="color:#ffffff;">
-                <h4>Lugar de Destino</h4>
-                <mat-form-field appearance="fill">
-                  <mat-label  style="color:#ffffff;">Destino</mat-label>
-                  <mat-select style="color:#ffffff;" formControlName='Destino' >
-                    <mat-option *ngFor="let aeropuerto of collection" [value]="aeropuerto.iataCode">
-                      {{aeropuerto.iataCode}}  {{aeropuerto.pais}}, {{aeropuerto.ciudad}}
-                    </mat-option>
-                  </mat-select>
-                </mat-form-field>
-              </div>
-              <div class="col order-last mb-3" style="color:#ffffff;">
-                <h4>Fecha del Vuelo</h4>
-                  <mat-form-field appearance="fill" >
-                    <mat-label style="color:#ffffff;">Fecha</mat-label>
-                    <input matInput type = "date" placeholder="Fecha" formControlName="Fecha" style="color:#000000;">
+  <div class="row">
+    <div class="col-sm-12 text-center align-self-center ">
+      <div class="background-overlay text-white py-5 ">
+        <div class="card " id="inicio">
+          <form [formGroup]="form" (ngSubmit)="grabar_localstorage()">
+            <div class="container p-1 mb-4 ">
+              <div class="row">
+                <div class="col order-first ">
+                  <h4>Lugar de Origen</h4>
+                  <mat-form-field appearance="fill">
+                    <mat-label style="color:#ffffff;">Origen</mat-label>
+                    <mat-select formControlName='Origen'>
+                      <mat-option *ngFor="let aeropuerto of collection" [value]="aeropuerto.iataCode">
+                        {{aeropuerto.iataCode}} {{aeropuerto.pais}}, {{aeropuerto.ciudad}}
+                      </mat-option>
+                    </mat-select>
                   </mat-form-field>
+                </div>
+                <div class="col order-last" style="color:#ffffff;">
+                  <h4>Lugar de Destino</h4>
+                  <mat-form-field appearance="fill">
+                    <mat-label style="color:#ffffff;">Destino</mat-label>
+                    <mat-select style="color:#ffffff;" formControlName='Destino'>
+                      <mat-option *ngFor="let aeropuerto of collection" [value]="aeropuerto.iataCode">
+                        {{aeropuerto.iataCode}} {{aeropuerto.pais}}, {{aeropuerto.ciudad}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="col order-last mb-3" style="color:#ffffff;">
+                  <h4>Fecha del Vuelo</h4>
+                  <mat-form-field appearance="fill">
+                    <mat-label style="color:#ffffff;">Fecha</mat-label>
+                    <input matInput type="date" placeholder="Fecha" formControlName="Fecha" style="color:#000000;">
+                  </mat-form-field>
+                </div>
+
               </div>
               <div class="col order-last align-self-center">
-              <div class="boton">
-                <button type='submit' [disabled]="form.invalid"  mat-raised-button color="primary">Buscar Vuelos</button>
+                <div class="boton">
+                  <button type='submit' [disabled]="form.invalid" mat-raised-button color="primary">Buscar
+                    Vuelos</button>
+                </div>
               </div>
             </div>
-          </div>
-          </div>
-        </form>
-      </div>
-      <h1 class="mt-5">TE OFRECEMOS EL MEJOR</h1>
-    <h1>SERVICIO DE VIAJES</h1>
-    <p>Airport Skyline te ofrece garantías y el mejor servicio de viajes que hay en el mercado.</p>
-    <div class="wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-8.84,97.85 C162.71,204.44 228.74,107.73 505.83,32.73 L501.88,153.11 L0.00,150.00 Z" style="stroke: none; fill: rgba(233, 211, 103);"></path></svg></div>
+          </form>
+        </div>
+        <h1 class="mt-5">TE OFRECEMOS EL MEJOR</h1>
+        <h1>SERVICIO DE VIAJES</h1>
+        <p>Airport Skyline te ofrece garantías y el mejor servicio de viajes que hay en el mercado.</p>
+        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+            style="height: 100%; width: 100%;">
+            <path d="M-8.84,97.85 C162.71,204.44 228.74,107.73 505.83,32.73 L501.88,153.11 L0.00,150.00 Z"
+              style="stroke: none; fill: rgba(233, 211, 103);"></path>
+          </svg></div>
 
+      </div>
+    </div>
   </div>
-</div>
-</div>
 </div>
 <section id="informacion1">
   <div class="info-header">
     <div class="container">
       <div class="row">
-        <div class="col-sm-6 mb-10">
-          <a class=" align-self-center"><img src="https://i.ibb.co/BBHLz9b/Mundo.png" alt="Mundo"></a>
-        </div>
-        <div class="col-sm-6 mb-5">
+
+        <div class="col order-last mb-5">
           <h1 class=" text-center">¿Qué es lo que hacemos?</h1>
           <p>El servicio del aeropuerto Airport Skyline realiza servicios de operaciones a través de varias
             infraestructuras para el transporte de pasajeros y comerciales
@@ -72,30 +75,25 @@
             por último en cuanto a los pasajeros se ofrece un servicio de facturación, para el control mediante el
             pasaporte y sus seguridad, además
             de priorizar aquellas personas con movilidad reducida y salas de viaje VIP para aquellos clientes que las
-            soliciten.</p>
-          <p></p>
+            soliciten.
+          </p>
+          <div style="text-align: center;">
+            <img src="https://i.ibb.co/WK7Xqr6/Avion.png" alt="Avion">
+          </div>
+
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="informacion2">
-  <div class="info-header">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6 mt-3">
-          <h1 class=" text-center">¿Qué tipos de viajes ofrecemos?</h1>
-          <p class=" text-center">Airport Skyline ofrecemos diferentes tipos de viajes ya sean nacionales e internacionales con diferentes
+        <div style="text-align: center;" class="col order-first mt-3">
+          <img src="https://i.ibb.co/BBHLz9b/Mundo.png" alt="Mundo">
+          <h1>¿Qué tipos de viajes ofrecemos?</h1>
+          <p>Airport Skyline ofrecemos diferentes tipos de viajes ya sean nacionales e internacionales con diferentes
             lineas de comodidad.</p>
-          <p class="py-2"></p>
-        </div>
-        <div class="col-sm-6">
-          <a class=" align-self-center" ><img src="https://i.ibb.co/WK7Xqr6/Avion.png" alt="Avion"></a>
+
         </div>
       </div>
     </div>
   </div>
 </section>
+
 <section id="lugares">
   <div class="container">
     <h1 class="titulo-serv py-4 align-self-center;">LUGARES MAS VISITADOS</h1>
@@ -158,7 +156,7 @@
           <div class="col-sm-6 align-self-center">
             <div class="galeria-garanty">
               <div class="imagen-garanty">
-                <a ><img src="https://i.ibb.co/LYb9cXG/personal-seguro.png" alt="personal-seguro"></a>
+                <a><img src="https://i.ibb.co/LYb9cXG/personal-seguro.png" alt="personal-seguro"></a>
                 <div class="hover-galeria-garanty">
                   <div class="container mt-2 text-center">
                     <h3>Seguro De Pasajeros</h3>
@@ -172,7 +170,7 @@
           <div class="col-sm-6 align-self-center">
             <div class="galeria-garanty">
               <div class="imagen-garanty">
-                <a ><img src="https://cdn.pixabay.com/photo/2020/05/15/13/21/luggage-5173505_960_720.png"
+                <a><img src="https://cdn.pixabay.com/photo/2020/05/15/13/21/luggage-5173505_960_720.png"
                     alt="maleta-seguro" height="200" width="500"></a>
                 <div class="hover-galeria-garanty">
                   <div class="container mt-2 text-center">

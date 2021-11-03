@@ -22,6 +22,9 @@
 footer{
   background: rgb(34, 95, 151);
   overflow: hidden;
+  width: 100%;
+
+  align-self: flex-end;
 }
 .content-foo{
   text-align: center;

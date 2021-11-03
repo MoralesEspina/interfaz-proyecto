@@ -1,4 +1,5 @@
 export interface Vuelo{
+  nombre:string;
   id_vuelo:string;
   id_avion:string;
   id_ruta:string;
