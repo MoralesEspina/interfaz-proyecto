@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import{HttpClient}from '@angular/common/http'
+import { HttpClient } from '@angular/common/http'
 import { Aeropuerto } from '../interfaces/aeropuerto';
 
 
@@ -7,33 +7,37 @@ import { Aeropuerto } from '../interfaces/aeropuerto';
   providedIn: 'root'
 })
 export class AeropuertoService {
-  url="https://aeropuerto-dw.herokuapp.com/aeropuertos"
-  constructor(private http:HttpClient) { }
+  url = "https://aeropuerto-dw.herokuapp.com/aeropuertos"
+  constructor(private http: HttpClient) { }
 
-  getAeropuertos(){
+  getAeropuertos() {
     return this.http.get(this.url);
   }
 
   //get un boleto
-  getUnAeropuerto(iataCode:string){
-    return this.http.get(this.url+'/'+iataCode);
+  getUnAeropuerto(iataCode: string) {
+    return this.http.get(this.url + '/' + iataCode);
   }
 
   //Crear
-  addAeropuerto(aeropuerto:Aeropuerto){
+  addAeropuerto(aeropuerto: Aeropuerto) {
     console.log("hola")
-  this.http.post(this.url,aeropuerto)
+    this.http.post(this.url, aeropuerto).subscribe(
+      res => console.log(res)
+    );
 
   }
 
   //eliminar
-  eliminarAeropuerto(iataCode:string){
-   this.http.delete(this.url+'/'+iataCode);
+  eliminarAeropuerto(iataCode: string) {
+    return this.http.delete(this.url + '/' + iataCode);
   }
 
   //modificar
-  editAeropuerto(id:string, aeropuerto:Aeropuerto){
-  this.http.put(this.url+'/'+id,aeropuerto);
+
+
+  editAeropuerto(id: string, aeropuerto: Aeropuerto) {
+    return this.http.put(this.url + '/' + id, aeropuerto);
 
   }
 }
