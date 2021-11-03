@@ -6,6 +6,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { TablaVDisponibleDataSource, TablaVDisponibleItem } from './tabla-vdisponible-datasource';
 import { Ruta } from '../../interfaces/ruta';
+import { Vuelo } from '../../interfaces/vuelo';
 
 @Component({
   selector: 'app-tabla-vdisponible',
@@ -25,22 +26,25 @@ export class TablaVDisponibleComponent implements AfterViewInit {
     distancia_viaje: '',
     tiempo_viaje: '',
     precio_base: '',
-    fecha_salida: ''+localStorage.getItem("Fech"),
+    fecha_salida: '' + localStorage.getItem("Fech"),
     descripcion: '',
-    id_vuelo:'',
-    id_ruta:'',
+    id_vuelo: '',
+    id_ruta: '',
   }
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['nombre', 'origen', 'destino', 'distancia_viaje', 'tiempo_viaje', 'precio_base', 'fecha_salida', 'descripcion', 'Acciones'];
-
-  constructor(private ApiService:ApiService, private _router:Router) {
+  ListarVuelo!: Vuelo[];
+  constructor(private ApiService: ApiService, private _router: Router) {
     this.dataSource = new TablaVDisponibleDataSource();
 
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.dataSource = new TablaVDisponibleDataSource();
+    this.listarVuelo();
 
+  }
+  listarVuelo() {
     this.ApiService.getVuelos2(this._ruta).subscribe(
       res => {
         console.log(res);
@@ -48,8 +52,8 @@ export class TablaVDisponibleComponent implements AfterViewInit {
       },
       err => console.log(err)
     )
-  }
 
+  }
 
   ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;
@@ -57,11 +61,11 @@ export class TablaVDisponibleComponent implements AfterViewInit {
     this.table.dataSource = this.dataSource;
   }
 
-  seleccionarVuelo(vuelo:any,ruta:any){
+  seleccionarVuelo(vuelo: any, ruta: any) {
 
-        localStorage.setItem('id_ruta',ruta);
-        localStorage.setItem('id_vuelo',vuelo);
-        this._router.navigate(["/agregar-personas"]);
+    localStorage.setItem('id_ruta', ruta);
+    localStorage.setItem('id_vuelo', vuelo);
+    this._router.navigate(["/agregar-personas"]);
   }
 
 }

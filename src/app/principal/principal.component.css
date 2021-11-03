@@ -53,6 +53,12 @@
 
   background-color:rgba(233, 211, 103);
 }
+.info-header2{
+  top: 0;
+  text-align: center;
+
+  background-color:rgba(233, 211, 103);
+}
 
 .galeria-transport{
   display: flex;

@@ -116,12 +116,8 @@ export class MostrarTablaComponent implements OnInit {
       tipo_doc:this.addressForm.value.tipo_doc,
       numero_doc:this.addressForm.value.numero_doc,
     }
-
     this._personaRegister.register(persona);
-
-    let numero_doc = this.addressForm.value.numero_doc;
     localStorage.setItem("persona", JSON.stringify (persona))
-    localStorage.setItem("NumeroDoc",numero_doc);
     this.router.navigate(['/pasajeros']);
   }
 
