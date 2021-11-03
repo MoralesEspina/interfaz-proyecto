@@ -23,8 +23,7 @@ export class AgregarAeropuertoComponent implements OnInit {
   }
   agregar(){
 
-
-   this.AeropuertoService.addAeropuerto(this.Modelo).subscribe();
+    this.AeropuertoService.addAeropuerto(this.Modelo).subscribe();
     this.router.navigate(['/listaaeropuerto']);
   }
 
