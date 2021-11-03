@@ -42,6 +42,8 @@ import { EditarAerolineaComponent } from './componentes/private/aerolinea/editar
 import { TablaAerolineaComponent } from './componentes/private/aerolinea/tablaAerolinea/tabla-aerolinea.component';
 import { AgregarModeloavionComponent } from './componentes/private/modeloavion/agregarModeloavion/agregar-modeloavion.component';
 import { TablaModeloavionComponent } from './componentes/private/modeloavion/tablaModeloavion/tabla-modelo.component';
+import { CrearvueloComponent } from './componentes/private/vuelos/crearvuelo/crearvuelo.component';
+import { MostrarvueloComponent } from './componentes/private/vuelos/mostrarvuelo/mostrarvuelo.component';
 
 
 @NgModule({
@@ -81,6 +83,10 @@ import { TablaModeloavionComponent } from './componentes/private/modeloavion/tab
     ModificarModeloavionComponent,
     AgregarModeloavionComponent,
     TablaModeloavionComponent,
+
+    //Modelo Mant Vuelos
+    CrearvueloComponent,
+    MostrarvueloComponent
 
   ],
   imports: [

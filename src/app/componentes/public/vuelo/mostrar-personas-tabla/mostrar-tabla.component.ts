@@ -2,15 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { VueloService } from 'src/app/componentes/services/vuelo.service';
-import { PersonaService } from 'src/app/componentes/services/persona.service';
 import { Persona } from 'src/app/componentes/interfaces/persona';
 import { Vuelo } from 'src/app/componentes/interfaces/vuelo';
 import { RegisterService } from 'src/app/componentes/services/register.service';
 import { Ruta } from 'src/app/componentes/interfaces/ruta';
 import { HttpClient } from '@angular/common/http';
-import { PasajeroService } from 'src/app/componentes/services/pasajero.service';
-import { RegisterUserService } from 'src/app/componentes/services/registerUser.service';
-import { Pasajero } from 'src/app/componentes/interfaces/pasajero';
 
 interface Boletos{
   clase: string;

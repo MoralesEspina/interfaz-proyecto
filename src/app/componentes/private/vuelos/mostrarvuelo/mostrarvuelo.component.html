@@ -1,0 +1,23 @@
+<div class="mat-elevation-z8">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id Vuelo</th>
+        <th scope="col">Id Ruta</th>
+        <th scope="col">Id Avion</th>
+        <th scope="col">Fecha de Salida</th>
+        <th scope="col">Id Estado</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor= "let vuelo of ListaVuelos">
+        <th>{{vuelo.id_vuelo}}</th>
+        <td>{{vuelo.id_ruta}}</td>
+        <td>{{vuelo.id_avion}}</td>
+        <td>{{vuelo.fecha_salida}}</td>
+        <td>{{vuelo.id_estado}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

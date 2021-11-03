@@ -1,4 +1,3 @@
-import { EditarAerolineaComponent } from './componentes/private/aerolinea/editarAerolinea/editar-aerolinea.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -25,11 +24,20 @@ import { RegisterUserComponent } from './componentes/public/register-user/regist
 import { AgregarModeloavionComponent } from './componentes/private/modeloavion/agregarModeloavion/agregar-modeloavion.component';
 import { TablaModeloavionComponent } from './componentes/private/modeloavion/tablaModeloavion/tabla-modelo.component';
 import { ModificarModeloavionComponent } from './componentes/private/modeloavion/modificarModeloavion/modificar-modelo.component';
+
+//Imports Cancelacion de Vuelos
 import { TablaCanvuelosComponent } from './componentes/private/canvuelo/tablaCanvuelos/tablaCanvuelos.component';
 import { FormcanvuelosComponent } from './componentes/private/canvuelo/agregarCanvuelos/agregarCanvuelos.component';
 import { FormularioEditcanvuelosComponent } from './componentes/private/canvuelo/editarCanvuelos/editarCanvuelos.component';
+
+//Imports Aerolineas
 import { AgregarAerolineaComponent } from './componentes/private/aerolinea/agregarAerolinea/agregar-aerolinea.component';
 import { TablaAerolineaComponent } from './componentes/private/aerolinea/tablaAerolinea/tabla-aerolinea.component';
+import { EditarAerolineaComponent } from './componentes/private/aerolinea/editarAerolinea/editar-aerolinea.component';
+
+//Imports Mant Vuelos
+import { MostrarvueloComponent } from './componentes/private/vuelos/mostrarvuelo/mostrarvuelo.component';
+import { CrearvueloComponent } from './componentes/private/vuelos/crearvuelo/crearvuelo.component';
 
 const routes: Routes = [
 
@@ -69,7 +77,11 @@ const routes: Routes = [
   //Direcciones Aerolineas
   {path: 'tablaAerolinea', component:TablaAerolineaComponent},
   {path: 'agregarAerolinea', component:AgregarAerolineaComponent},
-  {path: 'edit/:id_aerolinea', component:EditarAerolineaComponent}
+  {path: 'edit/:id_aerolinea', component:EditarAerolineaComponent},
+
+  //Direcciones Vuelos
+  {path:'crudVuelo', component: MostrarvueloComponent},
+  {path:'agregarVuelo', component: CrearvueloComponent},
 
 ];
 
