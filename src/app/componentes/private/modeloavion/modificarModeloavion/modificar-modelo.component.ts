@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
-import { Modelo, ModeloService } from 'src/app/services/modelo.service';
+import { ModeloAvion } from 'src/app/componentes/interfaces/modeloavion';
+import { ModeloService } from 'src/app/componentes/services/modelo.service';
 
 @Component({
   selector: 'app-modificar-modelo',
   templateUrl: './modificar-modelo.component.html',
   styleUrls: ['./modificar-modelo.component.css']
 })
-export class ModificarrComponent implements OnInit {
-  Modelo: Modelo= {
+export class ModificarModeloavionComponent implements OnInit {
+  Modelo: ModeloAvion= {
     id_modelo:'',
     nombre: '',
     velocidad_media: '',
@@ -44,6 +45,6 @@ export class ModificarrComponent implements OnInit {
       err => console.log(err)
     );
 
- this.router.navigate(['modeloavion'])
+ this.router.navigate(['tablamodelo'])
   }
 }

@@ -1,7 +1,7 @@
-
+import { ModeloAerolinea } from './../../../interfaces/modeloAerolinea';
 import { Component, OnInit } from '@angular/core';
-import {Modelo,aerolineaService} from 'src/app/aerolinea/Service/aerolinea.service';
 import {Router, ActivatedRoute} from '@angular/router';
+import { aerolineaService } from 'src/app/componentes/services/aerolinea.service';
 
 
 @Component({
@@ -9,8 +9,8 @@ import {Router, ActivatedRoute} from '@angular/router';
   templateUrl: './editar-aerolinea.component.html',
   styleUrls: ['./editar-aerolinea.component.css']
 })
-export class EditComponent implements OnInit {
-  Modelo: Modelo= {
+export class EditarAerolineaComponent implements OnInit {
+  ModeloAerolinea: ModeloAerolinea= {
     id_aerolinea:'',
     nombre: '',
   }
@@ -28,7 +28,7 @@ export class EditComponent implements OnInit {
       this.aerolineaService.getunmodelo(id_entrada).subscribe(
         (res: any) => {
 
-          this.Modelo = <any>res[0];
+          this.ModeloAerolinea = <any>res[0];
           console.log(res[0])
 
         },
@@ -39,14 +39,14 @@ export class EditComponent implements OnInit {
 
   }
   modificarAerolinea() {
-    this.aerolineaService.editmodelo(this.Modelo.id_aerolinea, this.Modelo).subscribe(
+    this.aerolineaService.editmodelo(this.ModeloAerolinea.id_aerolinea, this.ModeloAerolinea).subscribe(
       res => {
         console.log(res)
       },
       err => console.log(err)
     );
 
- this.router.navigate(['listar'])
+ this.router.navigate(['tablaAerolinea'])
   }
 
 

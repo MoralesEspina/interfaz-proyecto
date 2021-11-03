@@ -1,7 +1,8 @@
-
+import { ModeloAerolinea } from './../../../interfaces/modeloAerolinea';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { aerolineaService,Modelo } from '../../../services/aerolinea.service';
+import { aerolineaService } from '../../../services/aerolinea.service';
+
 
 
 @Component({
@@ -9,9 +10,9 @@ import { aerolineaService,Modelo } from '../../../services/aerolinea.service';
   templateUrl: './agregar-aerolinea.component.html',
   styleUrls: ['./agregar-aerolinea.component.css']
 })
-export class ListaComponent implements OnInit {
+export class AgregarAerolineaComponent implements OnInit {
 
-  Modelo: Modelo= {
+  ModeloAerolinea: ModeloAerolinea= {
 
     id_aerolinea: '',
     nombre: '',
@@ -24,8 +25,8 @@ export class ListaComponent implements OnInit {
     }
     agregarAerolinea(){
 
-      this.aerolineaService.addmodelo(this.Modelo).subscribe();
-       this.router.navigate(['/listar']);
+      this.aerolineaService.addmodelo(this.ModeloAerolinea).subscribe();
+       this.router.navigate(['/tablaAerolinea']);
      }
 
 }

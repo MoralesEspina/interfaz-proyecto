@@ -1,6 +1,7 @@
+import { Aeropuerto } from './../../../interfaces/aeropuerto';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AeroService,Modelo } from 'src/app/componentes/services/aero.service';
+import { AeropuertoService } from 'src/app/componentes/services/aeropuerto.service';
 
 
 @Component({
@@ -8,22 +9,22 @@ import { AeroService,Modelo } from 'src/app/componentes/services/aero.service';
   templateUrl: './agregarAeropuerto.component.html',
   styleUrls: ['./agregarAeropuerto.component.css']
 })
-export class AgregarComponent implements OnInit {
+export class AgregarAeropuertoComponent implements OnInit {
 
- Modelo: Modelo= {
+ Modelo: Aeropuerto= {
 
     iataCode: '',
     ciudad: '',
     pais: '',
     }
-  constructor(private AeroService:AeroService, private router:Router ) { }
+  constructor(private AeropuertoService:AeropuertoService, private router:Router ) { }
 
   ngOnInit(): void {
   }
   agregar(){
 
 
-   this.AeroService.addmodelo(this.Modelo).subscribe();
+   this.AeropuertoService.addAeropuerto(this.Modelo).subscribe();
     this.router.navigate(['/listaaeropuerto']);
   }
 

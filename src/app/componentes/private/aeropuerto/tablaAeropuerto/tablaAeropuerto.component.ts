@@ -1,6 +1,7 @@
+import { Aeropuerto } from './../../../interfaces/aeropuerto';
 import { Component, OnInit } from '@angular/core';
 
-import { AeroService, Modelo } from 'src/app/componentes/services/aero.service';
+import { AeropuertoService} from 'src/app/componentes/services/aeropuerto.service';
 
 import { Router } from '@angular/router';
 
@@ -10,17 +11,17 @@ import { Router } from '@angular/router';
   templateUrl: './tablaAeropuerto.component.html',
   styleUrls: ['./tablaAeropuerto.component.css']
 })
-export class AeropuertoComponent implements OnInit {
+export class TablaAeropuertoComponent implements OnInit {
 
-  ListarModelos!: Modelo[];
-  constructor(private AeroService:AeroService, private router:Router) { }
+  ListarModelos!: Aeropuerto[];
+  constructor(private AeropuertoService:AeropuertoService, private router:Router) { }
 
   ngOnInit(): void {
     this.listarmodelos();
   }
 
   listarmodelos(){
-    this.AeroService.getModelos().subscribe(
+    this.AeropuertoService.getAeropuertos().subscribe(
       res=>{
         console.log(res)
         this.ListarModelos=<any>res;
@@ -31,7 +32,7 @@ export class AeropuertoComponent implements OnInit {
 
   }
   eliminarr(iataCode:string){
-    this.AeroService.eliminarmodelo(iataCode).subscribe(
+    this.AeropuertoService.eliminarAeropuerto(iataCode).subscribe(
       res=>{
         console.log('Eliminado');
 
@@ -45,8 +46,6 @@ export class AeropuertoComponent implements OnInit {
 
   modificarr(iataCode:string){
     this.router.navigate(['modificarAeropuerto',iataCode])
-
-
   }
 
   Onnuevoo(){

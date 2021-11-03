@@ -1,47 +1,40 @@
 import { Injectable } from '@angular/core';
 import{HttpClient}from '@angular/common/http'
+import { Aeropuerto } from '../interfaces/aeropuerto';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class AeroService {
+export class AeropuertoService {
   url="https://aeropuerto-dw.herokuapp.com/aeropuertos"
   constructor(private http:HttpClient) { }
 
-  getModelos(){
+  getAeropuertos(){
     return this.http.get(this.url);
   }
 
   //get un boleto
-  getunmodelo(iataCode:string){
+  getUnAeropuerto(iataCode:string){
     return this.http.get(this.url+'/'+iataCode);
   }
 
   //Crear
-  addmodelo(modelo:Modelo){
-    return this.http.post(this.url,modelo);
+  addAeropuerto(aeropuerto:Aeropuerto){
+    return this.http.post(this.url,aeropuerto);
 
   }
 
   //eliminar
-  eliminarmodelo(iataCode:string){
+  eliminarAeropuerto(iataCode:string){
     return this.http.delete(this.url+'/'+iataCode);
   }
 
   //modificar
 
-   
 
-
-  editmodelo(id:string, modelo:Modelo){
-    return this.http.put(this.url+'/'+id,modelo);
+  editAeropuerto(id:string, aeropuerto:Aeropuerto){
+    return this.http.put(this.url+'/'+id,aeropuerto);
 
   }
-}
-export interface Modelo {
-   
-  iataCode:any;
-  ciudad: string;
-  pais: string;
 }

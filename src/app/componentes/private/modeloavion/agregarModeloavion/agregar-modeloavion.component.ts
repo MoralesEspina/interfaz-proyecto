@@ -1,7 +1,7 @@
-
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {ModeloService,Modelo } from 'src/app/services/modelo.service';
+import { ModeloAvion } from 'src/app/componentes/interfaces/modeloavion';
+import {ModeloService } from 'src/app/componentes/services/modelo.service';
 
 
 @Component({
@@ -9,10 +9,10 @@ import {ModeloService,Modelo } from 'src/app/services/modelo.service';
   templateUrl: './agregar-modeloavion.component.html',
   styleUrls: ['./agregar-modeloavion.component.css']
 })
-export class ModeloavionComponent implements OnInit {
+export class AgregarModeloavionComponent implements OnInit {
 
 
-  Modelo: Modelo= {
+  Modelo: ModeloAvion= {
    id_modelo:'',
     nombre: '',
     velocidad_media: '',
@@ -28,8 +28,8 @@ export class ModeloavionComponent implements OnInit {
   agregarModelo(){
 
     delete this.Modelo.id_modelo;
-   this.ModeloService.addmodelo(this.Modelo).subscribe();
-    this.router.navigate(['/modeloavion']);
+    this.ModeloService.addmodelo(this.Modelo).subscribe();
+    this.router.navigate(['/tablamodelo']);
   }
 
 }

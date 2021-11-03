@@ -1,20 +1,21 @@
+import { Aeropuerto } from './../../../interfaces/aeropuerto';
 import { Component, OnInit } from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
-import { AeroService, Modelo } from 'src/app/componentes/services/aero.service';
+import { AeropuertoService } from 'src/app/componentes/services/aeropuerto.service';
 
 @Component({
   selector: 'app-modificar-aeropuerto',
   templateUrl: './modificarAeropuerto.component.html',
   styleUrls: ['./modificarAeropuerto.component.css']
 })
-export class ModificarComponent implements OnInit {
+export class ModificarAeropuertoComponent implements OnInit {
 
-  Modelo: Modelo= {
+  Modelo: Aeropuerto= {
   iataCode: '',
   ciudad: '',
   pais: '',
   }
-  constructor(private AeroService:AeroService, private router:Router, private ActiveRoute:ActivatedRoute) { }
+  constructor(private AeropuertoService:AeropuertoService, private router:Router, private ActiveRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
 
@@ -23,7 +24,7 @@ export class ModificarComponent implements OnInit {
     console.log('Id de entrada:' + id_entrada);
 
     if (id_entrada) {
-      this.AeroService.getunmodelo(id_entrada).subscribe(
+      this.AeropuertoService.getUnAeropuerto(id_entrada).subscribe(
         (res: any) => {
 
           this.Modelo = <any>res[0];
@@ -39,7 +40,7 @@ export class ModificarComponent implements OnInit {
 
   }
   modificar() {
-    this.AeroService.editmodelo(this.Modelo.iataCode, this.Modelo).subscribe(
+    this.AeropuertoService.editAeropuerto(this.Modelo.iataCode, this.Modelo).subscribe(
       res => {
         console.log(res)
       },

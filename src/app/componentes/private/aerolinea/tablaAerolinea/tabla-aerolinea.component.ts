@@ -1,6 +1,6 @@
-
+import { ModeloAerolinea } from './../../../interfaces/modeloAerolinea';
 import { Component, OnInit } from '@angular/core';
-import {aerolineaService, Modelo} from 'src/app/aerolinea/Service/aerolinea.service';
+import {aerolineaService} from 'src/app/componentes/services/aerolinea.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,9 +8,9 @@ import { Router } from '@angular/router';
   templateUrl: './tabla-aerolinea.component.html',
   styleUrls: ['./tabla-aerolinea.component.css']
 })
-export class AddComponent implements OnInit {
+export class TablaAerolineaComponent implements OnInit {
 
-  ListarModelos!: Modelo[];
+  ListarModelos!: ModeloAerolinea[];
   constructor(private aerolineaService:aerolineaService, private router:Router) { }
 
   ngOnInit(): void {
@@ -31,7 +31,7 @@ export class AddComponent implements OnInit {
       res=>{
         console.log('Eliminado');
         this.ListarModelos;
-        this.router.navigate(['/listar']);
+        this.router.navigate(['/tablaAerolinea']);
 
 
       },
@@ -42,7 +42,7 @@ export class AddComponent implements OnInit {
     this.router.navigate(['/edit/'+id_aerolinea])
   }
   OnnuevaAerolinea(){
-    this.router.navigate(["add"])
+    this.router.navigate(["agregarAerolinea"])
     }
 
 

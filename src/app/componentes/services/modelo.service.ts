@@ -1,22 +1,15 @@
-import { ModeloAerolinea } from './../interfaces/modeloAerolinea';
 import { Injectable } from '@angular/core';
 import{HttpClient}from '@angular/common/http'
+import { ModeloAvion } from '../interfaces/modeloavion';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class aerolineaService {
-
+export class ModeloService {
+  url="https://aeropuerto-dw.herokuapp.com/modelos"
 
   constructor(private http:HttpClient) { }
-
-  url="https://aeropuerto-dw.herokuapp.com/aerolineas"
-
-
-  getAerolinea(){
-    return this.http.get<aerolineaService[]>(this.url);
-  }
 
   getModelos(){
     return this.http.get(this.url);
@@ -26,7 +19,9 @@ export class aerolineaService {
   getunmodelo(id:string){
     return this.http.get(this.url+'/'+id);
   }
-  addmodelo(modelo:ModeloAerolinea){
+
+  //Crear
+  addmodelo(modelo:ModeloAvion){
     return this.http.post(this.url,modelo);
 
   }
@@ -37,11 +32,10 @@ export class aerolineaService {
   }
 
   //modificar
-  editmodelo(id:string, modelo:ModeloAerolinea){
+  editmodelo(id:string, modelo:ModeloAvion){
     return this.http.put(this.url+'/'+id,modelo);
 
   }
-
-
 }
+
 

@@ -1,3 +1,4 @@
+import { ModificarModeloavionComponent } from './componentes/private/modeloavion/modificarModeloavion/modificar-modelo.component';
 import { RegisterUserComponent } from './componentes/public/register-user/register-user.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -29,10 +30,18 @@ import "@angular/compiler";
 import { TablaVDisponibleComponent } from './componentes/public/tabla-vdisponible/tabla-vdisponible.component';
 import { MostrarPasajerosTablaComponent } from './componentes/public/vuelo/mostrar-pasajeros-tabla/mostrar-pasajeros-tabla.component';
 import { MostrarTablaComponent } from './componentes/public/vuelo/mostrar-personas-tabla/mostrar-tabla.component';
-import { AeropuertoComponent } from './componentes/private/aeropuerto/tablaAeropuerto/tablaAeropuerto.component';
-import { AgregarComponent } from './componentes/private/aeropuerto/agregarAeropuerto/agregarAeropuerto.component';
-import { ModificarComponent } from './componentes/private/aeropuerto/modificarAeropuerto/modificarAeropuerto.component';
+import { AgregarAeropuertoComponent } from './componentes/private/aeropuerto/agregarAeropuerto/agregarAeropuerto.component';
+import { ModificarAeropuertoComponent } from './componentes/private/aeropuerto/modificarAeropuerto/modificarAeropuerto.component';
 import { LoginComponent } from './componentes/public/login/login.component';
+import { TablaCanvuelosComponent } from './componentes/private/canvuelo/tablaCanvuelos/tablaCanvuelos.component';
+import { TablaAeropuertoComponent } from './componentes/private/aeropuerto/tablaAeropuerto/tablaAeropuerto.component';
+import { FormularioEditcanvuelosComponent } from './componentes/private/canvuelo/editarCanvuelos/editarCanvuelos.component';
+import { FormcanvuelosComponent } from './componentes/private/canvuelo/agregarCanvuelos/agregarCanvuelos.component';
+import { AgregarAerolineaComponent } from './componentes/private/aerolinea/agregarAerolinea/agregar-aerolinea.component';
+import { EditarAerolineaComponent } from './componentes/private/aerolinea/editarAerolinea/editar-aerolinea.component';
+import { TablaAerolineaComponent } from './componentes/private/aerolinea/tablaAerolinea/tabla-aerolinea.component';
+import { AgregarModeloavionComponent } from './componentes/private/modeloavion/agregarModeloavion/agregar-modeloavion.component';
+import { TablaModeloavionComponent } from './componentes/private/modeloavion/tablaModeloavion/tabla-modelo.component';
 
 
 @NgModule({
@@ -40,16 +49,38 @@ import { LoginComponent } from './componentes/public/login/login.component';
     AppComponent,
     NavComponent,
     PrincipalComponent,
-    AeropuertoComponent,
-    AgregarComponent,
-    ModificarComponent,
-    PrincipalComponent,
+
+    //Aeropuertos Componentes
+    TablaAeropuertoComponent,
+    AgregarAeropuertoComponent,
+    ModificarAeropuertoComponent,
+
+    //Vuelos Disponibles Componente
     TablaVDisponibleComponent,
+
+    //Login y Registro Componentes
     LoginComponent,
     RegisterComponent,
     RegisterUserComponent,
+
+    // Pasajeros Componentes
     MostrarPasajerosTablaComponent,
-    MostrarTablaComponent
+    MostrarTablaComponent,
+
+    //Cancelacion de Vuelos Componentes
+    TablaCanvuelosComponent,
+    FormularioEditcanvuelosComponent,
+    FormcanvuelosComponent,
+
+    //Aerolinea Componentes
+    AgregarAerolineaComponent,
+    EditarAerolineaComponent,
+    TablaAerolineaComponent,
+
+    //Modelo Avion Componentes
+    ModificarModeloavionComponent,
+    AgregarModeloavionComponent,
+    TablaModeloavionComponent,
 
   ],
   imports: [
