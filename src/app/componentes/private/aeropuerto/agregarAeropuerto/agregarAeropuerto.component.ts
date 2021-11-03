@@ -2,6 +2,8 @@ import { Aeropuerto } from './../../../interfaces/aeropuerto';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AeropuertoService } from 'src/app/componentes/services/aeropuerto.service';
+import { FormBuilder, Validators } from '@angular/forms';
+
 
 
 @Component({
@@ -11,20 +13,31 @@ import { AeropuertoService } from 'src/app/componentes/services/aeropuerto.servi
 })
 export class AgregarAeropuertoComponent implements OnInit {
 
- Modelo: Aeropuerto= {
+  addressForm = this.fb.group({
+    iataCode: [''],
+    ciudad: ['', Validators.required],
+    pais: ['', Validators.required],
+  });
 
-    iataCode: '',
-    ciudad: '',
-    pais: '',
-    }
-  constructor(private AeropuertoService:AeropuertoService, private router:Router ) { }
+
+  constructor(private _aeropuertoService: AeropuertoService, private router: Router, private fb: FormBuilder) { }
 
   ngOnInit(): void {
   }
-  agregar(){
+  agregar() {
+
 
     this.AeropuertoService.addAeropuerto(this.Modelo).subscribe();
     this.router.navigate(['/listaaeropuerto']);
+
+    const aeropuerto: Aeropuerto = {
+      iataCode: this.addressForm.value.iataCode,
+      ciudad: this.addressForm.value.ciudad,
+      pais: this.addressForm.value.pais,
+    }
+    this._aeropuertoService.addAeropuerto(aeropuerto);
+    console.log(aeropuerto);
+    //this.router.navigate(['/listaAeropuertos']);
   }
 
 }

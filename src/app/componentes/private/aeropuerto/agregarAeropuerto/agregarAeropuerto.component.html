@@ -1,22 +1,7 @@
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-</head>
-<mat-toolbar style="background-color:rgb(241, 218, 87);" >
-  <span>AGREGAR AEROPUERTO</span>
-  <div class="example-spacer"></div>
-
-</mat-toolbar>
-
-<body>
-
-<div class="container">
-    <p>Agregar Aeropuerto</p>
+<body class="body">
+  <div class="container">
     <div class="row">
+
       <div class="col-sm-6">
         <form>
           <div class="mb3">
@@ -45,9 +30,38 @@
         <form>
 
         </form>
-      </div>
 
+          <form [formGroup]="addressForm" novalidate (ngSubmit)="agregar()">
+            <mat-card class="card">
+              <h1 class=" text-center">Agregar Aeropuerto</h1>
+            <mat-form-field appearance="fill">
+              <input matInput placeholder="IataCode" formControlName="iataCode">
+              <mat-error *ngIf="addressForm.controls['iataCode'].hasError('required')">
+                <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <input matInput placeholder="Ciudad" formControlName="ciudad">
+              <mat-error *ngIf="addressForm.controls['ciudad'].hasError('required')">
+                <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <input matInput placeholder="Pais" formControlName="pais">
+              <mat-error *ngIf="addressForm.controls['pais'].hasError('required')">
+                <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+            <mat-card-actions style="text-align: center;">
+              <button mat-raised-button [disabled]="addressForm.invalid" class="btn btn-info"
+                type="submit">Agregar</button>
+            </mat-card-actions>
+          </mat-card>
+          </form>
+
+      </div>
     </div>
 
-  </div>
 </body>

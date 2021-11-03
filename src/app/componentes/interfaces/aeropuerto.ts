@@ -1,6 +1,5 @@
 export interface Aeropuerto {
-
-  iataCode:any;
+  iataCode:string;
   ciudad: string;
   pais: string;
 }
