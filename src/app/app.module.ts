@@ -28,7 +28,6 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import "@angular/compiler";
 import { TablaVDisponibleComponent } from './componentes/public/tabla-vdisponible/tabla-vdisponible.component';
-import { MostrarPasajerosTablaComponent } from './componentes/public/vuelo/mostrar-pasajeros-tabla/mostrar-pasajeros-tabla.component';
 import { MostrarTablaComponent } from './componentes/public/vuelo/mostrar-personas-tabla/mostrar-tabla.component';
 import { AgregarAeropuertoComponent } from './componentes/private/aeropuerto/agregarAeropuerto/agregarAeropuerto.component';
 import { ModificarAeropuertoComponent } from './componentes/private/aeropuerto/modificarAeropuerto/modificarAeropuerto.component';
@@ -66,7 +65,6 @@ import { MostrarvueloComponent } from './componentes/private/vuelos/mostrarvuelo
     RegisterUserComponent,
 
     // Pasajeros Componentes
-    MostrarPasajerosTablaComponent,
     MostrarTablaComponent,
 
     //Cancelacion de Vuelos Componentes

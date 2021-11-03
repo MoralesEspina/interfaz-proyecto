@@ -21,20 +21,19 @@ export class AeropuertoService {
 
   //Crear
   addAeropuerto(aeropuerto:Aeropuerto){
-    return this.http.post(this.url,aeropuerto);
+    console.log("hola")
+  this.http.post(this.url,aeropuerto)
 
   }
 
   //eliminar
   eliminarAeropuerto(iataCode:string){
-    return this.http.delete(this.url+'/'+iataCode);
+   this.http.delete(this.url+'/'+iataCode);
   }
 
   //modificar
-
-
   editAeropuerto(id:string, aeropuerto:Aeropuerto){
-    return this.http.put(this.url+'/'+id,aeropuerto);
+  this.http.put(this.url+'/'+id,aeropuerto);
 
   }
 }

@@ -7,7 +7,6 @@ import { TablaVDisponibleComponent } from './componentes/public/tabla-vdisponibl
 
 //Imports Pasajeros
 import { MostrarTablaComponent } from './componentes/public/vuelo/mostrar-personas-tabla/mostrar-tabla.component';
-import { MostrarPasajerosTablaComponent } from './componentes/public/vuelo/mostrar-pasajeros-tabla/mostrar-pasajeros-tabla.component';
 
 //Imports Aeropuertos
 import { AgregarAeropuertoComponent } from './componentes/private/aeropuerto/agregarAeropuerto/agregarAeropuerto.component';
@@ -61,8 +60,6 @@ const routes: Routes = [
   //Direcciones Pasajeros
   {path:'vuelo', component: MostrarTablaComponent},
   {path:'agregar-personas', component: MostrarTablaComponent},
-  {path:'pasajeros', component: MostrarPasajerosTablaComponent},
-  {path:'mostrar-pasajeros', component: MostrarPasajerosTablaComponent},
 
   //Direcciones Modelo de Avion
   {path: 'tablamodelo',component:TablaModeloavionComponent},
