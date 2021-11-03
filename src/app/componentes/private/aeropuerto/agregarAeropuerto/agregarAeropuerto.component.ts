@@ -25,11 +25,6 @@ export class AgregarAeropuertoComponent implements OnInit {
   ngOnInit(): void {
   }
   agregar() {
-
-
-    this.AeropuertoService.addAeropuerto(this.Modelo).subscribe();
-    this.router.navigate(['/listaaeropuerto']);
-
     const aeropuerto: Aeropuerto = {
       iataCode: this.addressForm.value.iataCode,
       ciudad: this.addressForm.value.ciudad,
