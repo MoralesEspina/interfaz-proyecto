@@ -33,6 +33,8 @@ import { ModificarComponent } from './componentes/private/aeropuerto/COMPONENTE/
 import { TablaVDisponibleComponent } from './componentes/public/tabla-vdisponible/tabla-vdisponible.component';
 import { MostrarPasajerosTablaComponent } from './componentes/public/vuelo/mostrar-pasajeros-tabla/mostrar-pasajeros-tabla.component';
 import { MostrarTablaComponent } from './componentes/public/vuelo/mostrar-personas-tabla/mostrar-tabla.component';
+import { CrearvueloComponent } from './componentes/private/vuelos/crearvuelo/crearvuelo.component';
+import { MostrarvueloComponent } from './componentes/private/vuelos/mostrarvuelo/mostrarvuelo.component';
 
 
 @NgModule({
@@ -49,7 +51,10 @@ import { MostrarTablaComponent } from './componentes/public/vuelo/mostrar-person
     RegisterComponent,
     RegisterUserComponent,
     MostrarPasajerosTablaComponent,
-    MostrarTablaComponent
+    MostrarTablaComponent,
+    CrearvueloComponent,
+    MostrarvueloComponent
+
 
   ],
   imports: [

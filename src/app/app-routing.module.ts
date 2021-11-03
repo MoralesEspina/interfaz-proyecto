@@ -10,6 +10,8 @@ import { ModificarComponent } from './componentes/private/aeropuerto/COMPONENTE/
 import { AeropuertoComponent } from './componentes/private/aeropuerto/COMPONENTE/tablaAeropuerto.component';
 import { MostrarTablaComponent } from './componentes/public/vuelo/mostrar-personas-tabla/mostrar-tabla.component';
 import { MostrarPasajerosTablaComponent } from './componentes/public/vuelo/mostrar-pasajeros-tabla/mostrar-pasajeros-tabla.component';
+import { MostrarvueloComponent } from './componentes/private/vuelos/mostrarvuelo/mostrarvuelo.component';
+import { CrearvueloComponent } from './componentes/private/vuelos/crearvuelo/crearvuelo.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'/inicio',pathMatch:'full'},
@@ -25,6 +27,8 @@ const routes: Routes = [
   {path:'pasajeros', component: MostrarPasajerosTablaComponent},
   {path:'mostrar-pasajeros', component: MostrarPasajerosTablaComponent},
   {path:'register_user', component: RegisterUserComponent},
+  {path:'crudVuelo', component: MostrarvueloComponent},
+  {path:'agregarVuelo', component: CrearvueloComponent},
 
 ];
 

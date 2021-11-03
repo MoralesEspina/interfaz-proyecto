@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { VuelocrudService } from './../../services/vuelocrud.service';
+import { VuelocrudService } from '../../../services/vuelocrud.service';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';

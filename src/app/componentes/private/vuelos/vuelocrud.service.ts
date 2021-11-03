@@ -1,5 +1,4 @@
-import { MostrarvueloItem } from './../private/mostrarvuelo/mostrarvuelo-datasource';
-import { Observable } from 'rxjs';
+import { MostrarvueloItem } from '../private/vuelos/mostrarvuelo/mostrarvuelo-datasource';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -7,7 +6,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class VuelocrudService {
-  url = 'http://localhost:3000/vuelos'
+  url = 'https://aeropuerto-dw.herokuapp.com/vuelos'
 
   constructor(private Http: HttpClient) { }
   getvuelo(){

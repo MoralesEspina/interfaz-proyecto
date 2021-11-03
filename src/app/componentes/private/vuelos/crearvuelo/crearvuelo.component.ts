@@ -1,8 +1,8 @@
-import { VuelocrudService } from './../../services/vuelocrud.service';
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { MostrarvueloItem } from '../mostrarvuelo/mostrarvuelo-datasource';
+import { VuelocrudService } from 'src/app/componentes/services/vuelocrud.service';
 
 @Component({
   selector: 'app-crearvuelo',
