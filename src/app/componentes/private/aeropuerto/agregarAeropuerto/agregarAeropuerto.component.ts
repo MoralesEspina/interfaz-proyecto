@@ -1,6 +1,10 @@
 import { Aeropuerto } from './../../../interfaces/aeropuerto';
 import { Component, OnInit } from '@angular/core';
+
 import { ActivatedRoute, Router } from '@angular/router';
+
+import { Router, RouterModule } from '@angular/router';
+
 import { AeropuertoService } from 'src/app/componentes/services/aeropuerto.service';
 import { FormBuilder, Validators } from '@angular/forms';
 
@@ -26,7 +30,6 @@ export class AgregarAeropuertoComponent implements OnInit {
   });
 
   editing: boolean = false;
-
   constructor(private _aeropuertoService: AeropuertoService,
     private _router: Router,
     private fb: FormBuilder,
@@ -35,7 +38,6 @@ export class AgregarAeropuertoComponent implements OnInit {
   ngOnInit(): void {
     this.cargarAeropuertos();
   }
-
   cargarAeropuertos() {
     const id_entrada = this._activatedRoute.snapshot.params.iataCode;
     if (id_entrada) {
@@ -68,4 +70,8 @@ export class AgregarAeropuertoComponent implements OnInit {
     this._router.navigate(['/listaAeropuertos']);
   }
 }
+    console.log(aeropuerto);
+    this.router.navigate(['/listaAeropuertos'] );
+  }
+
 }

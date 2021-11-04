@@ -8,6 +8,7 @@ import { NavComponent } from './nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
@@ -48,6 +49,7 @@ import { MostrarTablaComponent } from './componentes/public/vuelo/mostrar-tabla.
     NavComponent,
     PrincipalComponent,
 
+
     //Aeropuertos Componentes
     TablaAeropuertoComponent,
     AgregarAeropuertoComponent,
@@ -82,6 +84,7 @@ import { MostrarTablaComponent } from './componentes/public/vuelo/mostrar-tabla.
 
   ],
   imports: [
+    MatTooltipModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
