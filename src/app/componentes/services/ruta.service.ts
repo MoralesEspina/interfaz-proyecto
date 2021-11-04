@@ -1,5 +1,5 @@
-import { Ruta } from './../../interfaz/ruta';
-import { TablaPagosItem } from './../pagos/tabla-pagos/tabla-pagos-datasource';
+import { Ruta } from '../../interfaz/ruta';
+import { TablaPagosItem } from '../pagos/tabla-pagos/tabla-pagos-datasource';
 import { TablaRutasItem } from '../rutas/tabla-rutas/tabla-rutas-datasource';
 
 import { Observable } from 'rxjs';

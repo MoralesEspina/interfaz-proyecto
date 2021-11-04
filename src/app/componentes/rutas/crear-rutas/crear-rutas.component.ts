@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { ApiService } from './../../services/api.service';
+import { ApiService } from '../../services/ruta.service';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TablaRutasItem } from '../tabla-rutas/tabla-rutas-datasource';

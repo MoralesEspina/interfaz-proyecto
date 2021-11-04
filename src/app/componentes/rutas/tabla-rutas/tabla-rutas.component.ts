@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { ApiService } from './../../services/api.service';
+import { ApiService } from '../../services/ruta.service';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';

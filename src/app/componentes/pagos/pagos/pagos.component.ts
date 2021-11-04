@@ -1,5 +1,5 @@
 import { TablaPagosItem } from './../tabla-pagos/tabla-pagos-datasource';
-import { ApiService } from './../../services/api.service';
+import { ApiService } from '../../services/ruta.service';
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
