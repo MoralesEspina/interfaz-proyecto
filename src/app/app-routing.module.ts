@@ -47,9 +47,16 @@ import { TablaRutasComponent } from './componentes/public/rutas/tabla-rutas/tabl
 import { PrincipalAdminComponent } from './componentes/private/principal-admin/principal-admin.component';
 
 
+import { TablaCanboletosComponent } from './componentes/private/canboleto/tablaCanboletos/tablaCanboletos.component';
+import { FormularioEditcanboletosComponent } from './componentes/private/canboleto/editarCanboletos/editarCanboletos.component';
+
+
 const routes: Routes = [
 
-  {path:'principalAdmin', component: PrincipalAdminComponent},
+  {path:'principalAdmin', component: PrincipalAdminComponent, canActivate:[AuthGuard,RoleGuardGuard],
+  data:{
+    expectedRoles: ['Admin']
+  } },
 
   //Direcciones Inicio
   {path:'', redirectTo:'/inicio',pathMatch:'full'},
@@ -98,6 +105,10 @@ const routes: Routes = [
   {path:'modificarRuta/:id_ruta', component: CrearRutasComponent, canActivate:[AuthGuard]},
   {path:'tablaRuta', component: TablaRutasComponent, canActivate:[AuthGuard]},
 
+  //Direcciones Can Boletos
+  {path:'tablaCanBoletos', component: TablaCanboletosComponent, canActivate:[AuthGuard]},
+  {path:'addcancelacion_boletos', component: FormcanvuelosComponent, canActivate:[AuthGuard]},
+  {path:'editcancelacion_boletos/:id_cancelacion_boletos', component: FormularioEditcanboletosComponent, canActivate:[AuthGuard]},
 ];
 
 @NgModule({

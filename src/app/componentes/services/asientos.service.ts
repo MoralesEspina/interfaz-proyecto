@@ -7,23 +7,23 @@ import { AsientoOcupado } from '../interfaces/asientosOcupados';
 })
 export class AsientosService {
 
-  url='https://aeropuerto-dw.herokuapp.com/asientos';
+  url='https://aeropuerto-dw.herokuapp.com/';
   constructor(private http:HttpClient) { }
 
 
   postAsientos(asiento:Asiento)
   {
-    return this.http.post(this.url, asiento).subscribe(
+    return this.http.post(this.url + 'asientos', asiento).subscribe(
       res => console.log(res)
     )
   }
 
   comprobarAsientos( asientoOcupado:AsientoOcupado){
-    return this.http.post('http://localhost:3000/asientosocupados', asientoOcupado)
+    return this.http.post(this.url +'asientosocupados', asientoOcupado)
   }
 
   asientoOcupado(asientoOcupado:AsientoOcupado){
-    return this.http.post('http://localhost:3000/insertarasientosocupados', asientoOcupado).subscribe(
+    return this.http.post(this.url +'insertarasientosocupados', asientoOcupado).subscribe(
       res => console.log(res)
     )
   }

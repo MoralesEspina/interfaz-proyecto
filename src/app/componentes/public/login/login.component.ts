@@ -4,6 +4,10 @@ import { Router } from '@angular/router';
 import { Usuario } from 'src/app/componentes/interfaces/usuario';
 import { SecurityService } from 'src/app/componentes/services/security.service';
 
+export interface log{
+  rol: string;
+}
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -25,6 +29,7 @@ export class LoginComponent {
   });
 
   hasUnitNumber = false;
+  rol: log;
 
   constructor(private fb: FormBuilder, private _security: SecurityService, private _router: Router) {}
 
@@ -32,8 +37,13 @@ export class LoginComponent {
     this._security.login(this._usuario).subscribe(
       (res) =>{
         localStorage.setItem('token', res.token);
-        this._router.navigate(['inicio']);
+        this.rol = this.getRol(res.token);
+        this._router.navigate(['navcomponent']);
       }
     )
+  }
+
+  private getRol(token: string): log{
+    return JSON.parse(atob(token.split('.')[1])) as log;
   }
 }
