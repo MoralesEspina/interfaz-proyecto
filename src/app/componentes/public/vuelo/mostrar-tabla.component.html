@@ -111,39 +111,22 @@
         <div class="col order-first">
           <div class="card2">
             <mat-card class="row">
-              <h1 class=" text-center mb-5">Asiento</h1>
+              <h1 class=" text-center ">Asiento</h1>
+              <p>Rojo = Clase Ejecutiva</p>
+              <p>Celeste = Clase Economica</p>
               <mat-card-content>
-                <!--<div style="text-align: center;">
-                  <mat-form-field appearance="fill">
-                    <mat-label>Asiento</mat-label>
-                    <mat-select formControlName='num_asiento'>
-                      <mat-option *ngFor="let asiento of collection1" [value]="asiento">
-                        {{asiento.numero}}{{asiento.letra}}
-                      </mat-option>
-                    </mat-select>
-                  </mat-form-field>
-                </div>
-                <mat-form-field appearance="fill">
-                  <mat-label>Clase</mat-label>
-                  <mat-select formControlName='clase'>
-                    <mat-option *ngFor="let clase of collection2" [value]="clase">
-                      {{clase.tipo_clase}}, ${{clase.precio}}
-                    </mat-option>
-                  </mat-select>
-                </mat-form-field>
-                -->
                 <div class = "container mb-5">
                   <div class="row">
                     <div class="col order-first">
-                  <button mat-raised-button [disabled] = "asientosbool[1]" class="btn btn-info" (click)="crearAsiento('1')" type = "button" >1A</button>
-                  <button mat-raised-button [disabled] = "asientosbool[2]" class="btn btn-info" (click)="crearAsiento('2')" type = "button">2A</button>
-                  <button mat-raised-button [disabled] = "asientosbool[3]" class="btn btn-info" (click)="crearAsiento('3')" type = "button">3A</button>
-                  <button mat-raised-button [disabled] = "asientosbool[4]" class="btn btn-info" (click)="crearAsiento('4')" type = "button">4A</button>
-                  <button mat-raised-button [disabled] = "asientosbool[5]" class="btn btn-info" (click)="crearAsiento('5')" type = "button">5A</button>
-                  <button mat-raised-button [disabled] = "asientosbool[6]" class="btn btn-info" (click)="crearAsiento('6')" type = "button">6A</button>
+                  <button mat-raised-button [disabled] = "asientosbool[1]" class="btn2 btn-info" (click)="crearAsiento('1')" type = "button" >1A</button>
+                  <button mat-raised-button [disabled] = "asientosbool[2]" class="btn2 btn-info" (click)="crearAsiento('2')" type = "button">2A</button>
+                  <button mat-raised-button [disabled] = "asientosbool[3]" class="btn2 btn-info" (click)="crearAsiento('3')" type = "button">3A</button>
+                  <button mat-raised-button [disabled] = "asientosbool[4]" class="btn2 btn-info" (click)="crearAsiento('4')" type = "button">4A</button>
+                  <button mat-raised-button [disabled] = "asientosbool[5]" class="btn2 btn-info" (click)="crearAsiento('5')" type = "button">5A</button>
+                  <button mat-raised-button [disabled] = "asientosbool[6]" class="btn2 btn-info" (click)="crearAsiento('6')" type = "button">6A</button>
 
-                  <button mat-raised-button [disabled] = "asientosbool[7]" class="btn btn-info" (click)="crearAsiento('7')" type = "button">7A</button>
-                  <button mat-raised-button [disabled] = "asientosbool[8]" class="btn btn-info" (click)="crearAsiento('8')" type = "button">8A</button>
+                  <button mat-raised-button [disabled] = "asientosbool[7]" class="btn2 btn-info" (click)="crearAsiento('7')" type = "button">7A</button>
+                  <button mat-raised-button [disabled] = "asientosbool[8]" class="btn2 btn-info" (click)="crearAsiento('8')" type = "button">8A</button>
                 </div>
                   <div class="col order-last">
                   <button mat-raised-button [disabled] = "asientosbool[9]" class="btn btn-info" (click)="crearAsiento('9')" type = "button">1B</button>

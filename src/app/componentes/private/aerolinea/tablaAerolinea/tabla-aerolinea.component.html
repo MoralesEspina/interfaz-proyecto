@@ -20,12 +20,12 @@
               <tr *ngFor="let modelo of ListarModelos" class=" text-center">
                 <td>{{modelo.nombre}}</td>
                 <td class="puntero" (click)="modificarAerolinea(modelo.id_aerolinea)" style="color:rgb(142, 191, 247)"
-                matTooltip="Editar Aeropuerto">
+                matTooltip="Editar Aerolinea">
                 <mat-icon>edit</mat-icon>
               </td>
 
               <td class="puntero" (click)="eliminarAerolinea(modelo.id_aerolinea)" style="color :rgba(187, 76, 76, 0.952)"
-                matTooltip="Eliminar Aeropuerto">
+                matTooltip="Eliminar Aerolinea">
                 <mat-icon>delete</mat-icon>
               </td>
 

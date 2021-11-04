@@ -6,21 +6,23 @@
 
 }
 .btn{
-  background-color:rgba(142, 222, 247, 0.897);
+  background-color:rgba(142, 240, 247, 0.897);
 }
-
+.btn2{
+  background-color:rgba(247, 158, 142, 0.897);
+}
 ::ng-deep .mat-form-field{ width:400px !important; }
 
 .card {
   max-width: 506px;
-  margin: 30px 3px 0px 50px;
+  margin: 30px 3px 0px 250px;
   text-align: left;
 }
 .card2 {
   width: 250px;
   max-width: 250px;
   min-width: 250px;
-  margin: -362px 100px 30px 680px;
+  margin: -362px 100px 30px 800px;
   text-align: center;
   justify-content: left;
   align-content: right;

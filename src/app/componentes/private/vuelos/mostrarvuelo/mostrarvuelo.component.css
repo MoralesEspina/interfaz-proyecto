@@ -4,7 +4,10 @@
 
 }
 
-
+.mat-form-field2 {
+  font-size: 14px;
+  width: 100%;
+}
 .puntero{
   cursor: pointer;
 
