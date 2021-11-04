@@ -38,7 +38,7 @@ export class LoginComponent {
       (res) =>{
         localStorage.setItem('token', res.token);
         this.rol = this.getRol(res.token);
-        this._router.navigate(['navcomponent']);
+        this._router.navigate(['principalAdmin']);
       }
     )
   }

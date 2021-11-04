@@ -19,9 +19,12 @@ export class CanvuelosService {
     return this.http.get(this.url+'/'+id_vuelo);
   }
 
-  addVuelos(canvuelos: canvuelos) {
-    return this.http.post(this.url, canvuelos);
+  addCanVuelos(canvuelos: canvuelos) {
+    return this.http.post(this.url, canvuelos).subscribe(
+      res => console.log(res)
+    );
   }
+
 
   updateVuelos(id: string, canvuelos: canvuelos){
     return this.http.put(this.url+'/'+id,canvuelos);
@@ -32,7 +35,6 @@ export class CanvuelosService {
     return this.http.put(this.url1+'/'+id, vuelos);
 
   }
-
 
 }
 export interface canvuelos {

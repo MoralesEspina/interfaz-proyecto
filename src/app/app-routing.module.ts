@@ -54,10 +54,7 @@ import { FormcanboletosComponent } from './componentes/private/canboleto/agregar
 
 const routes: Routes = [
 
-  {path:'principalAdmin', component: PrincipalAdminComponent, canActivate:[AuthGuard,RoleGuardGuard],
-  data:{
-    expectedRoles: ['Admin']
-  } },
+  {path:'principalAdmin', component: PrincipalAdminComponent, canActivate:[AuthGuard]},
 
   //Direcciones Inicio
   {path:'', redirectTo:'/inicio',pathMatch:'full'},

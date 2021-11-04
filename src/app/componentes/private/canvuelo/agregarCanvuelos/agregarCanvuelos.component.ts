@@ -39,7 +39,7 @@ export class FormcanvuelosComponent {
       id_cancelacion_vuelos: undefined,
       estado:"1",
     }
-    this.servicecan.addVuelos(cancelvuelos);
+    this.servicecan.addCanVuelos(cancelvuelos);
     console.log(cancelvuelos);
     alert('Guardado Correctamente');
       this.router.navigate(['/cancelacion_vuelos']);
