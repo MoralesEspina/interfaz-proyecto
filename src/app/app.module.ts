@@ -23,7 +23,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PrincipalComponent } from './principal/principal.component';
-import { RegisterComponent } from './componentes/public/register/register.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import "@angular/compiler";
@@ -59,7 +58,6 @@ import { MostrarTablaComponent } from './componentes/public/vuelo/mostrar-tabla.
 
     //Login y Registro Componentes
     LoginComponent,
-    RegisterComponent,
     RegisterUserComponent,
 
     // Pasajeros Componentes
