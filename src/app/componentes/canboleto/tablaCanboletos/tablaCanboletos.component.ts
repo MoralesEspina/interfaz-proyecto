@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CanboletosService, canboletos } from '../SERVICES/canboletos.service';
+import { CanboletosService, canboletos } from '../../SERVICES/canboletos.service';
 import { Router } from '@angular/router';
 
 @Component({

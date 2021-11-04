@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CanboletosService, canboletos } from '../SERVICES/canboletos.service';
+import { CanboletosService, canboletos } from '../../SERVICES/canboletos.service';
 import { ActivatedRoute } from '@angular/router';
 
 
@@ -17,14 +17,14 @@ export class FormularioEditcanboletosComponent implements OnInit {
     id_boleto: '',
     motivo: '',
     estado: '',
-   
+
   }
- 
+
   addressForm = this.fb.group({
     id_boleto: [null, Validators.required],
     motivo: [null, Validators.required],
     estado: [null, Validators.required],
-    
+
 
   });
 
@@ -56,7 +56,7 @@ export class FormularioEditcanboletosComponent implements OnInit {
       },
       err => console.log(err)
     );
-   
+
   }
 
 
