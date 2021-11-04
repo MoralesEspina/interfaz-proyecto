@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModeloAvion } from 'src/app/componentes/interfaces/modeloavion';
 import {ModeloService } from 'src/app/componentes/services/modelo.service';
@@ -19,10 +20,18 @@ export class AgregarModeloavionComponent implements OnInit {
     asientos_economicos: '',
     asientos_ejecutivos: ''
   }
+  addressForm = this.fb.group({
+    id_modelo:[""],
+    nombre: ['', Validators.required],
+    velocidad_media: ['', Validators.required],
+    asientos_economicos: ['', Validators.required],
+    asientos_ejecutivos: ['', Validators.required]
+  });
   editing: boolean = false;
 
   constructor(  private ModeloService:ModeloService,
                 private router:Router,
+                private fb: FormBuilder,
                 private _activatedRoute: ActivatedRoute ) { }
 
   ngOnInit(): void {
@@ -52,8 +61,14 @@ export class AgregarModeloavionComponent implements OnInit {
       this.router.navigate(['/tablamodelo']);
 
     }else{
-    delete this.Modelo.id_modelo;
-    this.ModeloService.addmodelo(this.Modelo).subscribe();
+      const model: ModeloAvion = {
+        nombre: this.addressForm.value.nombre,
+        velocidad_media: this.addressForm.value.velocidad_media,
+        asientos_ejecutivos: this.addressForm.value.asientos_ejecutivos,
+        asientos_economicos: this.addressForm.value.asientos_economicos,
+        id_modelo: undefined,
+      }
+    this.ModeloService.addmodelo(model).subscribe();
     this.router.navigate(['/tablamodelo']);
   }
 }

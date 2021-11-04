@@ -38,9 +38,14 @@ export class MostrarvueloComponent implements OnInit {
 
   eliminarVuelo(id_vuelo: string) {
     this.VuelocrudService.deleteVuelo(id_vuelo);
+    setTimeout(location.reload.bind(location),500);
   }
 
   OnNuevoModelo() {
   this.router.navigate(['/agregarVuelo']);
   }
+  actualizar(){
+    setTimeout(location.reload.bind(location),200);
+  }
+
 }

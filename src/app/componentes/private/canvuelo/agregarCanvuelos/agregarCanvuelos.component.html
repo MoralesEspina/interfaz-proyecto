@@ -1,47 +1,40 @@
+<body class="body">
+  <div class="container">
+    <div class="row">
+      <form  [formGroup]="addressForm" novalidate (ngSubmit)="agregar()">
+        <mat-card class="card">
+          <h1 class=" text-center">Retraso de Vuelo</h1>
 
-<form [formGroup]="addressForm" novalidate>
-  <body>
-  <mat-card class="shipping-card">
-    <mat-card-header>
-      <mat-card-title>Cancelacion Vuelos</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
+                <mat-form-field class="mat-form-field2" appearance="fill">
+                  <mat-label>Motivo</mat-label>
+                  <textarea  matInput placeholder="Ingrese Motivo" formControlName="motivo" [(ngModel)]="canvuelos.motivo"></textarea>
+                  <mat-error *ngIf="addressForm.controls['motivo'].hasError('required')">
+                    El Motivo es <strong>requerido</strong>
+                  </mat-error>
 
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Ingrese Motivo" formControlName="motivo" [(ngModel)]="canvuelos.motivo">
-            <mat-error *ngIf="addressForm.controls['motivo'].hasError('required')">
-               El Motivo es <strong>requerido</strong>
-            </mat-error>
-          </mat-form-field>
-        </div>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                  <mat-label>Vuelo</mat-label>
+                  <input matInput placeholder="Id Vuelo" formControlName="vuelo" [(ngModel)]="canvuelos.vuelo">
+                  <mat-error *ngIf="addressForm.controls['vuelo'].hasError('required')">
+                    El Vuelo es <strong>requerido</strong>
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                  <mat-label>Fecha Reasignada</mat-label>
+                  <input matInput placeholder="Seleccione Fecha" type="date"
+                    formControlName="fecha_reasignada" [(ngModel)]="canvuelos.fecha_reasignada">
+                  <mat-error *ngIf="addressForm.controls['fecha_reasignada'].hasError('required')">
+                    La Fecha Reasignada es <strong>requerida</strong>
+                  </mat-error>
+                </mat-form-field>
+                <mat-card-actions class="btn">
+                  <button class="btn2" [disabled]="addressForm.invalid" mat-raised-button type="submit" (click)="agregar()">Guardar</button>
+                  <button class="btn2" mat-raised-button type="submit" (click)="regresar()">Regresar</button>
+                </mat-card-actions>
 
-      </div>
-      <div class="row">
-        <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Id Vuelo" formControlName="vuelo" [(ngModel)]="canvuelos.vuelo">
-            <mat-error *ngIf="addressForm.controls['vuelo'].hasError('required')">
-               El Vuelo es <strong>requerido</strong>
-            </mat-error>
-          </mat-form-field>
-        </div>
-        <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput type="datetime-local"  placeholder="Seleccione Fecha" formControlName="fecha_reasignada" [(ngModel)]="canvuelos.fecha_reasignada">
-            <mat-error *ngIf="addressForm.controls['fecha_reasignada'].hasError('required')">
-              La Fecha Reasignada es <strong>requerida</strong>
-            </mat-error>
-          </mat-form-field>
-        </div>
-      </div>
-
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button color="primary" type="submit" (click)="agregar()">Guardar</button>
-      <button mat-raised-button color="primary" type="submit" (click)="regresar()">Regresar</button>
-    </mat-card-actions>
-  </mat-card>
+        </mat-card>
+      </form>
+    </div>
+  </div>
 </body>
-</form>

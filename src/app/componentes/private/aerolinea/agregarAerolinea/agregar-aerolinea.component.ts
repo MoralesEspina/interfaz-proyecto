@@ -2,6 +2,7 @@ import { Aerolinea } from './../../../interfaces/aerolinea';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { aerolineaService } from '../../../services/aerolinea.service';
+import { FormBuilder, Validators } from '@angular/forms';
 
 
 
@@ -16,11 +17,15 @@ export class AgregarAerolineaComponent implements OnInit {
     id_aerolinea: '',
     nombre: '',
     }
-
+    addressForm = this.fb.group({
+      id_aerolinea: [''],
+      nombre: ['', Validators.required],
+    });
     editing: boolean = false;
 
   constructor(private aerolineaService:aerolineaService,
               private router:Router,
+              private fb: FormBuilder,
               private _activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -50,7 +55,11 @@ export class AgregarAerolineaComponent implements OnInit {
         this.router.navigate(['/tablaAerolinea']);
 
       }else{
-      this.aerolineaService.addmodelo(this.ModeloAerolinea).subscribe();
+        const Aero: Aerolinea = {
+          nombre: this.addressForm.value.nombre,
+          id_aerolinea: undefined,
+        }
+      this.aerolineaService.addmodelo(Aero).subscribe();
        this.router.navigate(['/tablaAerolinea']);
      }
     }

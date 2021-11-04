@@ -38,6 +38,7 @@ export class TablaModeloavionComponent implements OnInit {
 
       },
       err=> console.log(err));
+      setTimeout(location.reload.bind(location),500);
   }
 
   modificarModelo(id_modelo:string){
@@ -48,7 +49,9 @@ export class TablaModeloavionComponent implements OnInit {
   OnnuevoModelo(){
     this.router.navigate(["agregarmodelo"])
     }
-
+    actualizar(){
+      setTimeout(location.reload.bind(location),100);
+    }
 
 
 
