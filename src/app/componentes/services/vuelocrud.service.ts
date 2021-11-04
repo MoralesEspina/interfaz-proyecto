@@ -25,6 +25,13 @@ export class VuelocrudService {
       res => console.log(res)
     )
   }
+   //modificar
+   editvuelo(id:string, Vuelos :mantVuelo){
+    return this.Http.put(this.url+'/'+id,Vuelos).subscribe(
+      res => console.log(res)
+    );
+
+  }
 
 }
 
