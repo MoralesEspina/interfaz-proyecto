@@ -11,6 +11,7 @@
   justify-content: center;
   flex-direction: column;
 }
+
 .example-form {
   min-width: 150px;
   max-width: 500px;
@@ -109,21 +110,22 @@
 }
 .mat-form-field{
   background: rgba(153, 153, 153, 0.589);
+  margin: auto;
+  width: 100%;
+  max-width: 200px;
 
 }
 .card,.card-header{
   background: rgb(41, 41, 41, 0.39);
   border: none !important;
   padding: 0 !important;
-  text-decoration-color: #f9ca24;
+  box-shadow: 0 20px 25px 0 rgba(110, 130, 208, 0.062);
+  width: 60%;
+  margin: auto;
+
 }
 
-.card{
-  box-shadow: 0 2px 25px 0 rgba(110, 130, 208, .18);
-  position:relative;
-  width: 50%;
-  left: 25%;
-}
+
 .button, .mat-raised-button{
   background-color:rgba(255, 0, 157, 0.74);
 }
