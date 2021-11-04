@@ -3,6 +3,7 @@
   display: block;
   max-width: 200px;
 
+
 }
 .btn{
   background-color:rgba(142, 222, 247, 0.897);
@@ -12,25 +13,34 @@
 
 .card {
   max-width: 506px;
-  margin: 30px 3px 0px 150px;
+  margin: 30px 3px 0px 50px;
   text-align: left;
 }
 .card2 {
-  max-width: 230px;
-  margin: -280px 30px 30px 680px;
+  width: 250px;
+  max-width: 250px;
+  min-width: 250px;
+  margin: -362px 100px 30px 680px;
   text-align: center;
   justify-content: left;
   align-content: right;
   align-items: right;
 }
 
+.conatiner{
+  background-color:rgb(235, 237, 238);
+}
+.fondo{
+  background-color:rgb(235, 237, 238);
+  margin: auto;
+
+}
 .body{
   background-color:rgb(235, 237, 238);
  background-repeat: no-repeat;
+ margin: auto;
 
 }
-
-
 .example-form {
   min-width: 150px;
   max-width: 500px;
@@ -146,15 +156,10 @@
   background: #192a56;
 }
 
-
-
-
-
 .titulo-final{
   text-align: center;
   font-size: 100%;
   color: #f2f2f2;
 
 }
-
 

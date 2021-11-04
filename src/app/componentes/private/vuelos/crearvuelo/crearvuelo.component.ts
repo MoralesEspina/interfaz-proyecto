@@ -1,3 +1,4 @@
+import { Vuelo } from 'src/app/componentes/interfaces/vuelo';
 import { AeropuertoService } from 'src/app/componentes/services/aeropuerto.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -14,23 +15,23 @@ import { Aeropuerto } from 'src/app/componentes/interfaces/aeropuerto';
 })
 export class CrearvueloComponent implements OnInit {
 
-  _vuelos : mantVuelo ={
+  _vuelos: mantVuelo = {
     id_vuelo: '',
     id_ruta: '',
     id_avion: '',
     fecha_salida: '',
     id_estado: '',
   }
-
+  editing: boolean = false;
   Aeropuertos!: Aeropuerto[];
   constructor(private http: HttpClient,
-              private fb: FormBuilder,
-              private router:Router,
-              private VuelocrudService:VuelocrudService,
-              private Aeropuerto : AeropuertoService) {
+    private fb: FormBuilder,
+    private router: Router,
+    private VuelocrudService: VuelocrudService,
+    private Aeropuerto: AeropuertoService) {
 
     this.form = this.fb.group({
-      id_vuelo:[''],
+      id_vuelo: [''],
       Ruta: ['', Validators.required],
       id_avion: ['', Validators.required],
       fecha_salida: ['', Validators.required],
@@ -50,9 +51,9 @@ export class CrearvueloComponent implements OnInit {
   selected1: string;
   selected: string;
 
-  collectionRuta = [{ 'origen': this.getCollectionRuta, 'destino': this.getCollectionRuta , 'id_ruta': this.getCollectionRuta  }];
-  collectionAvion = [{ 'id_avion': this.getCollectionAvion}];
-  collectionEstados = [{ 'descripcion': this.getCollectionEstados, 'id_estado': this.getCollectionEstados}];
+  collectionRuta = [{ 'origen': this.getCollectionRuta, 'destino': this.getCollectionRuta, 'id_ruta': this.getCollectionRuta }];
+  collectionAvion = [{ 'id_avion': this.getCollectionAvion }];
+  collectionEstados = [{ 'descripcion': this.getCollectionEstados, 'id_estado': this.getCollectionEstados }];
   form: FormGroup;
 
   getCollectionRuta() {
@@ -77,7 +78,7 @@ export class CrearvueloComponent implements OnInit {
 
   getCollectionEstados() {
     this.http
-      .get<any>('https://aeropuerto-dw.herokuapp.com/estado_aviones').subscribe((res: any) => {
+      .get<any>('https://aeropuerto-dw.herokuapp.com/estado_vuelos').subscribe((res: any) => {
         this.collectionEstados = res;
         console.log(res);
       }, error => {
@@ -85,7 +86,7 @@ export class CrearvueloComponent implements OnInit {
       })
   }
 
-  obtenerAeropuerto(){
+  obtenerAeropuerto() {
     this.Aeropuerto.getAeropuertos().subscribe(
       res => {
         console.log(res);
@@ -94,9 +95,22 @@ export class CrearvueloComponent implements OnInit {
       err => console.log(err)
     );
   }
-  crearVuelo(){
-  console.log(this.form.value.Id_estado);
-  console.log(this.form.value.Ruta);
-  console.log(this.form.value.Avion);
+  crearVuelo() {
+    if (this.editing) {
+      this.VuelocrudService.editvuelo(this._vuelos.id_vuelo, this._vuelos);
+      this.router.navigate(['/crudVuelo']);
+
+    } else {
+      const vuelos: mantVuelo = {
+        id_vuelo: undefined,
+        id_ruta: this.form.value.id_ruta,
+        id_avion: this.form.value.id_avion,
+        fecha_salida: this.form.value.fecha_salida,
+        id_estado: this.form.value.id_estado,
+      }
+      console.log(this.form.value.Id_estado);
+      console.log(this.form.value.Ruta);
+      console.log(this.form.value.Avion);
+    }
   }
 }
