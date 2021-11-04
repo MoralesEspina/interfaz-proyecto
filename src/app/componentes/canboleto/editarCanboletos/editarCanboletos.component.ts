@@ -6,9 +6,9 @@ import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
-  selector: 'app-editarCanvuelos',
-  templateUrl: './editarCanvuelos.component.html',
-  styleUrls: ['./editarCanvuelos.component.css']
+  selector: 'app-editarCanboletos',
+  templateUrl: './editarCanboletos.component.html',
+  styleUrls: ['./editarCanboletos.component.css']
 })
 export class FormularioEditcanboletosComponent implements OnInit {
 

@@ -2,7 +2,7 @@
     <mat-toolbar style="background-color:rgb(241, 218, 87);" >
       <span>Informacion De Cancelacion De Boletos</span>
       <div class="example-spacer"></div>
-      <button mat-raised-button color="primary" routerLink="/addcancelacion_boletos">Agregar</button>
+      <button mat-raised-button color="primary" routerLink="/addcancelacion_boletos"><mat-icon>add_box</mat-icon>Agregar</button>
     </mat-toolbar>
     <table class="table">
       <thead>
@@ -22,7 +22,7 @@
           <td>{{canboletos.motivo}}</td>
           <td>{{canboletos.estado}}</td>
           <td>
-            <button (click)="modificar(canboletos.id_cancelacion_boletos)"  type="button" class="btn btn-info" >Editar</button>
+            <button (click)="modificar(canboletos.id_cancelacion_boletos)"  type="button" class="btn btn-info" ><mat-icon>create</mat-icon>Editar</button>
           </td>
         </tr>
       </tbody>

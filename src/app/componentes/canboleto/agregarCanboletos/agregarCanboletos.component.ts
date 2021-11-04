@@ -5,9 +5,9 @@ import { CanboletosService, canboletos} from '../SERVICES/canboletos.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-agregarCanvuelos',
-  templateUrl: './agregarCanvuelos.component.html',
-  styleUrls: ['./agregarCanvuelos.component.css']
+  selector: 'app-agregarCanboletos',
+  templateUrl: './agregarCanboletos.component.html',
+  styleUrls: ['./agregarCanboletos.component.css']
 })
 export class FormcanboletosComponent {
 

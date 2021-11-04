@@ -3,9 +3,9 @@ import { CanboletosService, canboletos } from '../SERVICES/canboletos.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-tablaCanvuelos',
-  templateUrl: './tablaCanvuelos.component.html',
-  styleUrls: ['./tablaCanvuelos.component.css']
+  selector: 'app-tablaCanboletos',
+  templateUrl: './tablaCanboletos.component.html',
+  styleUrls: ['./tablaCanboletos.component.css']
 })
 export class TablaCanboletosComponent implements OnInit {
 
