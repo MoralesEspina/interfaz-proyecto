@@ -8,16 +8,23 @@ import { mantVuelo } from '../interfaces/mantVuelo';
   providedIn: 'root'
 })
 export class VuelocrudService {
-  url = 'https://aeropuerto-dw.herokuapp.com/vuelos'
+  url = 'https://aeropuerto-dw.herokuapp.com'
+  url2 = "http://localhost:3000"
 
   constructor(private Http: HttpClient) { }
 
-  getVuelo(): Observable<mantVuelo[]>{
-    return this.Http.get<mantVuelo[]>(this.url);
+  getVuelo(): Observable<VuelosDisponibles[]>{
+    return this.Http.get<VuelosDisponibles[]>(this.url+"/vuelosdisponibles");
   }
 
   addVuelo(vuelo:mantVuelo){
-    return this.Http.post(this.url, vuelo);
+    return this.Http.post(this.url+"/vuelos", vuelo).subscribe(
+      res => console.log(res)
+    );
+  }
+
+  getUnVuelo(id_vuelo:string): Observable<VuelosDisponibles[]>{
+    return this.Http.post<VuelosDisponibles[]>(this.url2+"/vuelosdisponibles",id_vuelo);
   }
 
   deleteVuelo(id_vuelo:string){
@@ -35,3 +42,11 @@ export class VuelocrudService {
 
 }
 
+export interface VuelosDisponibles{
+  id_vuelo:string;
+  origen:string;
+  destino:string;
+  id_avion:string;
+  fecha_salida:string;
+  descripcion:string;
+}

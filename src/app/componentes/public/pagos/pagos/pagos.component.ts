@@ -15,7 +15,6 @@ export class PagosComponent {
 
   constructor(private fb: FormBuilder, private Router:Router, private _pagoService:PagosService) {
     this.addressForm = this.fb.group({
-      numero_factura:[''],
       id_boleto: ['', Validators.required],
       costo_total: ['', Validators.required],
       Tarjeta_Credito: ['', Validators.required],
