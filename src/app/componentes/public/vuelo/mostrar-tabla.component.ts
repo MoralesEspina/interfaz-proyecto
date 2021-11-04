@@ -42,7 +42,8 @@ export class MostrarTablaComponent implements OnInit {
     genero: ['', Validators.required],
     nacionalidad: ['', Validators.required],
     num_asiento: ['', Validators.required],
-    clase: ['', Validators.required]
+    clase: ['', Validators.required],
+    id_avion: ['', Validators.required]
   });
 
 
@@ -52,18 +53,18 @@ export class MostrarTablaComponent implements OnInit {
     {value: 'VISA', viewValue: 'VISA'}
   ];
 
-
   _ruta: Ruta = {
-    nombre: '',
+    nombre: '' + localStorage.getItem("aero"),
     origen: '',
     destino: '',
     distancia_viaje: '',
     tiempo_viaje: '',
     precio_base: '',
-    fecha_salida: '',
+    fecha_salida: '' + localStorage.getItem("Fech"),
     descripcion: '',
     id_vuelo: localStorage.getItem("id_vuelo"),
     id_ruta: localStorage.getItem("id_ruta"),
+    id_avion: ''
   }
 
   asien!: AsientoOcupado[];
@@ -146,10 +147,9 @@ export class MostrarTablaComponent implements OnInit {
   Asientos(id:string, id_a:number){
   const _asiento : AsientoOcupado = {
     id_asiento :id,
-    id_avion : '1',
-    id_vuelo : '30',
+    id_avion : ''+localStorage.getItem('id_avion'),
+    id_vuelo : ''+localStorage.getItem('id_vuelo'),
   }
-
     this.asientoOcupado.comprobarAsientos(_asiento).subscribe(
       res=>{
         this.asien=<any>res;
@@ -161,6 +161,15 @@ export class MostrarTablaComponent implements OnInit {
       },
       err => console.log(err)
     );
+  }
+
+  crearAsiento(id:string){
+    const _asiento : AsientoOcupado = {
+      id_asiento :id,
+      id_avion : ''+localStorage.getItem('id_avion'),
+      id_vuelo : ''+localStorage.getItem('id_vuelo')
+    }
+    this.asientoOcupado.asientoOcupado(_asiento);
   }
 
   asientosOcupados(){

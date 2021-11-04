@@ -9,4 +9,5 @@ export interface Ruta {
   descripcion:string
   id_vuelo:any;
   id_ruta:any;
+  id_avion: string;
 }

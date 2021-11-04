@@ -21,6 +21,7 @@ export class TablaVDisponibleComponent  {
     descripcion: '',
     id_vuelo: '',
     id_ruta: '',
+    id_avion: '',
   }
 
   ListarVuelo!: Ruta[];
@@ -43,10 +44,12 @@ export class TablaVDisponibleComponent  {
 
   }
 
-  seleccionarVuelo(vuelo: any, ruta: any) {
+  seleccionarVuelo(nombre: any, vuelo: any, ruta: any, avion: any) {
 
+    localStorage.setItem('aero', nombre);
     localStorage.setItem('id_ruta', ruta);
     localStorage.setItem('id_vuelo', vuelo);
+    localStorage.setItem('id_avion', avion);
     this._router.navigate(["/agregar-personas"]);
   }
 

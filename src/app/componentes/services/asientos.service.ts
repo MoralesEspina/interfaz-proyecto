@@ -11,9 +11,9 @@ export class AsientosService {
   constructor(private http:HttpClient) { }
 
 
-  postAsientos(asiento:Asiento)
-  {
-    return this.http.post(this.url + 'asientos', asiento).subscribe(
+  postAsientos(asiento:AsientoOcupado){
+    console.log(asiento);
+    return this.http.post(this.url + 'asientosocupados', asiento).subscribe(
       res => console.log(res)
     )
   }
