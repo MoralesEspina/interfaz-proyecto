@@ -45,11 +45,15 @@ import { PagosComponent } from './componentes/public/pagos/pagos/pagos.component
 import { CrearRutasComponent } from './componentes/public/rutas/crear-rutas/crear-rutas.component';
 import { TablaRutasComponent } from './componentes/public/rutas/tabla-rutas/tabla-rutas.component';
 import { PrincipalAdminComponent } from './componentes/private/principal-admin/principal-admin.component';
+import { NavComponentAdmin } from './nav-admin/nav.component';
 
 
 const routes: Routes = [
 
-  {path:'principalAdmin', component: PrincipalAdminComponent},
+  {path:'principalAdmin', component: PrincipalAdminComponent, canActivate:[AuthGuard,RoleGuardGuard],
+  data:{
+    expectedRoles: ['Admin']
+  } },
 
   //Direcciones Inicio
   {path:'', redirectTo:'/inicio',pathMatch:'full'},
@@ -97,6 +101,8 @@ const routes: Routes = [
   {path:'crearRuta', component: CrearRutasComponent, canActivate:[AuthGuard]},
   {path:'modificarRuta/:id_ruta', component: CrearRutasComponent, canActivate:[AuthGuard]},
   {path:'tablaRuta', component: TablaRutasComponent, canActivate:[AuthGuard]},
+
+  {path:'navcomponent', component: NavComponentAdmin, canActivate:[AuthGuard]},
 
 ];
 

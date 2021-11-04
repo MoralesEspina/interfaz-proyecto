@@ -8,14 +8,13 @@
       <span class="example-spacer"></span>
       <a mat-button href="#inicio">INICIO</a>
       <ng-container *ngIf="!logedIn(); else elseTemplate">
-        <a mat-button routerLink= "/login">Log In</a>
+        <a mat-button routerLink= "/principalAdmin">Log In</a>
       </ng-container>
       <ng-template #elseTemplate>
-        <a mat-button (click)="onLogOut()" routerLink= "/login">Log Out</a>
+        <a mat-button (click)="onLogOut()" routerLink= "/principalAdmin">Log Out</a>
       </ng-template>
 
     </mat-toolbar>
-
     <router-outlet></router-outlet>
     <footer class="footer" id="contactos">
       <div class="container">
