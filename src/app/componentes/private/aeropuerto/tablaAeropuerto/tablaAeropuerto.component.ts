@@ -1,8 +1,6 @@
 import { Aeropuerto } from './../../../interfaces/aeropuerto';
 import { Component, OnInit } from '@angular/core';
-
 import { AeropuertoService} from 'src/app/componentes/services/aeropuerto.service';
-
 import { Router } from '@angular/router';
 
 
