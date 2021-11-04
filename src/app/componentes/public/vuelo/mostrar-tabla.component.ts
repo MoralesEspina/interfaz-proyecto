@@ -1,3 +1,4 @@
+import { AsientoOcupado } from './../../interfaces/asientosOcupados';
 import { Pasajero } from './../../interfaces/pasajero';
 import { PasajeroService } from './../../services/pasajero.service';
 import { Component, OnInit } from '@angular/core';
@@ -7,6 +8,7 @@ import { VueloService } from 'src/app/componentes/services/vuelo.service';
 import { Vuelo } from 'src/app/componentes/interfaces/vuelo';
 import { Ruta } from 'src/app/componentes/interfaces/ruta';
 import { HttpClient } from '@angular/common/http';
+import { AsientosService } from '../../services/asientos.service';
 
 interface Boletos{
   clase: string;
@@ -43,11 +45,13 @@ export class MostrarTablaComponent implements OnInit {
     clase: ['', Validators.required]
   });
 
+
   _tipoDoc: TipoDoc[] = [
     {value: 'DPI', viewValue: 'DPI'},
     {value: 'Pasaporte', viewValue: 'Pasaporte'},
     {value: 'VISA', viewValue: 'VISA'}
   ];
+
 
   _ruta: Ruta = {
     nombre: '',
@@ -61,13 +65,18 @@ export class MostrarTablaComponent implements OnInit {
     id_vuelo: localStorage.getItem("id_vuelo"),
     id_ruta: localStorage.getItem("id_ruta"),
   }
+
+  asien!: AsientoOcupado[];
+
+
   collection1 = [{'numero': this.getCollection, 'letra': this.getCollection}];
   collection2 = [{'tipo_clase': this.getCollection, 'precio': this.getCollection}];
 
   ListarVuelo!: Vuelo[];
   constructor(private VueloService:VueloService,
     private router:Router, private fb: FormBuilder,
-    private http:HttpClient, private Pasajero:PasajeroService) {
+    private http:HttpClient, private Pasajero:PasajeroService,
+    private asientoOcupado:AsientosService) {
 
      }
 
@@ -75,7 +84,7 @@ export class MostrarTablaComponent implements OnInit {
   ngOnInit(): void {
     this.listarVuelo();
     this.getCollection();
-
+    this.asientosOcupados();
   }
 
   getCollection() {
@@ -120,6 +129,45 @@ export class MostrarTablaComponent implements OnInit {
     this.router.navigate(['/realizarPago']);
   }
 
+   asientosbool: boolean[] = [
+    false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,
+    false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false
+   ]
+   asientos: string[] = [
+     '1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20'
+     ,'21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40'
+   ];
+   asientosnum: number[] = [
+    1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40
+  ];
 
+  asiento1A: boolean = false;
 
+  Asientos(id:string, id_a:number){
+  const _asiento : AsientoOcupado = {
+    id_asiento :id,
+    id_avion : '1',
+    id_vuelo : '30',
+  }
+
+    this.asientoOcupado.comprobarAsientos(_asiento).subscribe(
+      res=>{
+        this.asien=<any>res;
+        for (var i = 0; i<this.asien.length; i++){
+          if(this.asien[i].id_asiento == id){
+             this.asientosbool[id_a] = true;
+          }
+        }
+      },
+      err => console.log(err)
+    );
+  }
+
+  asientosOcupados(){
+    for (var i = 0; i<this.asientos.length; i++){
+      if(this.asientos[i] == this.asientosnum[i].toString()){
+        this.Asientos(i.toString(),i);
+      }
+    }
+  }
 }
