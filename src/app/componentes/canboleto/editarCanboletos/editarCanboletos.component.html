@@ -1,0 +1,50 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <body>
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Cancelacion Boletos</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Ingrese ID Boleto" formControlName="id_boleto" [(ngModel)]="canboletos.id_boleto">
+            <mat-error *ngIf="addressForm.controls['id_boleto'].hasError('required')">
+               El ID Boleto es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Motivo " formControlName="motivo" [(ngModel)]="canboletos.motivo">
+            <mat-error *ngIf="addressForm.controls['motivo'].hasError('required')">
+              El Motivo es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Id Estado" formControlName="estado" [(ngModel)]="canboletos.estado">
+            <mat-error *ngIf="addressForm.controls['estado'].hasError('required')">
+               El Estado es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+      </div>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit" (click)="modificar()">Guardar</button>
+      <button mat-raised-button color="primary" type="submit" (click)="regresar()">Regresar</button>
+
+    </mat-card-actions>
+  </mat-card>
+</body>
+</form>

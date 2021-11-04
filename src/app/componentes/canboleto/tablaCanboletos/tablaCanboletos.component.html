@@ -1,0 +1,34 @@
+<div class="mat-elevation-z8">
+    <mat-toolbar style="background-color:rgb(241, 218, 87);" >
+      <span>Informacion De Cancelacion De Boletos</span>
+      <div class="example-spacer"></div>
+      <button mat-raised-button color="primary" routerLink="/addcancelacion_boletos">Agregar</button>
+    </mat-toolbar>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id Cancelacion</th>
+          <th scope="col">Id Boleto</th>
+          <th scope="col">Motivo</th>
+          <th scope="col">Estado</th>
+
+        
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor= "let canboletos of Listarcanboletos">
+          <th>{{canboletos.id_cancelacion_boletos}}</th>
+          <td>{{canboletos.id_boleto}}</td>
+          <td>{{canboletos.motivo}}</td>
+          <td>{{canboletos.estado}}</td>
+          <td>
+            <button (click)="modificar(canboletos.id_cancelacion_boletos)"  type="button" class="btn btn-info" >Editar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  
+  
+  
