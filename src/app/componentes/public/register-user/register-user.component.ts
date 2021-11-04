@@ -34,9 +34,8 @@ export class RegisterUserComponent {
       const _user: Usuario = {
         userName: this.addressForm.value.userName,
         password: this.addressForm.value.password,
-        rol: this.user.rol,
+        rol: "User",
       }
-      console.log(_user);
       this._userRegister.register(_user);
       this._router.navigate(['']);
   }

@@ -17,8 +17,5 @@ export class RegisterUserService {
     )
   }
 
-  getId(persona: {}): Observable<Persona[]>{
-    return this.http.post<Persona[]>(this.URL+'/idpersona/', persona);
-  }
 
 }

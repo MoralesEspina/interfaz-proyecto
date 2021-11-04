@@ -1,0 +1,82 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Registrar Pago</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input type="number"[readonly]="true" matInput placeholder="Número de Factura" formControlName="numero_factura">
+            <mat-error *ngIf="addressForm.controls['numero_factura'].hasError('required')">
+              El Número de Factura es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input type="number" [readonly]="true" matInput placeholder="Boleto" formControlName="id_boleto">
+            <mat-error *ngIf="addressForm.controls['id_boleto'].hasError('required')">
+              El Boleto es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input type="number" [readonly]="true" matInput placeholder="Costo Total" formControlName="costo_total">
+            <mat-error *ngIf="addressForm.controls['costo_total'].hasError('required')">
+              El Costo Total es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input type="number" matInput placeholder="Número de Tarjeta de Credito" formControlName="Tarjeta_Credito">
+            <mat-error *ngIf="addressForm.controls['Tarjeta_Credito'].hasError('required')">
+              El Número de Tarjeta de Credito es <strong>requerida</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input type="text" matInput placeholder="Nombre del Propietario" formControlName="Nombre_Propietario">
+            <mat-error *ngIf="addressForm.controls['Nombre_Propietario'].hasError('required')">
+              El Nombre de Propietario es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Fecha de Expiracion" formControlName="Fecha_Exp">
+            <mat-error *ngIf="addressForm.controls['Fecha_Exp'].hasError('required')">
+              La Fecha de Expiracion es <strong>requerida</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input type="password" matInput placeholder="CVV" formControlName="cvv">
+            <mat-error *ngIf="addressForm.controls['cvv'].hasError('required')">
+              El CVV es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit" [disabled]="addressForm.invalid">Pagar</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

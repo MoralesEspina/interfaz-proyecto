@@ -40,6 +40,13 @@ import { TablaModeloavionComponent } from './componentes/private/modeloavion/tab
 import { CrearvueloComponent } from './componentes/private/vuelos/crearvuelo/crearvuelo.component';
 import { MostrarvueloComponent } from './componentes/private/vuelos/mostrarvuelo/mostrarvuelo.component';
 import { MostrarTablaComponent } from './componentes/public/vuelo/mostrar-tabla.component';
+import { AuthGuard } from './Guards/auth.guard';
+import { PagosComponent } from './componentes/public/pagos/pagos/pagos.component';
+import { TablaPagosComponent } from './componentes/public/pagos/tabla-pagos/tabla-pagos.component';
+import { CrearRutasComponent } from './componentes/public/rutas/crear-rutas/crear-rutas.component';
+import { TablaRutasComponent } from './componentes/public/rutas/tabla-rutas/tabla-rutas.component';
+
+
 
 
 @NgModule({
@@ -48,6 +55,13 @@ import { MostrarTablaComponent } from './componentes/public/vuelo/mostrar-tabla.
     NavComponent,
     PrincipalComponent,
 
+    //Pagos Componentes
+    PagosComponent,
+    TablaPagosComponent,
+
+    //Rutas Componentes
+    CrearRutasComponent,
+    TablaRutasComponent,
 
     //Aeropuertos Componentes
     TablaAeropuertoComponent,
@@ -80,6 +94,7 @@ import { MostrarTablaComponent } from './componentes/public/vuelo/mostrar-tabla.
     CrearvueloComponent,
     MostrarvueloComponent
 
+
   ],
   imports: [
     MatTooltipModule,
@@ -108,7 +123,7 @@ import { MostrarTablaComponent } from './componentes/public/vuelo/mostrar-tabla.
     MatDatepickerModule,
     MatNativeDateModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

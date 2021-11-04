@@ -22,7 +22,6 @@ export class AeropuertoService {
 
   //Crear
   addAeropuerto(aeropuerto: Aeropuerto) {
-    console.log("hola")
     this.http.post(this.url, aeropuerto).subscribe(
       res => console.log(res)
     );

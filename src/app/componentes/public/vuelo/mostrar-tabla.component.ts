@@ -1,10 +1,10 @@
+import { Pasajero } from './../../interfaces/pasajero';
+import { PasajeroService } from './../../services/pasajero.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { VueloService } from 'src/app/componentes/services/vuelo.service';
-import { Persona } from 'src/app/componentes/interfaces/persona';
 import { Vuelo } from 'src/app/componentes/interfaces/vuelo';
-import { RegisterService } from 'src/app/componentes/services/register.service';
 import { Ruta } from 'src/app/componentes/interfaces/ruta';
 import { HttpClient } from '@angular/common/http';
 
@@ -67,7 +67,7 @@ export class MostrarTablaComponent implements OnInit {
   ListarVuelo!: Vuelo[];
   constructor(private VueloService:VueloService,
     private router:Router, private fb: FormBuilder,
-    private _personaRegister: RegisterService,  private http:HttpClient) {
+    private http:HttpClient, private Pasajero:PasajeroService) {
 
      }
 
@@ -92,6 +92,7 @@ export class MostrarTablaComponent implements OnInit {
         console.log({ error });
       })
   }
+
   listarVuelo()
   {
     this.VueloService.getVuelos2(this._ruta).subscribe(
@@ -105,16 +106,18 @@ export class MostrarTablaComponent implements OnInit {
 
   onAgregar(){
 
-    const persona: Persona ={
-      id_persona:0,
+    const pasajero: Pasajero ={
+      numero_doc:this.addressForm.value.numero_doc,
+      tipo_doc:this.addressForm.value.tipo_doc,
       nombres: this.addressForm.value.nombres,
       apellidos:this.addressForm.value.apellidos,
-      tipo_doc:this.addressForm.value.tipo_doc,
-      numero_doc:this.addressForm.value.numero_doc,
+      fecha_nacimiento: this.addressForm.value.fecha_nacimiento,
+      genero: this.addressForm.value.genero,
+      nacionalidad: this.addressForm.value.nacionalidad,
     }
-    this._personaRegister.register(persona);
-    localStorage.setItem("persona", JSON.stringify (persona))
-    this.router.navigate(['/pasajeros']);
+    this.Pasajero.postPasajeros(pasajero);
+    localStorage.setItem("pasajero", JSON.stringify (pasajero))
+    this.router.navigate(['/realizarPago']);
   }
 
 
