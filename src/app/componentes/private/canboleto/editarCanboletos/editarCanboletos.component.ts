@@ -30,6 +30,7 @@ export class FormularioEditcanboletosComponent implements OnInit {
 
   hasUnitNumber = false;
 
+  editing: boolean = false;
   constructor(private fb: FormBuilder, private canboletosservice: CanboletosService, private router: Router, private ActiveRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -62,7 +63,7 @@ export class FormularioEditcanboletosComponent implements OnInit {
 
 
 regresar(){
-  this.router.navigate(['/cancelacion_boletos']);
+  this.router.navigate(['/tablaCanBoletos']);
 }
 
 

@@ -39,7 +39,7 @@ export class FormcanboletosComponent {
   }
 
   regresar(){
-    this.router.navigate(['/cancelacion_boletos']);
+    this.router.navigate(['/tablaCanBoletos']);
   }
 
 }

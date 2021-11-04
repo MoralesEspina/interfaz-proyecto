@@ -5,16 +5,15 @@
   [opened]="(isHandset$ | async) === true">
 <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/">Inicio</a>
-      <a mat-list-item routerLink="/disponible">Vuelos disponibles</a>
+      <a mat-list-item routerLink="/principalAdmin">Inicio</a>
       <a mat-list-item routerLink="/listaAeropuertos">Lista de Aeropuertos</a>
-      <a mat-list-item routerLink="/register_user">Registro de Usuario</a>
-      <a mat-list-item routerLink="/cancelacion_vuelos">Cancelacion de Vuelos</a>
+      <a mat-list-item routerLink="/register_user">Registro de Administradores</a>
+      <a mat-list-item routerLink="/cancelacion_vuelos">Retraso de Vuelos</a>
       <a mat-list-item routerLink="/tablaAerolinea">Aerolineas</a>
       <a mat-list-item routerLink="/tablamodelo">Modelos Aviones</a>
-      <a mat-list-item routerLink="/crudVuelo">Mant Vuelos</a>
-      <a mat-list-item routerLink="/tablaRuta">Tabla Ruta</a>
-      <a mat-list-item routerLink="/tablaCanBoletos">Tabla CanBoletos</a>
+      <a mat-list-item routerLink="/crudVuelo">Vuelos</a>
+      <a mat-list-item routerLink="/tablaRuta">Rutas</a>
+      <a mat-list-item routerLink="/tablaCanBoletos">Cancelacion de Boletos</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

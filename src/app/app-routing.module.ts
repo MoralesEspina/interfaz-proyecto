@@ -49,6 +49,7 @@ import { PrincipalAdminComponent } from './componentes/private/principal-admin/p
 
 import { TablaCanboletosComponent } from './componentes/private/canboleto/tablaCanboletos/tablaCanboletos.component';
 import { FormularioEditcanboletosComponent } from './componentes/private/canboleto/editarCanboletos/editarCanboletos.component';
+import { FormcanboletosComponent } from './componentes/private/canboleto/agregarCanboletos/agregarCanboletos.component';
 
 
 const routes: Routes = [
@@ -107,7 +108,7 @@ const routes: Routes = [
 
   //Direcciones Can Boletos
   {path:'tablaCanBoletos', component: TablaCanboletosComponent, canActivate:[AuthGuard]},
-  {path:'addcancelacion_boletos', component: FormcanvuelosComponent, canActivate:[AuthGuard]},
+  {path:'addcancelacion_boletos', component: FormcanboletosComponent, canActivate:[AuthGuard]},
   {path:'editcancelacion_boletos/:id_cancelacion_boletos', component: FormularioEditcanboletosComponent, canActivate:[AuthGuard]},
 ];
 
