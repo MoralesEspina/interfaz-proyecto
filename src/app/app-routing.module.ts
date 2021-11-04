@@ -1,7 +1,14 @@
+
+
+import { PagosComponent } from './componentes/pagos/pagos/pagos.component';
+
+
 import { RoleGuardGuard } from './Guards/role-guard.guard';
+
 import { PrincipalComponent } from './principal/principal.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CrearRutasComponent } from './componentes/rutas/crear-rutas/crear-rutas.component';
 
 //Imports Seleccion de Vuelos
 import { TablaVDisponibleComponent } from './componentes/public/tabla-vdisponible/tabla-vdisponible.component';
@@ -42,6 +49,10 @@ const routes: Routes = [
   {path:'', redirectTo:'/inicio',pathMatch:'full'},
   {path:'inicio', component: PrincipalComponent},
 
+  {path:'vuelo', component: PagosComponent},
+  {path: 'disponible', component: CrearRutasComponent},
+
+
   //Direcciones Seleccion de Vuelos
   {path:'disponible', component: TablaVDisponibleComponent},
 
@@ -67,6 +78,7 @@ const routes: Routes = [
   {path:'cancelacion_vuelos', component: TablaCanvuelosComponent, canActivate:[AuthGuard]},
   {path:'addcancelacion_vuelos', component: FormcanvuelosComponent, canActivate:[AuthGuard]},
   {path:'editcancelacion_vuelos/:id_cancelacion_vuelos', component: FormularioEditcanvuelosComponent, canActivate:[AuthGuard]},
+
 
   //Direcciones Aerolineas
   {path: 'tablaAerolinea', component:TablaAerolineaComponent, canActivate:[AuthGuard]},

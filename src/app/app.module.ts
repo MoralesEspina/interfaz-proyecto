@@ -1,4 +1,8 @@
+
+import { TablaRutasComponent } from './componentes/rutas/tabla-rutas/tabla-rutas.component';
+
 import { RegisterUserComponent } from './componentes/public/register-user/register-user.component';
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -16,11 +20,20 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
+
+import { ReactiveFormsModule } from '@angular/forms';
+import { PrincipalComponent } from './principal/principal.component';
+
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+
+import { PagosComponent } from './componentes/pagos/pagos/pagos.component';
+import { TablaPagosComponent } from './componentes/pagos/tabla-pagos/tabla-pagos.component';
+import { CrearRutasComponent } from './componentes/rutas/crear-rutas/crear-rutas.component';
+
 import { ReactiveFormsModule } from '@angular/forms';
 import { PrincipalComponent } from './principal/principal.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -43,11 +56,18 @@ import { MostrarTablaComponent } from './componentes/public/vuelo/mostrar-tabla.
 import { AuthGuard } from './Guards/auth.guard';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     PrincipalComponent,
+ PagoRonald
+    PagosComponent,
+    TablaPagosComponent,
+    CrearRutasComponent,
+    TablaRutasComponent
+
 
 
     //Aeropuertos Componentes
@@ -80,6 +100,7 @@ import { AuthGuard } from './Guards/auth.guard';
     //Modelo Mant Vuelos
     CrearvueloComponent,
     MostrarvueloComponent
+
 
   ],
   imports: [

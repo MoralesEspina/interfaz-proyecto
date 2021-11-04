@@ -1,0 +1,56 @@
+<div class="mat-elevation-z8">
+  <table mat-table class="full-width-table" matSort aria-label="Elements">
+    <!-- Id Column -->
+    <ng-container matColumnDef="id_ruta">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>id_ruta</th>
+      <td mat-cell *matCellDef="let row">{{row.id_ruta}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="precio_base">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>precio_base</th>
+      <td mat-cell *matCellDef="let row">{{row.precio_base}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="distancia_viaje">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>distancia_viaje</th>
+      <td mat-cell *matCellDef="let row">{{row.distancia_viaje}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="tiempo_viaje">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>tiempo_viaje</th>
+      <td mat-cell *matCellDef="let row">{{row.tiempo_viaje}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="fecha_creacion">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>fecha_creacion</th>
+      <td mat-cell *matCellDef="let row">{{row.fecha_creacion}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="origen">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>origen</th>
+      <td mat-cell *matCellDef="let row">{{row.origen}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="destino">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>destino</th>
+      <td mat-cell *matCellDef="let row">{{row.destino}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator
+      [length]="dataSource?.data?.length"
+      [pageIndex]="0"
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 20]"
+      aria-label="Select page">
+  </mat-paginator>
+</div>
