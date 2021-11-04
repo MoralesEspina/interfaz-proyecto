@@ -1,6 +1,14 @@
 import { Router } from '@angular/router';
+
+import { VuelocrudService } from '../../../services/vuelocrud.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { mantVuelo } from 'src/app/componentes/interfaces/mantVuelo';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+
 import { VuelocrudService, VuelosDisponibles } from '../../../services/vuelocrud.service';
 import { Component, OnInit } from '@angular/core';
+
 
 
 
@@ -17,9 +25,19 @@ export class MostrarvueloComponent implements OnInit {
   constructor(private VuelocrudService: VuelocrudService, private router: Router) {
 
   }
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  dataSource = new MatTableDataSource(this.ListaVuelos);
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngOnInit() {
     this.obtenerVuelos();
+
+  }
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+
   }
 
   obtenerVuelos() {
@@ -47,5 +65,8 @@ export class MostrarvueloComponent implements OnInit {
   actualizar(){
     setTimeout(location.reload.bind(location),200);
   }
-
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 }
