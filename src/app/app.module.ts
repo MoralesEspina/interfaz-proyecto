@@ -39,11 +39,11 @@ import { AgregarModeloavionComponent } from './componentes/private/modeloavion/a
 import { TablaModeloavionComponent } from './componentes/private/modeloavion/tablaModeloavion/tabla-modelo.component';
 import { CrearvueloComponent } from './componentes/private/vuelos/crearvuelo/crearvuelo.component';
 import { MostrarvueloComponent } from './componentes/private/vuelos/mostrarvuelo/mostrarvuelo.component';
-import { MostrarTablaComponent } from './componentes/public/vuelo/mostrar-tabla.component';
 import { AuthGuard } from './Guards/auth.guard';
 import { PagosComponent } from './componentes/public/pagos/pagos/pagos.component';
 import { TablaPagosComponent } from './componentes/public/pagos/tabla-pagos/tabla-pagos.component';
 import { CrearRutasComponent } from './componentes/public/rutas/crear-rutas/crear-rutas.component';
+import { MostrarTablaComponent } from './componentes/public/vuelo/mostrar-tabla.component';
 import { TablaRutasComponent } from './componentes/public/rutas/tabla-rutas/tabla-rutas.component';
 
 
