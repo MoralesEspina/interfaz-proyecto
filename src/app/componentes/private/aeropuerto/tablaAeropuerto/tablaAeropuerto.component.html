@@ -11,7 +11,7 @@
           </rec>
           <table class="table">
             <thead>
-              <tr>
+              <tr class=" text-center">
                 <th scope="col">IataCode</th>
                 <th scope="col">Ciudad</th>
                 <th scope="col">Pais</th>
@@ -21,18 +21,18 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let modelo of ListarModelos">
-                <th scope="row">{{modelo.iataCode}}</th>
+              <tr *ngFor="let modelo of ListarModelos" class=" text-center">
+                <th>{{modelo.iataCode}}</th>
                 <td>{{modelo.ciudad}}</td>
                 <td>{{modelo.pais}}</td>
 
                 <td class="puntero" (click)="modificarr(modelo.iataCode)" style="color:rgb(142, 191, 247)"
-                  matTooltip="Editar Vuelo">
+                  matTooltip="Editar Aeropuerto">
                   <mat-icon>edit</mat-icon>
                 </td>
 
                 <td class="puntero" (click)="eliminarr(modelo.iataCode)" style="color :rgba(187, 76, 76, 0.952)"
-                  matTooltip="Eliminar Vuelo">
+                  matTooltip="Eliminar Aeropuerto">
                   <mat-icon>delete</mat-icon>
                 </td>
               </tr>
@@ -41,6 +41,5 @@
         </mat-card>
       </div>
     </div>
-
   </div>
 </div>

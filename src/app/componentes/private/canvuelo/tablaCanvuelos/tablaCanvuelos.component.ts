@@ -29,6 +29,8 @@ export class TablaCanvuelosComponent implements OnInit {
   modificar(id_pasajero:string){
     this.router.navigate(['/editcancelacion_vuelos/'+id_pasajero])
   }
-
+  actualizar(){
+    setTimeout(location.reload.bind(location),100);
+  }
 
 }

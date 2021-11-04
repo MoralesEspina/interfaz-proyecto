@@ -1,34 +1,48 @@
+<div class="fondo">
+  <div class="container ">
+    <div class="row ">
+      <div class="col order-first mt-3 mb-5">
+        <mat-card class="card">
+          <h1 class=" text-center">VUELOS</h1>
+          <button type="submit" class=" btn agg btn-info" (click)="OnNuevoModelo()">Agregar Vuelo</button>
+          <rec class=" rec btn " (click)="actualizar()" style="color :rgba(187, 76, 76, 0.952)" matTooltip="Refrescar Tabla">
+            <mat-icon>refresh</mat-icon>
+          </rec>
+          <table class="table">
+            <thead>
+              <tr class=" text-center">
+                <th scope="col">Num. Vuelo</th>
+                <th scope="col">Ruta(falta)</th>
+                <th scope="col">Avion</th>
+                <th scope="col">Fecha de Salida</th>
+                <th scope="col">Estado(falta)</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Eliminar</th>
 
-<div class = "container">
-<div class="mat-elevation-z8">
-  <button type="button" class="btn btn-info" (click)="OnNuevoModelo()">Agregar Modelo</button>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Id Vuelo</th>
-        <th scope="col">Id Ruta</th>
-        <th scope="col">Id Avion</th>
-        <th scope="col">Fecha de Salida</th>
-        <th scope="col">Id Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let vuelo of ListaVuelos" class=" text-center">
+                <th>{{vuelo.id_vuelo}}</th>
+                <td>{{vuelo.id_ruta}}</td>
+                <td>{{vuelo.id_avion}}</td>
+                <td>{{vuelo.fecha_salida}}</td>
+                <td>{{vuelo.id_estado}}</td>
+                <td class="puntero" (click)="modificarVuelo(vuelo.id_vuelo)" style="color:rgb(142, 191, 247)"
+                matTooltip="Editar Vuelo">
+                <mat-icon>edit</mat-icon>
+              </td>
 
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor= "let vuelo of ListaVuelos">
-        <th>{{vuelo.id_vuelo}}</th>
-        <td>{{vuelo.id_ruta}}</td>
-        <td>{{vuelo.id_avion}}</td>
-        <td>{{vuelo.fecha_salida}}</td>
-        <td>{{vuelo.id_estado}}</td>
-        <td>
-          <button (click)="modificarVuelo(vuelo.id_vuelo)" type="button" class="btn btn-info">Editar</button>
-        </td>
-        <td>
-          <button (click)="eliminarVuelo(vuelo.id_vuelo)" type="button" class="btn btn-danger">Eliminar</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+              <td class="puntero" (click)="eliminarVuelo(vuelo.id_vuelo)" style="color :rgba(187, 76, 76, 0.952)"
+                matTooltip="Eliminar Vuelo">
+                <mat-icon>delete</mat-icon>
+              </td>
+
+              </tr>
+            </tbody>
+          </table>
+        </mat-card>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-

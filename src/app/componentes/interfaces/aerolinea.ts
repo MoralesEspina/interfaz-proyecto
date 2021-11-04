@@ -1,4 +1,4 @@
 export interface Aerolinea{
-  id_aerolinea: string;
+  id_aerolinea: any;
   nombre: string;
 }

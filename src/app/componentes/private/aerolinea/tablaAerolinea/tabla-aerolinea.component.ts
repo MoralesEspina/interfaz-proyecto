@@ -36,6 +36,7 @@ export class TablaAerolineaComponent implements OnInit {
 
       },
       err=> console.log(err));
+      setTimeout(location.reload.bind(location),500);
   }
 
   modificarAerolinea(id_aerolinea:string){
@@ -43,6 +44,9 @@ export class TablaAerolineaComponent implements OnInit {
   }
   OnnuevaAerolinea(){
     this.router.navigate(["agregarAerolinea"])
+    }
+    actualizar(){
+      setTimeout(location.reload.bind(location),100);
     }
 
 

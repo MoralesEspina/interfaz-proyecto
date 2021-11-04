@@ -21,10 +21,7 @@ export class FormcanvuelosComponent {
 
 
   addressForm = this.fb.group({
-
-
     motivo: [null, Validators.required],
-    estado: [null, Validators.required],
     vuelo: [null, Validators.required],
     fecha_reasignada: [null, Validators.required],
 
