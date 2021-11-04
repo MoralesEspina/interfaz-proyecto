@@ -1,0 +1,69 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onAgregar()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Ruta</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-label>Origen</mat-label>
+            <mat-select [(ngModel)]="modRuta.origen" [disabled]="editing" formControlName="origen">
+              <mat-option *ngFor="let OrigenDestino of collectionOrigenDestino" [value]="OrigenDestino.iataCode">
+                {{OrigenDestino.pais}} - {{OrigenDestino.ciudad}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-label>Destino</mat-label>
+            <mat-select [(ngModel)]="modRuta.destino" [disabled]="editing" formControlName="destino">
+              <mat-option *ngFor="let OrigenDestino of collectionOrigenDestino" [value]="OrigenDestino.iataCode">
+                {{OrigenDestino.pais}} - {{OrigenDestino.ciudad}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input [(ngModel)]="modRuta.precio_base" type="number" matInput placeholder="Precio Base" formControlName="precio_base">
+            <mat-error *ngIf="addressForm.controls['precio_base'].hasError('required')">
+              precio_base is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input [(ngModel)]="modRuta.distancia_viaje" type="number" matInput placeholder="Distancia de Viaje" formControlName="distancia_viaje">
+              <mat-error *ngIf="addressForm.controls['distancia_viaje'].hasError('required')">
+                distancia_viaje is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input [(ngModel)]="modRuta.tiempo_viaje" type="time" matInput placeholder="Tiempo de Viaje" formControlName="tiempo_viaje">
+              <mat-error *ngIf="addressForm.controls['tiempo_viaje'].hasError('required')">
+                tiempo_viaje is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit" [disabled]="addressForm.invalid">Guardar</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

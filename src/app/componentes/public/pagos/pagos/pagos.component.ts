@@ -1,5 +1,5 @@
+import { PagosService } from './../../../services/pagos.service';
 import { TablaPagosItem } from './../tabla-pagos/tabla-pagos-datasource';
-import { ApiService } from '../../services/ruta.service';
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -11,21 +11,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class PagosComponent {
   addressForm!: FormGroup;
-  /*addressForm = this.fb.group({--
-    company: null,
-    firstName: [null, Validators.required],
-    lastName: [null, Validators.required],
-    address: [null, Validators.required],
-    address2: null,
-    city: [null, Validators.required],
-    state: [null, Validators.required],
-    postalCode: [null, Validators.compose([
-      Validators.required, Validators.minLength(5), Validators.maxLength(5)])
-    ],
-    shipping: ['free', Validators.required]
-  });*/
 
-  constructor(private fb: FormBuilder, private Router:Router, private ApiService:ApiService) {
+
+  constructor(private fb: FormBuilder, private Router:Router, private _pagoService:PagosService) {
     this.addressForm = this.fb.group({
       numero_factura:[''],
       id_boleto: ['', Validators.required],
@@ -50,7 +38,7 @@ export class PagosComponent {
       cvv: this.addressForm.value.cvv,
     }
     console.log(user)
-    this.ApiService.addpago(user).subscribe();
+    this._pagoService.addPago(user).subscribe();
     this.Router.navigate(['/pagos'])
   }
 

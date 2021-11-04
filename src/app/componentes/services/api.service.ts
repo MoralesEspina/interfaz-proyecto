@@ -16,6 +16,13 @@ export class ApiService {
     return this.http.post<Ruta[]>(this.url+'/disponibilidad/',vuelos)
   }
 
+  getVuelos(){
+    return this.http.get(this.url+'/disponibilidad/');
+  }
+
+  getIdVuelos(id_vuelo:string){
+    return this.http.get(this.url+'/disponibilidad/'+id_vuelo);
+  }
 
 }
 

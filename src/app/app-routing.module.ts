@@ -1,14 +1,9 @@
 
-
-import { PagosComponent } from './componentes/pagos/pagos/pagos.component';
-
-
 import { RoleGuardGuard } from './Guards/role-guard.guard';
 
 import { PrincipalComponent } from './principal/principal.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CrearRutasComponent } from './componentes/rutas/crear-rutas/crear-rutas.component';
 
 //Imports Seleccion de Vuelos
 import { TablaVDisponibleComponent } from './componentes/public/tabla-vdisponible/tabla-vdisponible.component';
@@ -43,15 +38,18 @@ import { MostrarvueloComponent } from './componentes/private/vuelos/mostrarvuelo
 import { CrearvueloComponent } from './componentes/private/vuelos/crearvuelo/crearvuelo.component';
 import { AuthGuard } from './Guards/auth.guard';
 
+//Imports Pagos
+import { PagosComponent } from './componentes/public/pagos/pagos/pagos.component';
+
+//Imports Rutas
+import { CrearRutasComponent } from './componentes/public/rutas/crear-rutas/crear-rutas.component';
+import { TablaRutasComponent } from './componentes/public/rutas/tabla-rutas/tabla-rutas.component';
+
 const routes: Routes = [
 
   //Direcciones Inicio
   {path:'', redirectTo:'/inicio',pathMatch:'full'},
   {path:'inicio', component: PrincipalComponent},
-
-  {path:'vuelo', component: PagosComponent},
-  {path: 'disponible', component: CrearRutasComponent},
-
 
   //Direcciones Seleccion de Vuelos
   {path:'disponible', component: TablaVDisponibleComponent},
@@ -79,7 +77,6 @@ const routes: Routes = [
   {path:'addcancelacion_vuelos', component: FormcanvuelosComponent, canActivate:[AuthGuard]},
   {path:'editcancelacion_vuelos/:id_cancelacion_vuelos', component: FormularioEditcanvuelosComponent, canActivate:[AuthGuard]},
 
-
   //Direcciones Aerolineas
   {path: 'tablaAerolinea', component:TablaAerolineaComponent, canActivate:[AuthGuard]},
   {path: 'agregarAerolinea', component:AgregarAerolineaComponent, canActivate:[AuthGuard]},
@@ -88,6 +85,14 @@ const routes: Routes = [
   //Direcciones Vuelos
   {path:'crudVuelo', component: MostrarvueloComponent, canActivate:[AuthGuard]},
   {path:'agregarVuelo', component: CrearvueloComponent, canActivate:[AuthGuard]},
+
+  //Direcciones Pagos
+  {path:'realizarPago', component: PagosComponent, canActivate:[AuthGuard]},
+
+  //Direcciones Rutas
+  {path:'crearRuta', component: CrearRutasComponent, canActivate:[AuthGuard]},
+  {path:'modificarRuta/:id_ruta', component: CrearRutasComponent, canActivate:[AuthGuard]},
+  {path:'tablaRuta', component: TablaRutasComponent, canActivate:[AuthGuard]},
 
 ];
 

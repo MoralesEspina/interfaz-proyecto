@@ -21,6 +21,7 @@ export class CrearvueloComponent implements OnInit {
     fecha_salida: '',
     id_estado: '',
   }
+
   Aeropuertos!: Aeropuerto[];
   constructor(private http: HttpClient,
               private fb: FormBuilder,

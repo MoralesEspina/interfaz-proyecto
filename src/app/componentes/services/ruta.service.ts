@@ -1,63 +1,41 @@
-import { Ruta } from '../../interfaz/ruta';
-import { TablaPagosItem } from '../pagos/tabla-pagos/tabla-pagos-datasource';
-import { TablaRutasItem } from '../rutas/tabla-rutas/tabla-rutas-datasource';
-
-import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { _ruta } from '../public/rutas/crear-rutas/crear-rutas.component';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService {
-  url='http://localhost:3000/disponibles';
-  URL='http://localhost:3000';
+export class RutaService {
+  URL = 'https://aeropuerto-dw.herokuapp.com';
 
   constructor(private http: HttpClient,) { }
-   //Tabla vuelos
-   getVuelos(){
-    return this.http.get(this.url);
-  }
 
-  getIdVuelos(id_vuelo:string){
-    return this.http.get(this.url+'/'+id_vuelo);
-  }
-  getVuelos2(vuelos:{}): Observable<Ruta[]>{
-    console.log(vuelos);
-    return this.http.post<Ruta[]>(this.URL+'/disponibilidad/',vuelos)
-  }
-
-  //Tablapagos
-  getpagos(){
-    return this.http.get(this.URL+'/pagos')
-  }
-
-  addpago(Pago:TablaPagosItem){
-    return this.http.post(this.URL+'/pagos', Pago);
-
-  }
 
   //Tabla rutas
-  getrutas(){
-    return this.http.get(this.URL+'/rutas')
+  getRutas() {
+    return this.http.get(this.URL + '/rutas')
   }
 
-  addruta(Ruta:TablaRutasItem){
-    return this.http.post(this.URL+'/rutas', Ruta);
-
+  getUnaRuta(id_ruta: string): Observable<_ruta[]> {
+    return this.http.get<_ruta[]>(this.URL + '/rutas/' + id_ruta);
   }
 
+  addRuta(Ruta: _ruta) {
+    this.http.post(this.URL + "/rutas", Ruta).subscribe(
+      res => console.log(res)
+    );
+  }
+
+  eliminarRuta(id_ruta: string) {
+    return this.http.delete(this.URL + '/rutas/' + id_ruta);
+  }
+
+  editRuta(id: string, ruta: _ruta) {
+    this.http.put(this.URL + '/rutas/' + id, ruta).subscribe(
+      res => console.log(res)
+    );
+    }
 }
 
-export interface Vuelo{
-  id_vuelo:string;
-  id_avion:string;
-  id_ruta:string;
-  origen:string;
-  destino:string;
-  precio_base:string;
-  distancia_viaje:string;
-  tiempo_viaje:string;
-  fecha_creacion:string;
-  descripcion:string;
-}
+

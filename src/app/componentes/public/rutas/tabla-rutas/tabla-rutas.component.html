@@ -1,0 +1,48 @@
+<div class="fondo">
+  <div class="container ">
+    <div class="row ">
+      <div class="col order-first mt-3 mb-5">
+        <mat-card class="card">
+          <h1 class=" text-center">RUTAS</h1>
+          <button type="submit" class=" btn agg btn-info" (click)="agregarRuta()">Agregar Ruta</button>
+          <rec class=" rec btn " (click)="actualizarRuta()" style="color :rgba(187, 76, 76, 0.952)"
+            matTooltip="Refrescar Tabla">
+            <mat-icon>refresh</mat-icon>
+          </rec>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Origen</th>
+                <th scope="col">Destino</th>
+                <th scope="col">Precio Base</th>
+                <th scope="col">Distancia de Viaje</th>
+                <th scope="col">Tiempo de Viaje</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let ruta of _Ruta">
+                <td>{{ruta.origen}}</td>
+                <td>{{ruta.destino}}</td>
+                <td>{{ruta.precio_base}}</td>
+                <td>{{ruta.distancia_viaje}}</td>
+                <td>{{ruta.tiempo_viaje}}</td>
+
+                <td class="puntero" (click)="modificarRuta(ruta.id_ruta)" style="color:rgb(142, 191, 247)"
+                  matTooltip="Editar Vuelo">
+                  <mat-icon>edit</mat-icon>
+                </td>
+
+                <td class="puntero" (click)="eliminarRuta(ruta.id_ruta)" style="color :rgba(187, 76, 76, 0.952)"
+                  matTooltip="Eliminar Vuelo">
+                  <mat-icon>delete</mat-icon>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </mat-card>
+      </div>
+    </div>
+
+  </div>
+</div>

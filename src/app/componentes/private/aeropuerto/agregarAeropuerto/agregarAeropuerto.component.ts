@@ -32,6 +32,7 @@ export class AgregarAeropuertoComponent implements OnInit {
   ngOnInit(): void {
     this.cargarAeropuertos();
   }
+
   cargarAeropuertos() {
     const id_entrada = this._activatedRoute.snapshot.params.iataCode;
     if (id_entrada) {

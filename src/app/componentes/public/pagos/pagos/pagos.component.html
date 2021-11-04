@@ -5,19 +5,21 @@
     </mat-card-header>
     <mat-card-content>
       <div class="row">
+
         <div class="col">
           <mat-form-field class="full-width">
-            <input type="number" matInput placeholder="Numero Factura" formControlName="numero_factura">
+            <input type="number"[readonly]="true" matInput placeholder="Número de Factura" formControlName="numero_factura">
             <mat-error *ngIf="addressForm.controls['numero_factura'].hasError('required')">
-              Numero de Factura is <strong>required</strong>
+              El Número de Factura es <strong>requerido</strong>
             </mat-error>
           </mat-form-field>
         </div>
+
         <div class="col">
           <mat-form-field class="full-width">
-            <input type="number" matInput placeholder="Boleto" formControlName="id_boleto">
+            <input type="number" [readonly]="true" matInput placeholder="Boleto" formControlName="id_boleto">
             <mat-error *ngIf="addressForm.controls['id_boleto'].hasError('required')">
-              Boleto is <strong>required</strong>
+              El Boleto es <strong>requerido</strong>
             </mat-error>
           </mat-form-field>
         </div>
@@ -26,18 +28,18 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
-            <input type="number" matInput placeholder="Costo Total" formControlName="costo_total">
+            <input type="number" [readonly]="true" matInput placeholder="Costo Total" formControlName="costo_total">
             <mat-error *ngIf="addressForm.controls['costo_total'].hasError('required')">
-              Costo Total is <strong>required</strong>
+              El Costo Total es <strong>requerido</strong>
             </mat-error>
           </mat-form-field>
         </div>
 
         <div class="col">
           <mat-form-field class="full-width">
-            <input type="number" matInput placeholder="Tarjeta de Credito" formControlName="Tarjeta_Credito">
+            <input type="number" matInput placeholder="Número de Tarjeta de Credito" formControlName="Tarjeta_Credito">
             <mat-error *ngIf="addressForm.controls['Tarjeta_Credito'].hasError('required')">
-              Tarjeta de Credito is <strong>required</strong>
+              El Número de Tarjeta de Credito es <strong>requerida</strong>
             </mat-error>
           </mat-form-field>
         </div>
@@ -46,7 +48,7 @@
           <mat-form-field class="full-width">
             <input type="text" matInput placeholder="Nombre del Propietario" formControlName="Nombre_Propietario">
             <mat-error *ngIf="addressForm.controls['Nombre_Propietario'].hasError('required')">
-              Nombre de Propietario is <strong>required</strong>
+              El Nombre de Propietario es <strong>requerido</strong>
             </mat-error>
           </mat-form-field>
         </div>
@@ -55,9 +57,9 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
-            <input type="date" matInput placeholder="Fecha de Expiracion" formControlName="Fecha_Exp">
+            <input matInput placeholder="Fecha de Expiracion" formControlName="Fecha_Exp">
             <mat-error *ngIf="addressForm.controls['Fecha_Exp'].hasError('required')">
-              Fecha de Expiracion is <strong>required</strong>
+              La Fecha de Expiracion es <strong>requerida</strong>
             </mat-error>
           </mat-form-field>
         </div>
@@ -66,7 +68,7 @@
           <mat-form-field class="full-width">
             <input type="password" matInput placeholder="CVV" formControlName="cvv">
             <mat-error *ngIf="addressForm.controls['cvv'].hasError('required')">
-              cvv is <strong>required</strong>
+              El CVV es <strong>requerido</strong>
             </mat-error>
           </mat-form-field>
         </div>
@@ -74,7 +76,7 @@
 
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="primary" type="submit" [disabled]="addressForm.invalid">Submit</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="addressForm.invalid">Pagar</button>
     </mat-card-actions>
   </mat-card>
 </form>

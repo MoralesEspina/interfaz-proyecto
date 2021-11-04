@@ -1,4 +1,4 @@
-import { ApiService } from '../../services/ruta.service';
+import { PagosService } from './../../../services/pagos.service';
 import { Router } from '@angular/router';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
@@ -20,13 +20,13 @@ export class TablaPagosComponent implements AfterViewInit {
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['numero_factura', 'id_boleto', 'costo_total', 'Tarjeta_Credito', 'Nombre_Propietario', 'Fecha_Exp', 'cvv'];
 
-  constructor(private ApiService:ApiService, private Router:Router) {
+  constructor(private _pagoService:PagosService, private Router:Router) {
     this.dataSource = new TablaPagosDataSource();
   }
 
   ngOnInit(){
     this.dataSource = new TablaPagosDataSource();
-    this.ApiService.getpagos().subscribe(
+    this._pagoService.getPagos().subscribe(
       (res:any) => {
         console.log(res);
         this.dataSource.data = res;
