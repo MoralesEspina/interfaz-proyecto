@@ -44,8 +44,12 @@ import { PagosComponent } from './componentes/public/pagos/pagos/pagos.component
 //Imports Rutas
 import { CrearRutasComponent } from './componentes/public/rutas/crear-rutas/crear-rutas.component';
 import { TablaRutasComponent } from './componentes/public/rutas/tabla-rutas/tabla-rutas.component';
+import { PrincipalAdminComponent } from './componentes/private/principal-admin/principal-admin.component';
+
 
 const routes: Routes = [
+
+  {path:'principalAdmin', component: PrincipalAdminComponent},
 
   //Direcciones Inicio
   {path:'', redirectTo:'/inicio',pathMatch:'full'},
