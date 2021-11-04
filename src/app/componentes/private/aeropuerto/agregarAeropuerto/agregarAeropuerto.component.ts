@@ -1,14 +1,8 @@
 import { Aeropuerto } from './../../../interfaces/aeropuerto';
 import { Component, OnInit } from '@angular/core';
-
 import { ActivatedRoute, Router } from '@angular/router';
-
-import { Router, RouterModule } from '@angular/router';
-
 import { AeropuertoService } from 'src/app/componentes/services/aeropuerto.service';
 import { FormBuilder, Validators } from '@angular/forms';
-
-
 
 @Component({
   selector: 'app-agregar-aeropuerto',
@@ -70,8 +64,5 @@ export class AgregarAeropuertoComponent implements OnInit {
     this._router.navigate(['/listaAeropuertos']);
   }
 }
-    console.log(aeropuerto);
-    this.router.navigate(['/listaAeropuertos'] );
-  }
 
 }
