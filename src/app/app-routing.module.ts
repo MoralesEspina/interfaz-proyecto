@@ -99,7 +99,7 @@ const routes: Routes = [
   {path:'agregarVuelo', component: CrearvueloComponent, canActivate:[AuthGuard]},
 
   //Direcciones Pagos
-  {path:'realizarPago', component: PagosComponent, canActivate:[AuthGuard]},
+  {path:'realizarPago', component: PagosComponent,},
 
   //Direcciones Rutas
   {path:'crearRuta', component: CrearRutasComponent, canActivate:[AuthGuard]},
