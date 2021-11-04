@@ -11,7 +11,7 @@
           </rec>
           <table class="table">
             <thead>
-              <tr>
+              <tr class=" text-center">
                 <th scope="col">Origen</th>
                 <th scope="col">Destino</th>
                 <th scope="col">Precio Base</th>
@@ -21,12 +21,12 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let ruta of _Ruta">
+              <tr *ngFor="let ruta of _Ruta" class=" text-center">
                 <td>{{ruta.origen}}</td>
                 <td>{{ruta.destino}}</td>
-                <td>{{ruta.precio_base}}</td>
-                <td>{{ruta.distancia_viaje}}</td>
-                <td>{{ruta.tiempo_viaje}}</td>
+                <td>${{ruta.precio_base}}</td>
+                <td>{{ruta.distancia_viaje}} Km</td>
+                <td>{{ruta.tiempo_viaje}} Hrs</td>
 
                 <td class="puntero" (click)="modificarRuta(ruta.id_ruta)" style="color:rgb(142, 191, 247)"
                   matTooltip="Editar Vuelo">
