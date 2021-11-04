@@ -21,6 +21,7 @@ export class TablaAeropuertoComponent implements OnInit {
   }
 
   listarmodelos(){
+
     this.AeropuertoService.getAeropuertos().subscribe(
       res=>{
         console.log(res)
@@ -41,7 +42,7 @@ export class TablaAeropuertoComponent implements OnInit {
 
       },
       err=> console.log(err));
-      setTimeout(location.reload.bind(location),200);
+      setTimeout(location.reload.bind(location),500);
   }
 
   modificarr(iataCode:string){
@@ -52,9 +53,9 @@ export class TablaAeropuertoComponent implements OnInit {
     this.router.navigate(["agregarAeropuertos"])
 
     }
-
     actualizar(){
-      setTimeout(location.reload.bind(location),500);
+      setTimeout(location.reload.bind(location),100);
     }
+
 
 }
