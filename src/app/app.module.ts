@@ -40,6 +40,7 @@ import { TablaModeloavionComponent } from './componentes/private/modeloavion/tab
 import { CrearvueloComponent } from './componentes/private/vuelos/crearvuelo/crearvuelo.component';
 import { MostrarvueloComponent } from './componentes/private/vuelos/mostrarvuelo/mostrarvuelo.component';
 import { MostrarTablaComponent } from './componentes/public/vuelo/mostrar-tabla.component';
+import { AuthGuard } from './Guards/auth.guard';
 
 
 @NgModule({
@@ -108,7 +109,7 @@ import { MostrarTablaComponent } from './componentes/public/vuelo/mostrar-tabla.
     MatDatepickerModule,
     MatNativeDateModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

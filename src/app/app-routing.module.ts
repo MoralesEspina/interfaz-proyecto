@@ -1,3 +1,4 @@
+import { RoleGuardGuard } from './Guards/role-guard.guard';
 import { PrincipalComponent } from './principal/principal.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -33,6 +34,7 @@ import { TablaAerolineaComponent } from './componentes/private/aerolinea/tablaAe
 //Imports Mant Vuelos
 import { MostrarvueloComponent } from './componentes/private/vuelos/mostrarvuelo/mostrarvuelo.component';
 import { CrearvueloComponent } from './componentes/private/vuelos/crearvuelo/crearvuelo.component';
+import { AuthGuard } from './Guards/auth.guard';
 
 const routes: Routes = [
 
@@ -44,9 +46,9 @@ const routes: Routes = [
   {path:'disponible', component: TablaVDisponibleComponent},
 
   //Direcciones Aeropuertos
-  {path:'agregarAeropuertos', component:AgregarAeropuertoComponent},
-  {path:'modificarAeropuertos/:iataCode', component:AgregarAeropuertoComponent},
-  {path:'listaAeropuertos', component:TablaAeropuertoComponent},
+  {path:'agregarAeropuertos', component:AgregarAeropuertoComponent, canActivate:[AuthGuard]},
+  {path:'modificarAeropuertos/:iataCode', component:AgregarAeropuertoComponent, canActivate:[AuthGuard]},
+  {path:'listaAeropuertos', component:TablaAeropuertoComponent, canActivate:[AuthGuard]},
 
   //Direcciones Login
   {path:'login', component: LoginComponent},
@@ -57,23 +59,23 @@ const routes: Routes = [
   {path:'agregar-personas', component: MostrarTablaComponent},
 
   //Direcciones Modelo de Avion
-  {path: 'tablamodelo',component:TablaModeloavionComponent},
-  {path: 'agregarmodelo',component:AgregarModeloavionComponent},
-  {path: 'modificarmodelo/:id_modelo',component:AgregarModeloavionComponent},
+  {path: 'tablamodelo',component:TablaModeloavionComponent, canActivate:[AuthGuard]},
+  {path: 'agregarmodelo',component:AgregarModeloavionComponent, canActivate:[AuthGuard]},
+  {path: 'modificarmodelo/:id_modelo',component:AgregarModeloavionComponent, canActivate:[AuthGuard]},
 
-  //Direcciones Cancelacion de Boletos
-  {path:'cancelacion_vuelos', component: TablaCanvuelosComponent},
-  {path:'addcancelacion_vuelos', component: FormcanvuelosComponent},
-  {path:'editcancelacion_vuelos/:id_cancelacion_vuelos', component: FormularioEditcanvuelosComponent},
+  //Direcciones Cancelacion de Vuelos
+  {path:'cancelacion_vuelos', component: TablaCanvuelosComponent, canActivate:[AuthGuard]},
+  {path:'addcancelacion_vuelos', component: FormcanvuelosComponent, canActivate:[AuthGuard]},
+  {path:'editcancelacion_vuelos/:id_cancelacion_vuelos', component: FormularioEditcanvuelosComponent, canActivate:[AuthGuard]},
 
   //Direcciones Aerolineas
-  {path: 'tablaAerolinea', component:TablaAerolineaComponent},
-  {path: 'agregarAerolinea', component:AgregarAerolineaComponent},
-  {path: 'edit/:id_aerolinea', component:AgregarAerolineaComponent},
+  {path: 'tablaAerolinea', component:TablaAerolineaComponent, canActivate:[AuthGuard]},
+  {path: 'agregarAerolinea', component:AgregarAerolineaComponent, canActivate:[AuthGuard]},
+  {path: 'edit/:id_aerolinea', component:AgregarAerolineaComponent, canActivate:[AuthGuard]},
 
   //Direcciones Vuelos
-  {path:'crudVuelo', component: MostrarvueloComponent},
-  {path:'agregarVuelo', component: CrearvueloComponent},
+  {path:'crudVuelo', component: MostrarvueloComponent, canActivate:[AuthGuard]},
+  {path:'agregarVuelo', component: CrearvueloComponent, canActivate:[AuthGuard]},
 
 ];
 
