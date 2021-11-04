@@ -12,13 +12,19 @@ export class VuelocrudService {
 
   constructor(private Http: HttpClient) { }
 
-  getvuelo(): Observable<mantVuelo[]>{
+  getVuelo(): Observable<mantVuelo[]>{
     return this.Http.get<mantVuelo[]>(this.url);
   }
 
-  addvuelo(vuelo:mantVuelo){
+  addVuelo(vuelo:mantVuelo){
     return this.Http.post(this.url, vuelo);
-
   }
+
+  deleteVuelo(id_vuelo:string){
+    this.Http.delete(this.url+'/'+id_vuelo).subscribe(
+      res => console.log(res)
+    )
+  }
+
 }
 

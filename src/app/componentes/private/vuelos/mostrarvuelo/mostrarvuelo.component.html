@@ -1,4 +1,7 @@
+
+<div class = "container">
 <div class="mat-elevation-z8">
+  <button type="button" class="btn btn-info" (click)="OnNuevoModelo()">Agregar Modelo</button>
   <table class="table">
     <thead>
       <tr>
@@ -17,7 +20,15 @@
         <td>{{vuelo.id_avion}}</td>
         <td>{{vuelo.fecha_salida}}</td>
         <td>{{vuelo.id_estado}}</td>
+        <td>
+          <button (click)="modificarVuelo(vuelo.id_vuelo)" type="button" class="btn btn-info">Editar</button>
+        </td>
+        <td>
+          <button (click)="eliminarVuelo(vuelo.id_vuelo)" type="button" class="btn btn-danger">Eliminar</button>
+        </td>
       </tr>
     </tbody>
   </table>
 </div>
+</div>
+

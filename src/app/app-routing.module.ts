@@ -6,11 +6,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { TablaVDisponibleComponent } from './componentes/public/tabla-vdisponible/tabla-vdisponible.component';
 
 //Imports Pasajeros
-import { MostrarTablaComponent } from './componentes/public/vuelo/mostrar-personas-tabla/mostrar-tabla.component';
+import { MostrarTablaComponent } from './componentes/public/vuelo/mostrar-tabla.component';
 
 //Imports Aeropuertos
 import { AgregarAeropuertoComponent } from './componentes/private/aeropuerto/agregarAeropuerto/agregarAeropuerto.component';
-import { ModificarAeropuertoComponent } from './componentes/private/aeropuerto/modificarAeropuerto/modificarAeropuerto.component';
 import { TablaAeropuertoComponent } from './componentes/private/aeropuerto/tablaAeropuerto/tablaAeropuerto.component';
 
 //Imports Login
@@ -22,7 +21,6 @@ import { RegisterUserComponent } from './componentes/public/register-user/regist
 //Imports Modelo de Avión
 import { AgregarModeloavionComponent } from './componentes/private/modeloavion/agregarModeloavion/agregar-modeloavion.component';
 import { TablaModeloavionComponent } from './componentes/private/modeloavion/tablaModeloavion/tabla-modelo.component';
-import { ModificarModeloavionComponent } from './componentes/private/modeloavion/modificarModeloavion/modificar-modelo.component';
 
 //Imports Cancelacion de Vuelos
 import { TablaCanvuelosComponent } from './componentes/private/canvuelo/tablaCanvuelos/tablaCanvuelos.component';
@@ -32,7 +30,6 @@ import { FormularioEditcanvuelosComponent } from './componentes/private/canvuelo
 //Imports Aerolineas
 import { AgregarAerolineaComponent } from './componentes/private/aerolinea/agregarAerolinea/agregar-aerolinea.component';
 import { TablaAerolineaComponent } from './componentes/private/aerolinea/tablaAerolinea/tabla-aerolinea.component';
-import { EditarAerolineaComponent } from './componentes/private/aerolinea/editarAerolinea/editar-aerolinea.component';
 
 //Imports Mant Vuelos
 import { MostrarvueloComponent } from './componentes/private/vuelos/mostrarvuelo/mostrarvuelo.component';
@@ -49,7 +46,7 @@ const routes: Routes = [
 
   //Direcciones Aeropuertos
   {path:'agregarAeropuertos', component:AgregarAeropuertoComponent},
-  {path:'modificarAeropuerto/:iataCode', component:ModificarAeropuertoComponent},
+  {path:'modificarAeropuertos/:iataCode', component:AgregarAeropuertoComponent},
   {path:'listaAeropuertos', component:TablaAeropuertoComponent},
 
   //Direcciones Login
@@ -64,7 +61,7 @@ const routes: Routes = [
   //Direcciones Modelo de Avion
   {path: 'tablamodelo',component:TablaModeloavionComponent},
   {path: 'agregarmodelo',component:AgregarModeloavionComponent},
-  {path: 'modificarmodelo/:id_modelo',component:ModificarModeloavionComponent},
+  {path: 'modificarmodelo/:id_modelo',component:AgregarModeloavionComponent},
 
   //Direcciones Cancelacion de Boletos
   {path:'cancelacion_vuelos', component: TablaCanvuelosComponent},
@@ -74,7 +71,7 @@ const routes: Routes = [
   //Direcciones Aerolineas
   {path: 'tablaAerolinea', component:TablaAerolineaComponent},
   {path: 'agregarAerolinea', component:AgregarAerolineaComponent},
-  {path: 'edit/:id_aerolinea', component:EditarAerolineaComponent},
+  {path: 'edit/:id_aerolinea', component:AgregarAerolineaComponent},
 
   //Direcciones Vuelos
   {path:'crudVuelo', component: MostrarvueloComponent},

@@ -1,4 +1,3 @@
-import { ModificarModeloavionComponent } from './componentes/private/modeloavion/modificarModeloavion/modificar-modelo.component';
 import { RegisterUserComponent } from './componentes/public/register-user/register-user.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -28,21 +27,19 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import "@angular/compiler";
 import { TablaVDisponibleComponent } from './componentes/public/tabla-vdisponible/tabla-vdisponible.component';
-import { MostrarTablaComponent } from './componentes/public/vuelo/mostrar-personas-tabla/mostrar-tabla.component';
 import { AgregarAeropuertoComponent } from './componentes/private/aeropuerto/agregarAeropuerto/agregarAeropuerto.component';
-import { ModificarAeropuertoComponent } from './componentes/private/aeropuerto/modificarAeropuerto/modificarAeropuerto.component';
 import { LoginComponent } from './componentes/public/login/login.component';
 import { TablaCanvuelosComponent } from './componentes/private/canvuelo/tablaCanvuelos/tablaCanvuelos.component';
 import { TablaAeropuertoComponent } from './componentes/private/aeropuerto/tablaAeropuerto/tablaAeropuerto.component';
 import { FormularioEditcanvuelosComponent } from './componentes/private/canvuelo/editarCanvuelos/editarCanvuelos.component';
 import { FormcanvuelosComponent } from './componentes/private/canvuelo/agregarCanvuelos/agregarCanvuelos.component';
 import { AgregarAerolineaComponent } from './componentes/private/aerolinea/agregarAerolinea/agregar-aerolinea.component';
-import { EditarAerolineaComponent } from './componentes/private/aerolinea/editarAerolinea/editar-aerolinea.component';
 import { TablaAerolineaComponent } from './componentes/private/aerolinea/tablaAerolinea/tabla-aerolinea.component';
 import { AgregarModeloavionComponent } from './componentes/private/modeloavion/agregarModeloavion/agregar-modeloavion.component';
 import { TablaModeloavionComponent } from './componentes/private/modeloavion/tablaModeloavion/tabla-modelo.component';
 import { CrearvueloComponent } from './componentes/private/vuelos/crearvuelo/crearvuelo.component';
 import { MostrarvueloComponent } from './componentes/private/vuelos/mostrarvuelo/mostrarvuelo.component';
+import { MostrarTablaComponent } from './componentes/public/vuelo/mostrar-tabla.component';
 
 
 @NgModule({
@@ -54,7 +51,6 @@ import { MostrarvueloComponent } from './componentes/private/vuelos/mostrarvuelo
     //Aeropuertos Componentes
     TablaAeropuertoComponent,
     AgregarAeropuertoComponent,
-    ModificarAeropuertoComponent,
 
     //Vuelos Disponibles Componente
     TablaVDisponibleComponent,
@@ -74,11 +70,9 @@ import { MostrarvueloComponent } from './componentes/private/vuelos/mostrarvuelo
 
     //Aerolinea Componentes
     AgregarAerolineaComponent,
-    EditarAerolineaComponent,
     TablaAerolineaComponent,
 
     //Modelo Avion Componentes
-    ModificarModeloavionComponent,
     AgregarModeloavionComponent,
     TablaModeloavionComponent,
 
@@ -112,7 +106,6 @@ import { MostrarvueloComponent } from './componentes/private/vuelos/mostrarvuelo
     HttpClientModule,
     MatDatepickerModule,
     MatNativeDateModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]

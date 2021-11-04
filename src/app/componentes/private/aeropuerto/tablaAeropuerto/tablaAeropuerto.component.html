@@ -30,7 +30,7 @@
 
           <td>
 
-            <button (click)="modificarr(modelo.iataCode)" type="button" class="btn btn-info">Editar</button>
+            <button type="button" routerLink = "/modificarAeropuertos/{{modelo.iataCode}}" class="btn btn-info">Editar</button>
           </td>
           <td>
             <button (click)="eliminarr(modelo.iataCode)" type="button" class="btn btn-danger">Eliminar</button>

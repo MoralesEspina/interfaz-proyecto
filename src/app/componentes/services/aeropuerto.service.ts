@@ -1,6 +1,7 @@
+import { Aeropuerto } from './../interfaces/aeropuerto';
+import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { Aeropuerto } from '../interfaces/aeropuerto';
 
 
 @Injectable({
@@ -10,13 +11,13 @@ export class AeropuertoService {
   url = "https://aeropuerto-dw.herokuapp.com/aeropuertos"
   constructor(private http: HttpClient) { }
 
-  getAeropuertos() {
-    return this.http.get(this.url);
+  getAeropuertos(): Observable<Aeropuerto[]> {
+    return this.http.get<Aeropuerto[]>(this.url);
   }
 
   //get un boleto
-  getUnAeropuerto(iataCode: string) {
-    return this.http.get(this.url + '/' + iataCode);
+  getUnAeropuerto(iataCode: string): Observable<Aeropuerto[]> {
+    return this.http.get<Aeropuerto[]>(this.url + '/' + iataCode);
   }
 
   //Crear
@@ -35,9 +36,10 @@ export class AeropuertoService {
 
   //modificar
 
-
   editAeropuerto(id: string, aeropuerto: Aeropuerto) {
-    return this.http.put(this.url + '/' + id, aeropuerto);
+    this.http.put(this.url + '/' + id, aeropuerto).subscribe(
+      res => console.log(res)
+    );
 
   }
 }
