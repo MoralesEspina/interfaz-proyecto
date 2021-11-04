@@ -3,7 +3,7 @@
     <div class="row ">
       <div class="col order-first mt-5 mb-5">
         <mat-card class="card">
-          <h1 class=" text-center">Retrasos de Vuelos</h1>
+          <h1 class=" text-center">Retrasar Vuelos</h1>
     <button class=" btn agg btn-info" mat-raised-button routerLink="/addcancelacion_vuelos">Agregar</button>
     <rec class=" rec btn " (click)="actualizar()" style="color :rgba(187, 76, 76, 0.952)" matTooltip="Refrescar Tabla">
       <mat-icon>refresh</mat-icon>
@@ -12,9 +12,9 @@
       <thead>
         <tr class=" text-center">
           <th scope="col">No.</th>
+          <th scope="col">Vuelo No.</th>
           <th scope="col">Motivo</th>
           <th scope="col">Estado(falta)</th>
-          <th scope="col">Vuelo</th>
           <th scope="col">Fecha Reasignada</th>
           <th scope="col">Editar</th>
 
@@ -23,9 +23,9 @@
       <tbody>
         <tr *ngFor= "let canvuelos of Listarcanvuelos" class=" text-center">
           <th>{{canvuelos.id_cancelacion_vuelos}}</th>
+          <td>{{canvuelos.vuelo}}</td>
           <td>{{canvuelos.motivo}}</td>
           <td>{{canvuelos.estado}}</td>
-          <td>{{canvuelos.vuelo}}</td>
           <td>{{canvuelos.fecha_reasignada}}</td>
           <td class="puntero" (click)="modificar(canvuelos.id_cancelacion_vuelos)" style="color:rgb(142, 191, 247)"
           matTooltip="Aceptar o Denegar">
