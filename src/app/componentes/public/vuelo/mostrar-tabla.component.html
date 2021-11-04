@@ -1,0 +1,145 @@
+<body class="body">
+  <header>
+    <div class="container p-1">
+      <div class="row">
+        <div class="col order-first mt-3">
+          <mat-card class="shipping-card">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">nombre</th>
+                  <th scope="col">Origen</th>
+                  <th scope="col">Destino</th>
+                  <th scope="col">Precio Base</th>
+                  <th scope="col">Distancia</th>
+                  <th scope="col">Tiempo Viaje</th>
+                  <th scope="col">Fecha Creacion</th>
+                  <th scope="col">Descripcion</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let vuelo of ListarVuelo">
+                  <td>{{vuelo.nombre}}</td>
+                  <td>{{vuelo.origen}}</td>
+                  <td>{{vuelo.destino}}</td>
+                  <td>{{vuelo.precio_base}}</td>
+                  <td>{{vuelo.distancia_viaje}}</td>
+                  <td>{{vuelo.tiempo_viaje}}</td>
+                  <td>{{vuelo.fecha_creacion}}</td>
+                  <td>{{vuelo.descripcion}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+
+  </header>
+  <div class="container ">
+    <div class="row">
+      <form [formGroup]="addressForm" novalidate (ngSubmit)="onAgregar()">
+        <!--datos de pasajero-->
+        <div class="col order-first mb-auto">
+          <mat-card class="card">
+            <h1 class=" text-center">Datos del Pasajero</h1>
+
+                <mat-card-content class="align-self-center">
+                  <div class="container">
+                    <div class="row">
+                  <div class="col col order-first">
+                    <mat-form-field class="mat-form-field" appearance="fill">
+                      <input matInput placeholder="Nombres" formControlName="nombres">
+                      <mat-error *ngIf="addressForm.controls['nombres'].hasError('required')">
+                        <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                      <input matInput placeholder="Apellidos" formControlName="apellidos">
+                      <mat-error *ngIf="addressForm.controls['apellidos'].hasError('required')">
+                        <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                      <mat-label>Tipo Documento</mat-label>
+                      <mat-select formControlName="tipo_doc">
+                        <mat-option *ngFor="let TipoDoc of _tipoDoc" [value]="TipoDoc.value">
+                          {{TipoDoc.viewValue}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                      <input matInput placeholder="Numero Documento" formControlName="numero_doc">
+                      <mat-error *ngIf="addressForm.controls['numero_doc'].hasError('required')">
+                        <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                  <div class="col col order-last">
+                    <mat-form-field appearance="fill">
+                      <mat-label style="color:#000000;">Fecha de Nacimiento</mat-label>
+                      <input matInput type="date" placeholder="Fecha Nacimiento" formControlName="fecha_nacimiento">
+                      <mat-error *ngIf="addressForm.controls['fecha_nacimiento'].hasError('required')">
+                        <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                      <mat-label>Genero</mat-label>
+                      <mat-select formControlName="genero">
+                        <mat-option *ngFor="let persona of genero" [value]="persona">
+                          {{persona}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                      <input matInput placeholder="Nacionalidad" formControlName="nacionalidad">
+                      <mat-error *ngIf="addressForm.controls['nacionalidad'].hasError('required')">
+                        <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+                </mat-card-content>
+
+          </mat-card>
+        </div>
+
+        <!--asientos-->
+        <div class="col order-first">
+          <div class="card2">
+            <mat-card class="row">
+              <h1 class=" text-center">Asiento</h1>
+              <mat-card-content>
+                <div style="text-align: center;">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Asiento</mat-label>
+                    <mat-select formControlName='num_asiento'>
+                      <mat-option *ngFor="let asiento of collection1" [value]="asiento">
+                        {{asiento.numero}}{{asiento.letra}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <mat-form-field appearance="fill">
+                  <mat-label>Clase</mat-label>
+                  <mat-select formControlName='clase'>
+                    <mat-option *ngFor="let clase of collection2" [value]="clase">
+                      {{clase.tipo_clase}}, ${{clase.precio}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </mat-card-content>
+            </mat-card>
+            <mat-card-actions style="text-align: center;">
+              <button mat-raised-button [disabled]="addressForm.invalid" class="btn btn-info"
+                type="submit">Siguiente</button>
+            </mat-card-actions>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+</body>

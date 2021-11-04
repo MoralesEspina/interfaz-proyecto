@@ -1,0 +1,58 @@
+<form [formGroup]="addressForm" novalidate>
+  <body>
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Cancelacion Vuelos</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Ingrese Motivo" formControlName="motivo" [(ngModel)]="canvuelos.motivo">
+            <mat-error *ngIf="addressForm.controls['motivo'].hasError('required')">
+               El Motivo es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Id Estado" formControlName="estado" [(ngModel)]="canvuelos.estado">
+            <mat-error *ngIf="addressForm.controls['estado'].hasError('required')">
+              El Estado es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Id Vuelo" formControlName="vuelo" [(ngModel)]="canvuelos.vuelo">
+            <mat-error *ngIf="addressForm.controls['vuelo'].hasError('required')">
+               El Vuelo es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Ingrese Fecha" formControlName="fecha_reasignada" [(ngModel)]="canvuelos.fecha_reasignada">
+            <mat-error *ngIf="addressForm.controls['fecha_reasignada'].hasError('required')">
+              La Fecha Reasignada es <strong>requerida</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit" (click)="modificar()">Guardar</button>
+      <button mat-raised-button color="primary" type="submit" (click)="regresar()">Regresar</button>
+
+    </mat-card-actions>
+  </mat-card>
+</body>
+</form>

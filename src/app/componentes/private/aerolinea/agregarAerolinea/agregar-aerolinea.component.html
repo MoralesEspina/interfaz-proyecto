@@ -1,0 +1,21 @@
+<div class="container">
+  <p>agregar</p>
+  <div class="row">
+    <div class="col-sm-6">
+      <form>
+        <div class="mb3">
+          <label class="form-label">Nombre</label>
+          <input [(ngModel)]="ModeloAerolinea.nombre" type="text" class="form-control" name="nombre">
+        </div>
+        <br>
+        <div class="mb10">
+          <button (click)="agregarAerolinea()" type="button" class="btn btn-danger">Guardar</button>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+
+</div>
+
