@@ -32,8 +32,16 @@ export class FormcanvuelosComponent {
   constructor(private fb: FormBuilder, private servicecan: CanvuelosService, private router: Router, private activate: ActivatedRoute) { }
 
   agregar() {
-      this.servicecan.addVuelos(this.canvuelos).subscribe();
-      alert('Guardado Correctamente');
+    const cancelvuelos: canvuelos = {
+      motivo: this.addressForm.value.motivo,
+      vuelo: this.addressForm.value.vuelo,
+      fecha_reasignada: this.addressForm.value.fecha_reasignada,
+      id_cancelacion_vuelos: undefined,
+      estado:"1",
+    }
+    this.servicecan.addVuelos(cancelvuelos);
+    console.log(cancelvuelos);
+    alert('Guardado Correctamente');
       this.router.navigate(['/cancelacion_vuelos']);
   }
 
