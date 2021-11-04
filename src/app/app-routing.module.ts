@@ -14,7 +14,6 @@ import { TablaAeropuertoComponent } from './componentes/private/aeropuerto/tabla
 
 //Imports Login
 import { LoginComponent } from './componentes/public/login/login.component';
-import { RegisterComponent } from './componentes/public/register/register.component';
 import { RegisterUserComponent } from './componentes/public/register-user/register-user.component';
 
 
@@ -51,7 +50,6 @@ const routes: Routes = [
 
   //Direcciones Login
   {path:'login', component: LoginComponent},
-  {path:'register', component: RegisterComponent},
   {path:'register_user', component: RegisterUserComponent},
 
   //Direcciones Pasajeros

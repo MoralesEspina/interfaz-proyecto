@@ -1,17 +1,19 @@
 .mat_card {
-  max-width: 400px;
-  margin: 2em auto;
+  max-width: 300px;
+  margin: 30px  auto;
   text-align: center;
 }
+.body{
+  background-color:rgb(235, 237, 238);
+ background-repeat: no-repeat;
 
+}
 .mat-form-field {
   display: block;
+  width: 270px;
+  max-width: 270px;
 }
 
-.shipping-card {
-  min-width: 120px;
-  margin: 20px auto;
-}
 
 .mat-radio-button {
   display: block;
@@ -30,4 +32,15 @@
 
 .col:last-child {
   margin-right: 0;
+}
+
+.fondo{
+  background-color:rgb(235, 237, 238);
+  margin: auto;
+
+}
+.body{
+  background-color:rgb(235, 237, 238);
+  margin: auto;
+
 }
