@@ -1,34 +1,41 @@
-<div class="mat-elevation-z8">
-    <mat-toolbar style="background-color:rgb(241, 218, 87);" >
-      <span>Informacion De Cancelacion De Boletos</span>
-      <div class="example-spacer"></div>
-      <button mat-raised-button color="primary" routerLink="/addcancelacion_boletos"><mat-icon>add_box</mat-icon>Agregar</button>
-    </mat-toolbar>
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Id Cancelacion</th>
-          <th scope="col">Id Boleto</th>
-          <th scope="col">Motivo</th>
-          <th scope="col">Estado</th>
+<div class="fondo">
+  <div class="container">
+    <div class="row ">
+      <div class="col order-first mt-5 mb-5">
+        <mat-card class="card">
+          <h1 class=" text-center">Cancelacion de Boletos</h1>
+          <button class=" btn agg btn-info" mat-raised-button routerLink="/addcancelacion_boletos">
+            <mat-icon>add</mat-icon>Agregar
+          </button>
+          <rec class=" rec btn " (click)="actualizar()" style="color :rgba(187, 76, 76, 0.952)" matTooltip="Refrescar Tabla">
+            <mat-icon>refresh</mat-icon>
+          </rec>
+          <table class="table">
+            <thead>
+              <tr  class=" text-center">
+                <th scope="col">Id Cancelacion</th>
+                <th scope="col">Id Boleto</th>
+                <th scope="col">Motivo</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Editar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let canboletos of Listarcanboletos"  class=" text-center">
+                <th>{{canboletos.id_cancelacion_boletos}}</th>
+                <td>{{canboletos.id_boleto}}</td>
+                <td>{{canboletos.motivo}}</td>
+                <td>{{canboletos.estado}}</td>
 
-        
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor= "let canboletos of Listarcanboletos">
-          <th>{{canboletos.id_cancelacion_boletos}}</th>
-          <td>{{canboletos.id_boleto}}</td>
-          <td>{{canboletos.motivo}}</td>
-          <td>{{canboletos.estado}}</td>
-          <td>
-            <button (click)="modificar(canboletos.id_cancelacion_boletos)"  type="button" class="btn btn-info" ><mat-icon>create</mat-icon>Editar</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+                <td class="puntero" (click)="modificar(canboletos.id_cancelacion_boletos)"
+                  style="color:rgb(142, 191, 247)" matTooltip="Aceptar o Denegar">
+                  <mat-icon>edit</mat-icon>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </mat-card>
+      </div>
+    </div>
   </div>
-  
-  
-  
-  
+</div>

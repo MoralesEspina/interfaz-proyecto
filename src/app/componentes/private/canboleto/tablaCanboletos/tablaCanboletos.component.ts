@@ -28,6 +28,8 @@ export class TablaCanboletosComponent implements OnInit {
   }
   modificar(id_cancelacion_boletos:string){
     this.router.navigate(['/editcancelacion_boletos/'+id_cancelacion_boletos])
+  }  actualizar(){
+    setTimeout(location.reload.bind(location),100);
   }
 
 
