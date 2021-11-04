@@ -1,7 +1,6 @@
-<div class="fondo">
-  <div class="container ">
-    <div class="row ">
-      <div class="col order-first mt-3 mb-5">
+<body class="body">
+  <div class="container">
+    <div class="row">
         <mat-card class="card">
           <h1 class=" text-center">Vuelos Disponibles</h1>
           <table class="table">
@@ -22,17 +21,18 @@
                 <td>{{vuelos.nombre}}</td>
                 <td>{{vuelos.origen}}</td>
                 <td>{{vuelos.destino}}</td>
-                <td>{{vuelos.distancia_viaje}}</td>
-                <td>{{vuelos.tiempo_viaje}}</td>
-                <td>{{vuelos.precio_base}}</td>
+                <td>{{vuelos.distancia_viaje}} Km</td>
+                <td>{{vuelos.tiempo_viaje}} Hrs</td>
+                <td>${{vuelos.precio_base}}</td>
                 <td>{{vuelos.fecha_salida}}</td>
                 <td>{{vuelos.descripcion}}</td>
-                <button type="submit" class=" btn agg btn-info" (click)="seleccionarVuelo(vuelos.id_vuelo,vuelos.id_ruta)">Agregar Aeropuerto</button>
+                <td>
+                <button type="submit" class=" btn agg btn-info" (click)="seleccionarVuelo(vuelos.id_vuelo,vuelos.id_ruta)">Seleccionar</button>
+              </td>
               </tr>
             </tbody>
           </table>
         </mat-card>
       </div>
     </div>
-  </div>
-</div>
+</body>

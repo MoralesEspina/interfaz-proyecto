@@ -14,8 +14,8 @@
               <tr class="text-center">
                 <th scope="col">Modelo</th>
                 <th scope="col">Velocidad Media</th>
-                <th scope="col">Cant. Asientos Economicos</th>
-                <th scope="col">Cant. Asientos Ejecutivos</th>
+                <th scope="col">Asientos Economicos</th>
+                <th scope="col">Asientos Ejecutivos</th>
                 <th scope="col">Editar</th>
                 <th scope="col">Eliminar</th>
               </tr>
@@ -24,8 +24,8 @@
               <tr *ngFor="let modelo of ListarModelos" class="text-center">
                 <td>{{modelo.nombre}}</td>
                 <td>{{modelo.velocidad_media}} Km/h</td>
-                <td>{{modelo.asientos_economicos}}</td>
-                <td>{{modelo.asientos_ejecutivos}}</td>
+                <td>{{modelo.asientos_economicos}} Asientos</td>
+                <td>{{modelo.asientos_ejecutivos}} Asientos /td>
 
                 <td class="puntero" (click)="modificarModelo(modelo.id_modelo)" style="color:rgb(142, 191, 247)"
                   matTooltip="Editar Modelo">
