@@ -45,8 +45,10 @@ import { TablaPagosComponent } from './componentes/public/pagos/tabla-pagos/tabl
 import { CrearRutasComponent } from './componentes/public/rutas/crear-rutas/crear-rutas.component';
 import { MostrarTablaComponent } from './componentes/public/vuelo/mostrar-tabla.component';
 import { TablaRutasComponent } from './componentes/public/rutas/tabla-rutas/tabla-rutas.component';
-import { NavComponentAdmin } from './nav-admin/nav.component';
 import { PrincipalAdminComponent } from './componentes/private/principal-admin/principal-admin.component';
+import { FormcanboletosComponent } from './componentes/private/canboleto/agregarCanboletos/agregarCanboletos.component';
+import { FormularioEditcanboletosComponent } from './componentes/private/canboleto/editarCanboletos/editarCanboletos.component';
+import { TablaCanboletosComponent } from './componentes/private/canboleto/tablaCanboletos/tablaCanboletos.component';
 
 
 
@@ -55,7 +57,6 @@ import { PrincipalAdminComponent } from './componentes/private/principal-admin/p
   declarations: [
     AppComponent,
     NavComponent,
-    NavComponentAdmin,
 
     PrincipalComponent,
 
@@ -97,7 +98,12 @@ import { PrincipalAdminComponent } from './componentes/private/principal-admin/p
     //Modelo Mant Vuelos
     CrearvueloComponent,
     MostrarvueloComponent,
-    PrincipalAdminComponent
+    PrincipalAdminComponent,
+
+    //Cancelación Boletos Component
+    TablaCanboletosComponent,
+    FormularioEditcanboletosComponent,
+    FormcanboletosComponent
 
 
   ],
