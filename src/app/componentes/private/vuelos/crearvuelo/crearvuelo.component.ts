@@ -1,58 +1,101 @@
+import { AeropuertoService } from 'src/app/componentes/services/aeropuerto.service';
 import { Router } from '@angular/router';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { VuelocrudService } from 'src/app/componentes/services/vuelocrud.service';
+import { mantVuelo } from 'src/app/componentes/interfaces/mantVuelo';
+import { HttpClient } from '@angular/common/http';
+import { Aeropuerto } from 'src/app/componentes/interfaces/aeropuerto';
 
 @Component({
   selector: 'app-crearvuelo',
   templateUrl: './crearvuelo.component.html',
   styleUrls: ['./crearvuelo.component.css']
 })
-export class CrearvueloComponent {
-  addressForm!: FormGroup;
-  /*addressForm = this.fb.group({
-    company: null,
-    firstName: [null, Validators.required],
-    lastName: [null, Validators.required],
-    address: [null, Validators.required],
-    address2: null,
-    city: [null, Validators.required],
-    state: [null, Validators.required],
-    postalCode: [null, Validators.compose([
-      Validators.required, Validators.minLength(5), Validators.maxLength(5)])
-    ],
-    shipping: ['free', Validators.required]
-  });*/
+export class CrearvueloComponent implements OnInit {
 
+  _vuelos : mantVuelo ={
+    id_vuelo: '',
+    id_ruta: '',
+    id_avion: '',
+    fecha_salida: '',
+    id_estado: '',
+  }
+  Aeropuertos!: Aeropuerto[];
+  constructor(private http: HttpClient,
+              private fb: FormBuilder,
+              private router:Router,
+              private VuelocrudService:VuelocrudService,
+              private Aeropuerto : AeropuertoService) {
 
-  constructor(private fb: FormBuilder, private Router:Router, private VuelocrudService:VuelocrudService) {
-    this.addressForm = this.fb.group({
+    this.form = this.fb.group({
       id_vuelo:[''],
-      id_ruta: ['', Validators.required],
+      Ruta: ['', Validators.required],
       id_avion: ['', Validators.required],
       fecha_salida: ['', Validators.required],
-      id_estado: ['', Validators.required]
+      Id_estado: ['', Validators.required],
+      Avion: ['', Validators.required]
 
     });
   }
-  delete(){
-
-    delete this.addressForm.value.id_vuelo
+  ngOnInit(): void {
+    this.getCollectionRuta();
+    this.getCollectionAvion();
+    this.getCollectionEstados();
+    this.obtenerAeropuerto();
   }
 
-  onSubmit(){
-    /*console.log(this.addressForm)
-    const user: MostrarvueloItem ={
-      id_vuelo: this.addressForm.value.id_vuelo,
-      id_avion: this.addressForm.value.id_avion,
-      id_ruta: this.addressForm.value.id_ruta,
-      fecha_salida: this.addressForm.value.fecha_salida,
-      id_estado: this.addressForm.value.id_estado,
-    }
-    this.delete();
-    console.log(user)
-    this.VuelocrudService.addvuelo(user).subscribe();
-    this.Router.navigate(['/vuelver'])
-  }*/
-}
+  selected2: string;
+  selected1: string;
+  selected: string;
+
+  collectionRuta = [{ 'origen': this.getCollectionRuta, 'destino': this.getCollectionRuta , 'id_ruta': this.getCollectionRuta  }];
+  collectionAvion = [{ 'id_avion': this.getCollectionAvion}];
+  collectionEstados = [{ 'descripcion': this.getCollectionEstados, 'id_estado': this.getCollectionEstados}];
+  form: FormGroup;
+
+  getCollectionRuta() {
+    this.http
+      .get<any>('https://aeropuerto-dw.herokuapp.com/rutas').subscribe((res: any) => {
+        this.collectionRuta = res;
+        console.log(res);
+      }, error => {
+        console.log({ error });
+      })
+  }
+
+  getCollectionAvion() {
+    this.http
+      .get<any>('https://aeropuerto-dw.herokuapp.com/aviones').subscribe((res: any) => {
+        this.collectionAvion = res;
+        console.log(res);
+      }, error => {
+        console.log({ error });
+      })
+  }
+
+  getCollectionEstados() {
+    this.http
+      .get<any>('https://aeropuerto-dw.herokuapp.com/estado_aviones').subscribe((res: any) => {
+        this.collectionEstados = res;
+        console.log(res);
+      }, error => {
+        console.log({ error });
+      })
+  }
+
+  obtenerAeropuerto(){
+    this.Aeropuerto.getAeropuertos().subscribe(
+      res => {
+        console.log(res);
+        this.Aeropuertos = res;
+      },
+      err => console.log(err)
+    );
+  }
+  crearVuelo(){
+  console.log(this.form.value.Id_estado);
+  console.log(this.form.value.Ruta);
+  console.log(this.form.value.Avion);
+  }
 }

@@ -1,4 +1,4 @@
-import { ModeloAerolinea } from './../../../interfaces/modeloAerolinea';
+import { Aerolinea } from './../../../interfaces/aerolinea';
 import { Component, OnInit } from '@angular/core';
 import {aerolineaService} from 'src/app/componentes/services/aerolinea.service';
 import { Router } from '@angular/router';
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class TablaAerolineaComponent implements OnInit {
 
-  ListarModelos!: ModeloAerolinea[];
+  ListarModelos!: Aerolinea[];
   constructor(private aerolineaService:aerolineaService, private router:Router) { }
 
   ngOnInit(): void {

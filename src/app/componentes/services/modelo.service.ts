@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import{HttpClient}from '@angular/common/http'
 import { ModeloAvion } from '../interfaces/modeloavion';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -16,8 +17,8 @@ export class ModeloService {
   }
 
   //get un boleto
-  getunmodelo(id:string){
-    return this.http.get(this.url+'/'+id);
+  getUnModelo(iataCode: string): Observable<ModeloAvion[]> {
+    return this.http.get<ModeloAvion[]>(this.url + '/' + iataCode);
   }
 
   //Crear
@@ -33,7 +34,9 @@ export class ModeloService {
 
   //modificar
   editmodelo(id:string, modelo:ModeloAvion){
-    return this.http.put(this.url+'/'+id,modelo);
+    return this.http.put(this.url+'/'+id,modelo).subscribe(
+      res => console.log(res)
+    );
 
   }
 }

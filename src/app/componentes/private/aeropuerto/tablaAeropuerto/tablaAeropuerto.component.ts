@@ -46,7 +46,7 @@ export class TablaAeropuertoComponent implements OnInit {
   }
 
   modificarr(iataCode:string){
-    this.router.navigate(['modificarAeropuerto',iataCode])
+    this.router.navigate(['agregarAeropuertos',iataCode])
   }
 
   Onnuevoo(){

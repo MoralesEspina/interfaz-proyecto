@@ -14,25 +14,33 @@ export class MostrarvueloComponent implements OnInit {
 
   //
   ListaVuelos!: mantVuelo[];
-  constructor(private VuelocrudService:VuelocrudService, private Router:Router) {
+  constructor(private VuelocrudService: VuelocrudService, private router: Router) {
 
   }
 
   ngOnInit() {
-
     this.obtenerVuelos();
-
   }
 
-  obtenerVuelos()
-  {
-    this.VuelocrudService.getvuelo().subscribe(
-      res=>{
+  obtenerVuelos() {
+    this.VuelocrudService.getVuelo().subscribe(
+      res => {
         console.log(res);
-        this.ListaVuelos=res;
+        this.ListaVuelos = res;
       },
       err => console.log(err)
     );
   }
 
+  modificarVuelo(id_vuelo: string) {
+    this.router.navigate(['/agregarVuelo/' + id_vuelo])
+  }
+
+  eliminarVuelo(id_vuelo: string) {
+    this.VuelocrudService.deleteVuelo(id_vuelo);
+  }
+
+  OnNuevoModelo() {
+  this.router.navigate(['/agregarVuelo']);
+  }
 }
