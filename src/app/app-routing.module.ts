@@ -94,6 +94,7 @@ const routes: Routes = [
   //Direcciones Vuelos
   {path:'crudVuelo', component: MostrarvueloComponent, canActivate:[AuthGuard]},
   {path:'agregarVuelo', component: CrearvueloComponent, canActivate:[AuthGuard]},
+  {path:'modificarvuelo/:id_vuelo', component: CrearvueloComponent, canActivate:[AuthGuard]},
 
   //Direcciones Pagos
   {path:'realizarPago', component: PagosComponent,},
