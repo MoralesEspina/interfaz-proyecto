@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AsientoOcupado } from '../interfaces/asientosOcupados';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,19 @@ export class AsientosService {
       res => console.log(res)
     )
   }
+
+  comprobarAsientos( asientoOcupado:AsientoOcupado){
+    return this.http.post('http://localhost:3000/asientosocupados', asientoOcupado)
+  }
+
+  asientoOcupado(asientoOcupado:AsientoOcupado){
+    return this.http.post('http://localhost:3000/insertarasientosocupados', asientoOcupado).subscribe(
+      res => console.log(res)
+    )
+  }
 }
+
+
 
 export interface Asiento{
   id_asiento: number;
