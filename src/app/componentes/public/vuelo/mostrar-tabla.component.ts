@@ -33,7 +33,6 @@ export class MostrarTablaComponent implements OnInit {
   ];
 
   addressForm = this.fb.group({
-    id_persona: [''],
     nombres: ['', Validators.required],
     apellidos: ['', Validators.required],
     tipo_doc: ['', Validators.required],
@@ -41,9 +40,6 @@ export class MostrarTablaComponent implements OnInit {
     fecha_nacimiento: ['', Validators.required],
     genero: ['', Validators.required],
     nacionalidad: ['', Validators.required],
-    num_asiento: ['', Validators.required],
-    clase: ['', Validators.required],
-    id_avion: ['', Validators.required]
   });
 
 
@@ -163,13 +159,15 @@ export class MostrarTablaComponent implements OnInit {
     );
   }
 
+  boton : boolean = true;
   crearAsiento(id:string){
     const _asiento : AsientoOcupado = {
       id_asiento :id,
       id_avion : ''+localStorage.getItem('id_avion'),
       id_vuelo : ''+localStorage.getItem('id_vuelo')
     }
-    this.asientoOcupado.asientoOcupado(_asiento);
+    this.boton = false;
+    //this.asientoOcupado.asientoOcupado(_asiento);
   }
 
   asientosOcupados(){

@@ -1,9 +1,15 @@
 import { Router } from '@angular/router';
+
 import { VuelocrudService } from '../../../services/vuelocrud.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { mantVuelo } from 'src/app/componentes/interfaces/mantVuelo';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+
+import { VuelocrudService, VuelosDisponibles } from '../../../services/vuelocrud.service';
+import { Component, OnInit } from '@angular/core';
+
+
 
 
 @Component({
@@ -15,7 +21,7 @@ export class MostrarvueloComponent implements OnInit {
 
 
   //
-  ListaVuelos!: mantVuelo[];
+  ListaVuelos!: VuelosDisponibles[];
   constructor(private VuelocrudService: VuelocrudService, private router: Router) {
 
   }
@@ -45,7 +51,7 @@ export class MostrarvueloComponent implements OnInit {
   }
 
   modificarVuelo(id_vuelo: string) {
-    this.router.navigate(['/agregarVuelo/' + id_vuelo])
+    this.router.navigate(['/modificarvuelo/' + id_vuelo])
   }
 
   eliminarVuelo(id_vuelo: string) {
@@ -53,7 +59,7 @@ export class MostrarvueloComponent implements OnInit {
     setTimeout(location.reload.bind(location),500);
   }
 
-  OnNuevoModelo() {
+  OnNuevoVuelo() {
   this.router.navigate(['/agregarVuelo']);
   }
   actualizar(){

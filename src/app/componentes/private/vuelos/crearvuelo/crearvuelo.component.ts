@@ -1,6 +1,7 @@
+import { VuelosDisponibles } from './../../../services/vuelocrud.service';
 import { Vuelo } from 'src/app/componentes/interfaces/vuelo';
 import { AeropuertoService } from 'src/app/componentes/services/aeropuerto.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { VuelocrudService } from 'src/app/componentes/services/vuelocrud.service';
@@ -24,18 +25,29 @@ export class CrearvueloComponent implements OnInit {
   }
   editing: boolean = false;
   Aeropuertos!: Aeropuerto[];
+
+  Vuelos : VuelosDisponibles ={
+    id_vuelo:'',
+    origen:'',
+    destino:'',
+    id_avion:'',
+    fecha_salida:'',
+    descripcion:''
+  }
+
   constructor(private http: HttpClient,
     private fb: FormBuilder,
     private router: Router,
     private VuelocrudService: VuelocrudService,
-    private Aeropuerto: AeropuertoService) {
+    private Aeropuerto: AeropuertoService,
+    private _activatedRoute: ActivatedRoute ) {
 
     this.form = this.fb.group({
       id_vuelo: [''],
-      Ruta: ['', Validators.required],
+      id_ruta: ['', Validators.required],
       id_avion: ['', Validators.required],
       fecha_salida: ['', Validators.required],
-      Id_estado: ['', Validators.required],
+      id_estado: ['', Validators.required],
       Avion: ['', Validators.required]
 
     });
@@ -95,6 +107,25 @@ export class CrearvueloComponent implements OnInit {
       err => console.log(err)
     );
   }
+
+  cargarVuelo() {
+    const id_entrada = this._activatedRoute.snapshot.params.id_vuelo;
+
+    if (id_entrada) {
+      this.editing = true;
+      this.VuelocrudService.getUnVuelo(id_entrada).subscribe(
+        res => {
+          this.Vuelos = res[0];
+          console.log(res[0]);
+        },
+        err => console.log(err)
+      )
+    }else{
+      this.editing = false;
+    }
+  }
+
+
   crearVuelo() {
     if (this.editing) {
       this.VuelocrudService.editvuelo(this._vuelos.id_vuelo, this._vuelos);
@@ -106,8 +137,10 @@ export class CrearvueloComponent implements OnInit {
         id_ruta: this.form.value.id_ruta,
         id_avion: this.form.value.id_avion,
         fecha_salida: this.form.value.fecha_salida,
-        id_estado: this.form.value.id_estado,
+        id_estado: '1',
       }
+      console.log(vuelos);
+      this.VuelocrudService.addVuelo(vuelos);
       console.log(this.form.value.Id_estado);
       console.log(this.form.value.Ruta);
       console.log(this.form.value.Avion);

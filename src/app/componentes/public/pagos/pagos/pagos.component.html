@@ -9,14 +9,6 @@
           <div class="col order-first mt-5">
 
               <mat-form-field appearance="fill">
-                <mat-label >Factura No.</mat-label>
-                <input type="number" [readonly]="true" matInput placeholder="Número de Factura"
-                  formControlName="numero_factura">
-                <mat-error *ngIf="addressForm.controls['numero_factura'].hasError('required')">
-                  El Número de Factura es <strong>requerido</strong>
-                </mat-error>
-              </mat-form-field>
-              <mat-form-field appearance="fill">
                 <mat-label >Boleto No.</mat-label>
                 <input type="number" [readonly]="true" matInput placeholder="Boleto" formControlName="id_boleto">
                 <mat-error *ngIf="addressForm.controls['id_boleto'].hasError('required')">

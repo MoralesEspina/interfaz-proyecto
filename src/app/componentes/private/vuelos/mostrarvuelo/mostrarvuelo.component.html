@@ -4,11 +4,14 @@
       <div class="col order-first mt-3 mb-5">
         <mat-card class="card">
           <h1 class=" text-center">VUELOS</h1>
-          <mat-form-field class="mat-form-field2" appearance="standard">
+      <mat-form-field class="mat-form-field2" appearance="standard">
             <mat-label>Filter</mat-label>
             <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
           </mat-form-field>
           <button type="submit" class=" btn agg btn-info" (click)="OnNuevoModelo()">Agregar Vuelo</button>
+
+          <button type="submit" class=" btn agg btn-info" (click)="OnNuevoVuelo()">Agregar Vuelo</button>
+
           <rec class=" rec btn " (click)="actualizar()" style="color :rgba(187, 76, 76, 0.952)" matTooltip="Refrescar Tabla">
             <mat-icon>refresh</mat-icon>
           </rec>
@@ -16,11 +19,12 @@
             <thead>
               <tr class=" text-center">
                 <th scope="col">Num. Vuelo</th>
-                <th scope="col">Ruta(falta)</th>
-                <th scope="col">Avion</th>
+                <th scope="col">Origen</th>
+                <th scope="col">Destino</th>
+                <th scope="col">ID Avión</th>
                 <th scope="col">Fecha de Salida</th>
-                <th scope="col">Estado(falta)</th>
-                <th scope="col">Editar(falta)</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Editar</th>
                 <th scope="col">Eliminar</th>
 
               </tr>
@@ -28,10 +32,11 @@
             <tbody>
               <tr *ngFor="let vuelo of ListaVuelos" class=" text-center">
                 <th>{{vuelo.id_vuelo}}</th>
-                <td>{{vuelo.id_ruta}}</td>
+                <td>{{vuelo.origen}}</td>
+                <td>{{vuelo.destino}}</td>
                 <td>{{vuelo.id_avion}}</td>
                 <td>{{vuelo.fecha_salida}}</td>
-                <td>{{vuelo.id_estado}}</td>
+                <td>{{vuelo.descripcion}}</td>
                 <td class="puntero" (click)="modificarVuelo(vuelo.id_vuelo)" style="color:rgb(142, 191, 247)"
                 matTooltip="Editar Vuelo">
                 <mat-icon>edit</mat-icon>

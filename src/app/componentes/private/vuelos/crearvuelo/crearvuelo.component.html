@@ -31,7 +31,7 @@
           <mat-card-content>
               <mat-form-field class="mat-form-field2" appearance="fill">
                 <mat-label style="color:#070707;">Ruta</mat-label>
-                <mat-select [(ngModel)]="_vuelos.id_ruta" formControlName='Ruta'>
+                <mat-select [(ngModel)]="_vuelos.id_ruta" formControlName='id_ruta'>
                   <mat-option *ngFor="let ruta of collectionRuta" [value]="ruta.id_ruta">
                     Origen: {{ruta.origen}} Destino: {{ruta.destino}}
                   </mat-option>
@@ -39,7 +39,7 @@
               </mat-form-field>
                 <mat-form-field appearance="fill">
                   <mat-label style="color:#070707;">ID Avion</mat-label>
-                  <mat-select [(ngModel)]="_vuelos.id_avion" formControlName='Avion'>
+                  <mat-select [(ngModel)]="_vuelos.id_avion" formControlName='id_avion'>
                     <mat-option *ngFor="let avion of collectionAvion" [value]="avion.id_avion">
                       {{avion.id_avion}}
                     </mat-option>
@@ -47,7 +47,7 @@
                 </mat-form-field>
                 <mat-form-field appearance="fill">
                   <mat-label style="color:#070707;">Estado Vuelo</mat-label>
-                  <mat-select [(ngModel)]="_vuelos.id_estado" formControlName='Avion'>
+                  <mat-select [(ngModel)]="_vuelos.id_estado" formControlName='id_estado'>
                     <mat-option *ngFor="let estado of collectionEstados" [value]="estado.id_estado">
                       {{estado.descripcion}}
                     </mat-option>
