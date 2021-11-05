@@ -1,7 +1,7 @@
+import { Pasajero } from './../interfaces/pasajero';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Pasajero } from '../interfaces/pasajero';
 import { Ruta } from '../interfaces/ruta';
 
 @Injectable({
@@ -20,9 +20,8 @@ export class PasajeroService {
     return this.http.get(this.url+'/'+id);
   }
 
-  postPasajeros(pasajero:{})
-  {
-    return this.http.post(this.url, pasajero).subscribe(
+  postPasajeros(pasajero:Pasajero){
+      this.http.post(this.url, pasajero).subscribe(
       res => console.log(res)
     )
   }

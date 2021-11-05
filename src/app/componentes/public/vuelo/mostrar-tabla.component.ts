@@ -121,9 +121,10 @@ export class MostrarTablaComponent implements OnInit {
       genero: this.addressForm.value.genero,
       nacionalidad: this.addressForm.value.nacionalidad,
     }
+    console.log(pasajero);
     this.Pasajero.postPasajeros(pasajero);
     localStorage.setItem("pasajero", JSON.stringify (pasajero))
-    this.router.navigate(['/realizarPago']);
+    this.router.navigate(["/realizarPago"])
   }
 
    asientosbool: boolean[] = [
@@ -167,7 +168,7 @@ export class MostrarTablaComponent implements OnInit {
       id_vuelo : ''+localStorage.getItem('id_vuelo')
     }
     this.boton = false;
-    //this.asientoOcupado.asientoOcupado(_asiento);
+    this.asientoOcupado.asientoOcupado(_asiento);
   }
 
   asientosOcupados(){

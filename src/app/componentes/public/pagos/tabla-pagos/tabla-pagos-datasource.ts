@@ -6,7 +6,6 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 
 // TODO: Replace this with your own data model type.
 export interface TablaPagosItem {
-  numero_factura: string;
   id_boleto: string;
   costo_total: string;
   Tarjeta_Credito: string;
@@ -81,7 +80,6 @@ export class TablaPagosDataSource extends DataSource<TablaPagosItem> {
     return data.sort((a, b) => {
       const isAsc = this.sort?.direction === 'asc';
       switch (this.sort?.active) {
-        case 'numero_factura': return compare(a.numero_factura, b.numero_factura, isAsc);
         case 'id_boleto': return compare(+a.id_boleto, +b.id_boleto, isAsc);
         case 'costo_total': return compare(+a.costo_total, +b.costo_total, isAsc);
         case 'Tarjeta_Credito': return compare(+a.Tarjeta_Credito, +b.Tarjeta_Credito, isAsc);
