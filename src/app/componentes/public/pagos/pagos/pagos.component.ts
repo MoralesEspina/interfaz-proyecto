@@ -12,7 +12,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class PagosComponent {
   addressForm!: FormGroup;
 
-
   constructor(private fb: FormBuilder, private Router:Router, private _pagoService:PagosService) {
     this.addressForm = this.fb.group({
       id_boleto: ['', Validators.required],
@@ -21,14 +20,12 @@ export class PagosComponent {
       Nombre_Propietario: ['', Validators.required],
       Fecha_Exp: ['', Validators.required],
       cvv: ['', Validators.required]
-
     });
   }
 
   onSubmit(){
     console.log(this.addressForm)
     const user: TablaPagosItem ={
-      numero_factura: this.addressForm.value.numero_factura,
       id_boleto: this.addressForm.value.id_boleto,
       costo_total: this.addressForm.value.costo_total,
       Tarjeta_Credito: this.addressForm.value.Tarjeta_Credito,
