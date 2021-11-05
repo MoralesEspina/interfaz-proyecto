@@ -28,7 +28,7 @@ export class VuelocrudService {
   }
 
   deleteVuelo(id_vuelo:string){
-    this.Http.delete(this.url+'/'+id_vuelo).subscribe(
+    this.Http.delete(this.url+'/vuelos/'+id_vuelo).subscribe(
       res => console.log(res)
     )
   }
