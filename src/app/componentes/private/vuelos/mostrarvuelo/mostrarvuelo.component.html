@@ -8,10 +8,7 @@
             <mat-label>Filter</mat-label>
             <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
           </mat-form-field>
-          <button type="submit" class=" btn agg btn-info" (click)="OnNuevoModelo()">Agregar Vuelo</button>
-
           <button type="submit" class=" btn agg btn-info" (click)="OnNuevoVuelo()">Agregar Vuelo</button>
-
           <rec class=" rec btn " (click)="actualizar()" style="color :rgba(187, 76, 76, 0.952)" matTooltip="Refrescar Tabla">
             <mat-icon>refresh</mat-icon>
           </rec>

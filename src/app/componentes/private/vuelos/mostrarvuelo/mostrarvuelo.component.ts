@@ -1,16 +1,9 @@
 import { Router } from '@angular/router';
-
-import { VuelocrudService } from '../../../services/vuelocrud.service';
+import { VuelocrudService, VuelosDisponibles } from '../../../services/vuelocrud.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { mantVuelo } from 'src/app/componentes/interfaces/mantVuelo';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
-
-import { VuelocrudService, VuelosDisponibles } from '../../../services/vuelocrud.service';
-import { Component, OnInit } from '@angular/core';
-
-
-
 
 @Component({
   selector: 'app-mostrarvuelo',
@@ -18,7 +11,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mostrarvuelo.component.css']
 })
 export class MostrarvueloComponent implements OnInit {
-
 
   //
   ListaVuelos!: VuelosDisponibles[];
@@ -56,7 +48,7 @@ export class MostrarvueloComponent implements OnInit {
 
   eliminarVuelo(id_vuelo: string) {
     this.VuelocrudService.deleteVuelo(id_vuelo);
-    setTimeout(location.reload.bind(location),500);
+    setTimeout(location.reload.bind(location),600);
   }
 
   OnNuevoVuelo() {
