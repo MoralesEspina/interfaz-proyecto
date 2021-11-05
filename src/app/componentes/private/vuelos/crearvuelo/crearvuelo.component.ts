@@ -146,4 +146,7 @@ export class CrearvueloComponent implements OnInit {
       console.log(this.form.value.Avion);
     }
   }
+  regresar(){
+    this.router.navigate(['/crudVuelo']);
+  }
 }
