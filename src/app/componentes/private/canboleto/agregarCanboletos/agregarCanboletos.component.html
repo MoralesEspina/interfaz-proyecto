@@ -1,0 +1,34 @@
+<body class="body">
+  <div class="container">
+    <div class="row">
+      <form [formGroup]="addressForm" novalidate>
+        <mat-card class="card">
+          <h1 class=" text-center">Cancelacion de Boleto</h1>
+            <mat-form-field appearance="fill">
+              <mat-label>ID Boleto</mat-label>
+              <input matInput placeholder="Ingrese ID Boleto" formControlName="id_boleto"
+                [(ngModel)]="canboletos.id_boleto">
+              <mat-error *ngIf="addressForm.controls['id_boleto'].hasError('required')">
+                El ID Boleto es <strong>requerido</strong>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field  class="mat-form-field2" appearance="fill">
+              <mat-label>Motivo</mat-label>
+                  <textarea  matInput placeholder="Ingrese Motivo" formControlName="motivo" [(ngModel)]="canboletos.motivo"></textarea>
+                  <mat-error *ngIf="addressForm.controls['motivo'].hasError('required')">
+                    El Motivo es <strong>requerido</strong>
+                  </mat-error>
+            </mat-form-field>
+          <mat-card-actions class="btn">
+            <button mat-raised-button class="btn2" [disabled]="addressForm.invalid" type="submit" (click)="agregar()">
+              <mat-icon>save_alt</mat-icon>Guardar
+            </button>
+            <button mat-raised-button class="btn2" type="submit" (click)="regresar()">
+              <mat-icon>reply</mat-icon>Regresar
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </form>
+    </div>
+  </div>
+</body>

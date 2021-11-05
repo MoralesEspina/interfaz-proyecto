@@ -1,0 +1,46 @@
+.mat_card {
+  max-width: 300px;
+  margin: 30px  auto;
+  text-align: center;
+}
+.body{
+  background-color:rgb(235, 237, 238);
+ background-repeat: no-repeat;
+
+}
+.mat-form-field {
+  display: block;
+  width: 270px;
+  max-width: 270px;
+}
+
+
+.mat-radio-button {
+  display: block;
+  margin: 5px 0;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.col:last-child {
+  margin-right: 0;
+}
+
+.fondo{
+  background-color:rgb(235, 237, 238);
+  margin: auto;
+
+}
+.body{
+  background-color:rgb(235, 237, 238);
+  margin: auto;
+
+}

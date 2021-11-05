@@ -1,0 +1,45 @@
+<body class="body">
+<div class="container">
+    <div class="row">
+      <form [formGroup]="addressForm" novalidate (ngSubmit)="agregarModelo()">
+          <mat-card class="card">
+            <h1 class=" text-center">Agregar Modelo</h1>
+            <mat-form-field appearance="fill">
+              <input matInput [(ngModel)]="Modelo.nombre" [readonly]="editing" placeholder="Agregar Modelo" formControlName="nombre">
+              <mat-error *ngIf="addressForm.controls['nombre'].hasError('required')">
+                <strong>requerido</strong>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <input matInput [(ngModel)]="Modelo.velocidad_media" placeholder="Velocidad Media" formControlName="velocidad_media">
+              <mat-error *ngIf="addressForm.controls['velocidad_media'].hasError('required')">
+                <strong>requerido</strong>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <input matInput [(ngModel)]="Modelo.asientos_economicos" placeholder="Asientos Economicos" formControlName="asientos_economicos">
+              <mat-error *ngIf="addressForm.controls['asientos_economicos'].hasError('required')">
+                <strong>requerido</strong>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <input matInput [(ngModel)]="Modelo.asientos_ejecutivos" placeholder="Asientos Ejecutivos" formControlName="asientos_ejecutivos">
+              <mat-error *ngIf="addressForm.controls['asientos_ejecutivos'].hasError('required')">
+                <strong>requerido</strong>
+              </mat-error>
+            </mat-form-field>
+
+            <mat-card-actions style="text-align: center;">
+              <button mat-raised-button [disabled]="addressForm.invalid" class="btn btn-info"
+                type="submit">Agregar</button>
+            </mat-card-actions>
+
+        </mat-card>
+        </form>
+      </div>
+      <div class="col-sm-6">
+      </div>
+
+    </div>
+
+</body>

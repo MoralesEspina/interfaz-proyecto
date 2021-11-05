@@ -1,0 +1,159 @@
+<body class="body">
+  <header>
+    <div class="container p-1">
+      <div class="row">
+        <div class="col order-first mt-3">
+          <mat-card class="shipping-card">
+            <table class="table">
+              <thead>
+                <tr class="text-center">
+                  <th scope="col">Aerolinea</th>
+                  <th scope="col">Origen</th>
+                  <th scope="col">Destino</th>
+                  <th scope="col">Precio Base</th>
+                  <th scope="col">Distancia</th>
+                  <th scope="col">Tiempo Viaje</th>
+                  <th scope="col">Fecha de Vuelo</th>
+                  <th scope="col">Descripcion</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let vuelo of ListarVuelo" class="text-center">
+                  <td>{{_ruta.nombre}}</td>
+                  <td>{{vuelo.origen}}</td>
+                  <td>{{vuelo.destino}}</td>
+                  <td>${{vuelo.precio_base}}</td>
+                  <td>{{vuelo.distancia_viaje}} Km</td>
+                  <td>{{vuelo.tiempo_viaje}} Hrs</td>
+                  <td>{{_ruta.fecha_salida}}</td>
+                  <td>{{vuelo.descripcion}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+
+  </header>
+  <div class="container ">
+    <div class="row">
+      <form [formGroup]="addressForm" novalidate (ngSubmit)="onAgregar()">
+        <!--datos de pasajero-->
+        <div class="col order-first mb-auto">
+          <mat-card class="card">
+            <h1 class=" text-center">Datos del Pasajero</h1>
+
+                <mat-card-content class="align-self-center">
+                  <div class="container">
+                    <div class="row">
+                  <div class="col col order-first">
+                    <mat-form-field class="mat-form-field" appearance="fill">
+                      <input matInput placeholder="Nombres" formControlName="nombres">
+                      <mat-error *ngIf="addressForm.controls['nombres'].hasError('required')">
+                        <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                      <input matInput placeholder="Apellidos" formControlName="apellidos">
+                      <mat-error *ngIf="addressForm.controls['apellidos'].hasError('required')">
+                        <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                      <mat-label>Tipo Documento</mat-label>
+                      <mat-select formControlName="tipo_doc">
+                        <mat-option *ngFor="let TipoDoc of _tipoDoc" [value]="TipoDoc.value">
+                          {{TipoDoc.viewValue}}
+                        </mat-option>
+                      </mat-select>
+
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                      <input matInput placeholder="Numero Documento" formControlName="numero_doc">
+                      <mat-error *ngIf="addressForm.controls['numero_doc'].hasError('required')">
+                        <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+
+                  </div>
+                  <div class="col col order-last">
+                    <mat-form-field appearance="fill">
+                      <mat-label style="color:#000000;">Fecha de Nacimiento</mat-label>
+                      <input matInput type="date" placeholder="Fecha Nacimiento" formControlName="fecha_nacimiento">
+                      <mat-error *ngIf="addressForm.controls['fecha_nacimiento'].hasError('required')">
+                        <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                      <mat-label>Genero</mat-label>
+                      <mat-select formControlName="genero">
+                        <mat-option *ngFor="let persona of genero" [value]="persona">
+                          {{persona}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                      <input matInput placeholder="Nacionalidad" formControlName="nacionalidad">
+                      <mat-error *ngIf="addressForm.controls['nacionalidad'].hasError('required')">
+                        <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+                </mat-card-content>
+
+          </mat-card>
+        </div>
+
+        <!--asientos-->
+        <div class="col order-first">
+          <div class="card2">
+            <mat-card class="row">
+              <h1 class=" text-center ">Asiento</h1>
+              <p>Rojo = Clase Ejecutiva</p>
+              <p>Celeste = Clase Economica</p>
+              <mat-card-content>
+                <div class = "container mb-5">
+                  <div class="row">
+                    <div class="col order-first">
+                  <button mat-raised-button [disabled] = "asientosbool[1]" class="btn2 btn-info" (click)="crearAsiento('1')" type = "button" >1A</button>
+                  <button mat-raised-button [disabled] = "asientosbool[2]" class="btn2 btn-info" (click)="crearAsiento('2')" type = "button">2A</button>
+                  <button mat-raised-button [disabled] = "asientosbool[3]" class="btn2 btn-info" (click)="crearAsiento('3')" type = "button">3A</button>
+                  <button mat-raised-button [disabled] = "asientosbool[4]" class="btn2 btn-info" (click)="crearAsiento('4')" type = "button">4A</button>
+                  <button mat-raised-button [disabled] = "asientosbool[5]" class="btn2 btn-info" (click)="crearAsiento('5')" type = "button">5A</button>
+                  <button mat-raised-button [disabled] = "asientosbool[6]" class="btn2 btn-info" (click)="crearAsiento('6')" type = "button">6A</button>
+
+                  <button mat-raised-button [disabled] = "asientosbool[7]" class="btn2 btn-info" (click)="crearAsiento('7')" type = "button">7A</button>
+                  <button mat-raised-button [disabled] = "asientosbool[8]" class="btn2 btn-info" (click)="crearAsiento('8')" type = "button">8A</button>
+                </div>
+                  <div class="col order-last">
+                  <button mat-raised-button [disabled] = "asientosbool[9]" class="btn btn-info" (click)="crearAsiento('9')" type = "button">1B</button>
+                  <button mat-raised-button [disabled] = "asientosbool[10]" class="btn btn-info" (click)="crearAsiento('10')" type = "button">2B</button>
+                  <button mat-raised-button [disabled] = "asientosbool[11]" class="btn btn-info" (click)="crearAsiento('11')" type = "button">3B</button>
+                  <button mat-raised-button [disabled] = "asientosbool[12]" class="btn btn-info" (click)="crearAsiento('12')" type = "button">4B</button>
+                  <button mat-raised-button [disabled] = "asientosbool[13]" class="btn btn-info" (click)="crearAsiento('13')" type = "button">5B</button>
+                  <button mat-raised-button [disabled] = "asientosbool[14]" class="btn btn-info" (click)="crearAsiento('14')" type = "button">6B</button>
+                  <button mat-raised-button [disabled] = "asientosbool[15]" class="btn btn-info" (click)="crearAsiento('15')" type = "button">7B</button>
+                  <button mat-raised-button [disabled] = "asientosbool[16]" class="btn btn-info" (click)="crearAsiento('16')" type = "button">8B</button>
+                </div>
+
+                </div>
+                </div>
+
+              </mat-card-content>
+
+            </mat-card>
+            <mat-card-actions style="text-align: center;">
+              <button mat-raised-button [disabled]="boton" class="btn btn-info"
+                type="submit">Siguiente</button>
+            </mat-card-actions>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+</body>

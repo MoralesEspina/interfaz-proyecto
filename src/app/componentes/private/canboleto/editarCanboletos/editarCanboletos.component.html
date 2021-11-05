@@ -1,0 +1,46 @@
+<body class="body">
+  <div class="container">
+    <div class="row">
+      <form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+        <mat-card class="card">
+          <h1 class=" text-center">Cancelacion de Boletos</h1>
+
+          <mat-form-field appearance="fill">
+            <input matInput placeholder="Ingrese ID Boleto" [readonly]="true" formControlName="id_boleto"
+              [(ngModel)]="canboletos.id_boleto">
+            <mat-error *ngIf="addressForm.controls['id_boleto'].hasError('required')">
+              El ID Boleto es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="mat-form-field2" appearance="fill">
+            <mat-label>Motivo</mat-label>
+            <textarea matInput placeholder="Ingrese Motivo"  [readonly]="true" formControlName="motivo"
+              [(ngModel)]="canboletos.motivo"></textarea>
+            <mat-error *ngIf="addressForm.controls['motivo'].hasError('required')">
+              El Motivo es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <input matInput placeholder="Id Estado" formControlName="estado" [(ngModel)]="canboletos.estado">
+            <mat-error *ngIf="addressForm.controls['estado'].hasError('required')">
+              El Estado es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-card-actions class="btn">
+            <button class="btn2" mat-raised-button  type="submit" (click)="modificar()">
+              <mat-icon>save_alt</mat-icon>Guardar
+            </button>
+            <button class="btn2" mat-raised-button  type="submit" (click)="regresar()">
+              <mat-icon>reply</mat-icon>Regresar
+            </button>
+
+          </mat-card-actions>
+        </mat-card>
+
+      </form>
+    </div>
+  </div>
+</body>

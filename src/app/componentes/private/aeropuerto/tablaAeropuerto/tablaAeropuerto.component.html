@@ -1,0 +1,45 @@
+
+<div class="fondo">
+  <div class="container ">
+    <div class="row ">
+      <div class="col order-first mt-3 mb-5">
+        <mat-card class="card">
+          <h1 class=" text-center">AEROPUERTOS</h1>
+          <button type="submit" class=" btn agg btn-info" (click)="agregar()">Agregar Aeropuerto</button>
+          <rec class=" rec btn " (click)="actualizar()" style="color :rgba(187, 76, 76, 0.952)" matTooltip="Refrescar Tabla">
+            <mat-icon>refresh</mat-icon>
+          </rec>
+          <table class="table">
+            <thead>
+              <tr class=" text-center">
+                <th scope="col">IataCode</th>
+                <th scope="col">Ciudad</th>
+                <th scope="col">Pais</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Eliminar</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let modelo of ListarModelos" class=" text-center">
+                <th>{{modelo.iataCode}}</th>
+                <td>{{modelo.ciudad}}</td>
+                <td>{{modelo.pais}}</td>
+
+                <td class="puntero" (click)="modificarr(modelo.iataCode)" style="color:rgb(142, 191, 247)"
+                  matTooltip="Editar Aeropuerto">
+                  <mat-icon>edit</mat-icon>
+                </td>
+
+                <td class="puntero" (click)="eliminarr(modelo.iataCode)" style="color :rgba(187, 76, 76, 0.952)"
+                  matTooltip="Eliminar Aeropuerto">
+                  <mat-icon>delete</mat-icon>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

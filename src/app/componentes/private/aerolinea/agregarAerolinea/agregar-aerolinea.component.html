@@ -1,0 +1,23 @@
+<body class="body">
+  <div class="container">
+    <div class="row">
+      <form [formGroup]="addressForm" novalidate (ngSubmit)="agregarAerolinea()">
+        <mat-card class="card">
+          <h1 class=" text-center">Agregar Aerolinea</h1>
+          <mat-form-field appearance="fill">
+            <input matInput [(ngModel)]="ModeloAerolinea.nombre" placeholder="Nombre" formControlName="nombre"
+              required autofocus>
+            <mat-error *ngIf="addressForm.controls['nombre'].hasError('required')">
+              <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-card-actions style="text-align: center;">
+            <button mat-raised-button [disabled]="addressForm.invalid" class="btn btn-info"
+              type="submit">Agregar</button>
+          </mat-card-actions>
+        </mat-card>
+      </form>
+    </div>
+
+  </div>
+</body>

@@ -1,0 +1,55 @@
+<div class="fondo">
+  <div class="container ">
+    <div class="row ">
+      <div class="col order-first mt-3 mb-5">
+        <mat-card class="card">
+          <h1 class=" text-center">VUELOS</h1>
+      <mat-form-field class="mat-form-field2" appearance="standard">
+            <mat-label>Filter</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+          </mat-form-field>
+          <button type="submit" class=" btn agg btn-info" (click)="OnNuevoVuelo()">Agregar Vuelo</button>
+          <rec class=" rec btn " (click)="actualizar()" style="color :rgba(187, 76, 76, 0.952)" matTooltip="Refrescar Tabla">
+            <mat-icon>refresh</mat-icon>
+          </rec>
+          <table class="table">
+            <thead>
+              <tr class=" text-center">
+                <th scope="col">Num. Vuelo</th>
+                <th scope="col">Origen</th>
+                <th scope="col">Destino</th>
+                <th scope="col">ID Avión</th>
+                <th scope="col">Fecha de Salida</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Eliminar</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let vuelo of ListaVuelos" class=" text-center">
+                <th>{{vuelo.id_vuelo}}</th>
+                <td>{{vuelo.origen}}</td>
+                <td>{{vuelo.destino}}</td>
+                <td>{{vuelo.id_avion}}</td>
+                <td>{{vuelo.fecha_salida}}</td>
+                <td>{{vuelo.descripcion}}</td>
+                <td class="puntero" (click)="modificarVuelo(vuelo.id_vuelo)" style="color:rgb(142, 191, 247)"
+                matTooltip="Editar Vuelo">
+                <mat-icon>edit</mat-icon>
+              </td>
+
+              <td class="puntero" (click)="eliminarVuelo(vuelo.id_vuelo)" style="color :rgba(187, 76, 76, 0.952)"
+                matTooltip="Eliminar Vuelo">
+                <mat-icon>delete</mat-icon>
+              </td>
+
+              </tr>
+            </tbody>
+          </table>
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page"></mat-paginator>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

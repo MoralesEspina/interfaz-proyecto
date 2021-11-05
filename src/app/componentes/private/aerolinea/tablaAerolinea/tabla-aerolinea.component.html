@@ -1,0 +1,39 @@
+<div class="fondo">
+  <div class="container ">
+    <div class="row ">
+      <div class="col order-first mt-3 mb-5">
+        <mat-card class="card">
+          <h1 class=" text-center">Aerolineas</h1>
+          <button type="button" class="btn agg btn-info" (click)="OnnuevaAerolinea()">Agregar Aerolinea</button>
+          <rec class=" rec btn " (click)="actualizar()" style="color :rgba(187, 76, 76, 0.952)" matTooltip="Refrescar Tabla">
+            <mat-icon>refresh</mat-icon>
+          </rec>
+          <table class="table">
+            <thead>
+              <tr class=" text-center">
+                <th scope="col">Nombre</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Eliminar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let modelo of ListarModelos" class=" text-center">
+                <td>{{modelo.nombre}}</td>
+                <td class="puntero" (click)="modificarAerolinea(modelo.id_aerolinea)" style="color:rgb(142, 191, 247)"
+                matTooltip="Editar Aerolinea">
+                <mat-icon>edit</mat-icon>
+              </td>
+
+              <td class="puntero" (click)="eliminarAerolinea(modelo.id_aerolinea)" style="color :rgba(187, 76, 76, 0.952)"
+                matTooltip="Eliminar Aerolinea">
+                <mat-icon>delete</mat-icon>
+              </td>
+
+              </tr>
+            </tbody>
+          </table>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

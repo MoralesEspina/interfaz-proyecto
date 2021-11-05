@@ -1,0 +1,38 @@
+<body class="body">
+  <div class="container">
+    <div class="row">
+        <mat-card class="card">
+          <h1 class=" text-center">Vuelos Disponibles</h1>
+          <table class="table">
+            <thead>
+              <tr class=" text-center">
+                <th scope="col">Aerolinea</th>
+                <th scope="col">Origen</th>
+                <th scope="col">Destino</th>
+                <th scope="col">Distancia</th>
+                <th scope="col">Tiempo de Viaje</th>
+                <th scope="col">Precio Base</th>
+                <th scope="col">Fecha de Salida</th>
+                <th scope="col">Estado de Vuelo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let vuelos of ListarVuelo" class=" text-center">
+                <td>{{vuelos.nombre}}</td>
+                <td>{{vuelos.origen}}</td>
+                <td>{{vuelos.destino}}</td>
+                <td>{{vuelos.distancia_viaje}} Km</td>
+                <td>{{vuelos.tiempo_viaje}} Hrs</td>
+                <td>${{vuelos.precio_base}}</td>
+                <td>{{vuelos.fecha_salida}}</td>
+                <td>{{vuelos.descripcion}}</td>
+                <td>
+                <button type="submit" class=" btn agg btn-info" (click)="seleccionarVuelo(vuelos.nombre, vuelos.id_vuelo,vuelos.id_ruta,vuelos.id_avion)">Seleccionar</button>
+              </td>
+              </tr>
+            </tbody>
+          </table>
+        </mat-card>
+      </div>
+    </div>
+</body>

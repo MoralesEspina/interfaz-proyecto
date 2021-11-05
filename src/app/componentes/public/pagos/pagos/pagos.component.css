@@ -1,0 +1,106 @@
+
+.mat-form-field {
+  display: block;
+  width: 275px;
+  max-width: 280px;
+  max-width: 275px;
+}
+.btn{
+  background-color:rgba(142, 222, 247, 0.897);
+}
+.btn2{
+  margin: -1em auto;
+  text-align: center;
+}
+
+::ng-deep .mat-form-field{ width:400px !important; }
+
+.card {
+  width: 645px;
+  max-width: 650px;
+  margin: 30px  auto;
+  text-align: left;
+}
+
+
+.body{
+  background-color:rgb(235, 237, 238);
+ background-repeat: no-repeat;
+
+}
+
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+
+.wave {
+  position: absolute ;
+  bottom: 0;
+  width: 100%;
+}
+
+
+.galeria-transport{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.imagen-transport{
+  width: 100%;
+  margin-bottom: 5%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 6px 0 rgb(0, 0, 0, .5);
+
+}
+
+.imagen-transport > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+
+::ng-deep .mat-form-field-underline, ::ng-deep .mat-form-field-ripple {
+  color: #f2f2f2;
+  background: rgb(255, 255, 255) !important;
+  padding-right: 10%;
+
+}
+
+.btn-link{
+  width: 100%;
+  height: 60px;
+  color: #000000 !important;
+  font-weight: bold !important;
+  text-align: center !important;
+  text-decoration: none !important;
+
+}
+
+.btn-link:after{
+  content: '\2212';
+  width: 35px;
+  font-size: 25px;
+  text-align: center;
+  border-radius: 5px;
+  right: 15px;
+  top: 11px;
+  position: absolute;
+  background: #000000;
+}
+
+
+
